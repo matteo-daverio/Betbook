@@ -1,25 +1,48 @@
 //
 //  ViewController.swift
-//  MyApp
+//  Example-Swift
 //
-//  Created by Alessandro Cimbelli on 07/12/15.
-//  Copyright © 2015 CimboMatte. All rights reserved.
+//  Created by Robert Nash on 22/09/2015.
+//  Copyright © 2015 Robert Nash. All rights reserved.
 //
 
 import UIKit
+import CollapsableTable
 
-class ViewController: UIViewController {
+class ViewController: CollapsableTableViewController {
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
-	}
+    @IBOutlet weak var tableView: UITableView!
+    
+    let menu = ModelBuilder.buildMenu()
+    
+    override func model() -> [CollapsableTableViewSectionModelProtocol]? {
+        return menu
+    }
 
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
-
-
+    override func sectionHeaderNibName() -> String? {
+        return "MenuSectionHeaderView"
+    }
+    
+    override func singleOpenSelectionOnly() -> Bool {
+        return true
+    }
+    
+    override func collapsableTableView() -> UITableView? {
+        return tableView
+    }
 }
 
+extension ViewController {
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 44.0
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44.0
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        return tableView.dequeueReusableCellWithIdentifier("Cell")!
+    }
+}

@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		F418C34F1C160EF00063A112 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418C34E1C160EF00063A112 /* AppDelegate.swift */; };
-		F418C3511C160EF00063A112 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418C3501C160EF00063A112 /* ViewController.swift */; };
-		F418C3541C160EF00063A112 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418C3521C160EF00063A112 /* Main.storyboard */; };
 		F418C3561C160EF00063A112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F418C3551C160EF00063A112 /* Assets.xcassets */; };
 		F418C3591C160EF00063A112 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418C3571C160EF00063A112 /* LaunchScreen.storyboard */; };
 		F418C3641C160EF00063A112 /* MyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418C3631C160EF00063A112 /* MyAppTests.swift */; };
 		F418C36F1C160EF00063A112 /* MyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418C36E1C160EF00063A112 /* MyAppUITests.swift */; };
+		F418CB821C1610780063A112 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = F418CB811C1610780063A112 /* Cartfile */; };
+		F418CB911C16179A0063A112 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F418CB8F1C16179A0063A112 /* Kanna.framework */; };
+		F418CB921C16179A0063A112 /* CollapsableTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F418CB901C16179A0063A112 /* CollapsableTable.framework */; };
+		F418CB991C16191F0063A112 /* FakeModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CB981C16191F0063A112 /* FakeModelBuilder.swift */; };
+		F418CB9B1C16192B0063A112 /* MenuSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CB9A1C16192B0063A112 /* MenuSectionHeader.swift */; };
+		F418CB9D1C1619310063A112 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CB9C1C1619310063A112 /* ViewController.swift */; };
+		F418CB9F1C16194C0063A112 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418CB9E1C16194C0063A112 /* Main.storyboard */; };
+		F418CBA11C1619690063A112 /* MenuSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F418CBA01C1619690063A112 /* MenuSectionHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +42,6 @@
 /* Begin PBXFileReference section */
 		F418C34B1C160EF00063A112 /* MyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F418C34E1C160EF00063A112 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F418C3501C160EF00063A112 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F418C3531C160EF00063A112 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F418C3551C160EF00063A112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F418C3581C160EF00063A112 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F418C35A1C160EF00063A112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +51,14 @@
 		F418C36A1C160EF00063A112 /* MyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F418C36E1C160EF00063A112 /* MyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppUITests.swift; sourceTree = "<group>"; };
 		F418C3701C160EF00063A112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F418CB811C1610780063A112 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Cartfile; path = ../Cartfile; sourceTree = "<group>"; };
+		F418CB8F1C16179A0063A112 /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = Carthage/Build/iOS/Kanna.framework; sourceTree = "<group>"; };
+		F418CB901C16179A0063A112 /* CollapsableTable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CollapsableTable.framework; path = Carthage/Build/iOS/CollapsableTable.framework; sourceTree = "<group>"; };
+		F418CB981C16191F0063A112 /* FakeModelBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeModelBuilder.swift; sourceTree = "<group>"; };
+		F418CB9A1C16192B0063A112 /* MenuSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSectionHeader.swift; sourceTree = "<group>"; };
+		F418CB9C1C1619310063A112 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F418CB9E1C16194C0063A112 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F418CBA01C1619690063A112 /* MenuSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuSectionHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F418CB911C16179A0063A112 /* Kanna.framework in Frameworks */,
+				F418CB921C16179A0063A112 /* CollapsableTable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +95,7 @@
 				F418C3621C160EF00063A112 /* MyAppTests */,
 				F418C36D1C160EF00063A112 /* MyAppUITests */,
 				F418C34C1C160EF00063A112 /* Products */,
+				F418CB931C1618640063A112 /* FrameWork */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +112,11 @@
 		F418C34D1C160EF00063A112 /* MyApp */ = {
 			isa = PBXGroup;
 			children = (
-				F418C34E1C160EF00063A112 /* AppDelegate.swift */,
-				F418C3501C160EF00063A112 /* ViewController.swift */,
-				F418C3521C160EF00063A112 /* Main.storyboard */,
-				F418C3551C160EF00063A112 /* Assets.xcassets */,
-				F418C3571C160EF00063A112 /* LaunchScreen.storyboard */,
-				F418C35A1C160EF00063A112 /* Info.plist */,
+				F418CB9E1C16194C0063A112 /* Main.storyboard */,
+				F418CB971C1618EC0063A112 /* View */,
+				F418CB961C1618E60063A112 /* Controller */,
+				F418CB951C1618DE0063A112 /* Model */,
+				F418CB941C1618BF0063A112 /* Supporting Files */,
 			);
 			path = MyApp;
 			sourceTree = "<group>";
@@ -125,6 +139,52 @@
 			path = MyAppUITests;
 			sourceTree = "<group>";
 		};
+		F418CB931C1618640063A112 /* FrameWork */ = {
+			isa = PBXGroup;
+			children = (
+				F418CB8F1C16179A0063A112 /* Kanna.framework */,
+				F418CB901C16179A0063A112 /* CollapsableTable.framework */,
+			);
+			name = FrameWork;
+			sourceTree = "<group>";
+		};
+		F418CB941C1618BF0063A112 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F418C34E1C160EF00063A112 /* AppDelegate.swift */,
+				F418C3551C160EF00063A112 /* Assets.xcassets */,
+				F418CBA01C1619690063A112 /* MenuSectionHeaderView.xib */,
+				F418C3571C160EF00063A112 /* LaunchScreen.storyboard */,
+				F418C35A1C160EF00063A112 /* Info.plist */,
+				F418CB811C1610780063A112 /* Cartfile */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F418CB951C1618DE0063A112 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F418CB981C16191F0063A112 /* FakeModelBuilder.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F418CB961C1618E60063A112 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F418CB9C1C1619310063A112 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F418CB971C1618EC0063A112 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F418CB9A1C16192B0063A112 /* MenuSectionHeader.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +195,7 @@
 				F418C3471C160EF00063A112 /* Sources */,
 				F418C3481C160EF00063A112 /* Frameworks */,
 				F418C3491C160EF00063A112 /* Resources */,
+				F418CBA21C161BCA0063A112 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -233,8 +294,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F418C3591C160EF00063A112 /* LaunchScreen.storyboard in Resources */,
+				F418CBA11C1619690063A112 /* MenuSectionHeaderView.xib in Resources */,
 				F418C3561C160EF00063A112 /* Assets.xcassets in Resources */,
-				F418C3541C160EF00063A112 /* Main.storyboard in Resources */,
+				F418CB821C1610780063A112 /* Cartfile in Resources */,
+				F418CB9F1C16194C0063A112 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,12 +317,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F418CBA21C161BCA0063A112 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Kanna.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CollapsableTable.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F418C3471C160EF00063A112 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F418C3511C160EF00063A112 /* ViewController.swift in Sources */,
+				F418CB991C16191F0063A112 /* FakeModelBuilder.swift in Sources */,
+				F418CB9B1C16192B0063A112 /* MenuSectionHeader.swift in Sources */,
+				F418CB9D1C1619310063A112 /* ViewController.swift in Sources */,
 				F418C34F1C160EF00063A112 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,14 +379,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F418C3521C160EF00063A112 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F418C3531C160EF00063A112 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F418C3571C160EF00063A112 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -402,6 +477,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = MyApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CM.MyApp;
@@ -413,6 +493,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = MyApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CM.MyApp;
@@ -487,6 +572,7 @@
 				F418C3751C160EF00063A112 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F418C3761C160EF00063A112 /* Build configuration list for PBXNativeTarget "MyAppTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +581,7 @@
 				F418C3781C160EF00063A112 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F418C3791C160EF00063A112 /* Build configuration list for PBXNativeTarget "MyAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +590,7 @@
 				F418C37B1C160EF00063A112 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
