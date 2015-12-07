@@ -1,0 +1,10 @@
+framework module CollapsableTable {
+  umbrella header "CollapsableTable.h"
+
+  export *
+  module * { export * }
+}
+
+module CollapsableTable.Swift {
+    header "CollapsableTable-Swift.h"
+}
