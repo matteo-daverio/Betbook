@@ -36,7 +36,7 @@ class ModelBuilder {
             case 0:
                 section.title = "Option 1"
                 section.isVisible = true
-                section.items = [NSNull(), NSNull(), NSNull()]
+                section.items = [NSNull(), NSNull(), NSNull(), NSNull()]
             case 1:
                 section.title = "Option 2"
                 section.items = [NSNull(), NSNull(), NSNull(), NSNull(), NSNull(), NSNull()]
