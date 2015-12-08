@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="La8-UB-2WS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hys-Qt-Hy9">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PBm-ub-DKL">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -175,11 +175,62 @@
             </objects>
             <point key="canvasLocation" x="1869" y="335"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Animated Tab Bar Controller-->
+        <scene sceneID="pY7-Ca-CZS">
+            <objects>
+                <tabBarController id="Hys-Qt-Hy9" customClass="RAMAnimatedTabBarController" customModule="MyApp" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="HyR-PB-C07">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="R9k-oM-Uex" kind="relationship" relationship="viewControllers" id="p1o-XI-KUJ"/>
+                        <segue destination="La8-UB-2WS" kind="relationship" relationship="viewControllers" id="zqi-bS-XKp"/>
+                        <segue destination="6Sr-YU-b8S" kind="relationship" relationship="viewControllers" id="Xge-Fg-tlp"/>
+                        <segue destination="9e1-vW-Bxb" kind="relationship" relationship="viewControllers" id="LwJ-yZ-m2k"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Sn-jP-pJx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-619" y="335"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="3bN-rS-ZYg">
+            <objects>
+                <viewController id="R9k-oM-Uex" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ebU-MK-3CV"/>
+                        <viewControllerLayoutGuide type="bottom" id="BKp-J7-5LK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eO7-jF-3lH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="icon_pin" id="YjL-ka-Xl6" customClass="RAMAnimatedTabBarItem" customModule="MyApp" customModuleProvider="target">
+                        <connections>
+                            <outlet property="animation" destination="vTb-xm-L9Z" id="oBk-OF-LGj"/>
+                        </connections>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pwm-Lf-KAz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="vTb-xm-L9Z" customClass="RAMFumeAnimation" customModule="MyApp" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="426" y="-548"/>
+        </scene>
+        <!--Bella-->
         <scene sceneID="aYg-D4-hGb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="La8-UB-2WS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bella" image="drop" id="vTN-L2-ZIH" customClass="RAMAnimatedTabBarItem" customModule="MyApp">
+                        <connections>
+                            <outlet property="animation" destination="Wl7-dV-egB" id="VM9-gy-Y4z"/>
+                        </connections>
+                    </tabBarItem>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xe6-CS-h1G">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -191,8 +242,65 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1na-CU-rLZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="Wl7-dV-egB" customClass="RAMBounceAnimation" customModule="MyApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="426" y="335"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="obC-ak-4kj">
+            <objects>
+                <viewController id="6Sr-YU-b8S" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="peJ-rI-YeW"/>
+                        <viewControllerLayoutGuide type="bottom" id="eST-Ws-Mbz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XGx-jJ-UvK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="Tools_00028" id="Bcl-lw-7BM" customClass="RAMAnimatedTabBarItem" customModule="MyApp" customModuleProvider="target">
+                        <connections>
+                            <outlet property="animation" destination="ACg-ry-Z17" id="vXR-QA-y8b"/>
+                        </connections>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rJk-gO-ofl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="ACg-ry-Z17" customClass="RAMRotationAnimation" customModule="MyApp" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="426" y="1185"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Ke8-Fx-C63">
+            <objects>
+                <viewController id="9e1-vW-Bxb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tw8-Un-MRm"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Sq-Th-Xbq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Czf-a0-TDy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="icon_user" id="ZlQ-oj-Oyl" customClass="RAMAnimatedTabBarItem" customModule="MyApp" customModuleProvider="target">
+                        <connections>
+                            <outlet property="animation" destination="6q8-pI-h6j" id="PZe-ap-f4g"/>
+                        </connections>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4oy-3p-uNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="6q8-pI-h6j" customClass="RAMBounceAnimation" customModule="MyApp" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="426" y="1951"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Tools_00028" width="30" height="30"/>
+        <image name="drop" width="24" height="24"/>
+        <image name="icon_pin" width="30" height="30"/>
+        <image name="icon_user" width="30" height="30"/>
+    </resources>
 </document>

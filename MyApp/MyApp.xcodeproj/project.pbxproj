@@ -30,6 +30,13 @@
 		F418CBC21C16F2240063A112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F418CBC11C16F2240063A112 /* Assets.xcassets */; };
 		F418CBC41C1727950063A112 /* MatchListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBC31C1727950063A112 /* MatchListRequest.swift */; };
 		F418CBC61C172A6A0063A112 /* StringForTheWebHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBC51C172A6A0063A112 /* StringForTheWebHelper.swift */; };
+		F418CBD71C174C310063A112 /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBCC1C174C310063A112 /* RAMBounceAnimation.swift */; };
+		F418CBD81C174C310063A112 /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBCE1C174C310063A112 /* RAMFrameItemAnimation.swift */; };
+		F418CBD91C174C310063A112 /* RAMFumeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBD01C174C310063A112 /* RAMFumeAnimation.swift */; };
+		F418CBDA1C174C310063A112 /* RAMRotationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBD21C174C310063A112 /* RAMRotationAnimation.swift */; };
+		F418CBDB1C174C310063A112 /* RAMTransitionItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBD41C174C310063A112 /* RAMTransitionItemAnimation.swift */; };
+		F418CBDC1C174C310063A112 /* RAMAnimatedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBD51C174C310063A112 /* RAMAnimatedTabBarController.swift */; };
+		F418CBDD1C174C310063A112 /* RAMItemAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBD61C174C310063A112 /* RAMItemAnimationProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +86,13 @@
 		F418CBC11C16F2240063A112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F418CBC31C1727950063A112 /* MatchListRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchListRequest.swift; sourceTree = "<group>"; };
 		F418CBC51C172A6A0063A112 /* StringForTheWebHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringForTheWebHelper.swift; sourceTree = "<group>"; };
+		F418CBCC1C174C310063A112 /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBounceAnimation.swift; sourceTree = "<group>"; };
+		F418CBCE1C174C310063A112 /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFrameItemAnimation.swift; sourceTree = "<group>"; };
+		F418CBD01C174C310063A112 /* RAMFumeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFumeAnimation.swift; sourceTree = "<group>"; };
+		F418CBD21C174C310063A112 /* RAMRotationAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMRotationAnimation.swift; sourceTree = "<group>"; };
+		F418CBD41C174C310063A112 /* RAMTransitionItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMTransitionItemAnimation.swift; sourceTree = "<group>"; };
+		F418CBD51C174C310063A112 /* RAMAnimatedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMAnimatedTabBarController.swift; sourceTree = "<group>"; };
+		F418CBD61C174C310063A112 /* RAMItemAnimationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMItemAnimationProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +214,7 @@
 		F418CB961C1618E60063A112 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F418CBC91C174C310063A112 /* RAMAnimatedTabBarController */,
 				F418CBB51C16E9AD0063A112 /* MatchListTableViewController.swift */,
 				F418CB9C1C1619310063A112 /* MenuViewController.swift */,
 			);
@@ -213,6 +228,68 @@
 				F418CB9A1C16192B0063A112 /* MenuSectionHeader.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		F418CBC91C174C310063A112 /* RAMAnimatedTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				F418CBCA1C174C310063A112 /* Animations */,
+				F418CBD51C174C310063A112 /* RAMAnimatedTabBarController.swift */,
+				F418CBD61C174C310063A112 /* RAMItemAnimationProtocol.swift */,
+			);
+			path = RAMAnimatedTabBarController;
+			sourceTree = "<group>";
+		};
+		F418CBCA1C174C310063A112 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				F418CBCB1C174C310063A112 /* BounceAnimation */,
+				F418CBCD1C174C310063A112 /* FrameAnimation */,
+				F418CBCF1C174C310063A112 /* FumeAnimation */,
+				F418CBD11C174C310063A112 /* RotationAnimation */,
+				F418CBD31C174C310063A112 /* TransitionAniamtions */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		F418CBCB1C174C310063A112 /* BounceAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				F418CBCC1C174C310063A112 /* RAMBounceAnimation.swift */,
+			);
+			path = BounceAnimation;
+			sourceTree = "<group>";
+		};
+		F418CBCD1C174C310063A112 /* FrameAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				F418CBCE1C174C310063A112 /* RAMFrameItemAnimation.swift */,
+			);
+			path = FrameAnimation;
+			sourceTree = "<group>";
+		};
+		F418CBCF1C174C310063A112 /* FumeAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				F418CBD01C174C310063A112 /* RAMFumeAnimation.swift */,
+			);
+			path = FumeAnimation;
+			sourceTree = "<group>";
+		};
+		F418CBD11C174C310063A112 /* RotationAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				F418CBD21C174C310063A112 /* RAMRotationAnimation.swift */,
+			);
+			path = RotationAnimation;
+			sourceTree = "<group>";
+		};
+		F418CBD31C174C310063A112 /* TransitionAniamtions */ = {
+			isa = PBXGroup;
+			children = (
+				F418CBD41C174C310063A112 /* RAMTransitionItemAnimation.swift */,
+			);
+			path = TransitionAniamtions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,8 +447,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F418CBDD1C174C310063A112 /* RAMItemAnimationProtocol.swift in Sources */,
+				F418CBD81C174C310063A112 /* RAMFrameItemAnimation.swift in Sources */,
 				F418CB991C16191F0063A112 /* MenuModelBuilder.swift in Sources */,
+				F418CBDA1C174C310063A112 /* RAMRotationAnimation.swift in Sources */,
 				F418CBAA1C16C1AB0063A112 /* CollapsableTableProtocols.swift in Sources */,
+				F418CBD91C174C310063A112 /* RAMFumeAnimation.swift in Sources */,
 				F418CBBA1C16E9DF0063A112 /* Match.swift in Sources */,
 				F418CBAC1C16C1EF0063A112 /* CollapsableTableScene.swift in Sources */,
 				F418CBC41C1727950063A112 /* MatchListRequest.swift in Sources */,
@@ -384,6 +465,9 @@
 				F418CBC01C16EA0F0063A112 /* ParserHtml.swift in Sources */,
 				F418CBB61C16E9AD0063A112 /* MatchListTableViewController.swift in Sources */,
 				F418CBBC1C16EA010063A112 /* SoccerInformationModel.swift in Sources */,
+				F418CBDB1C174C310063A112 /* RAMTransitionItemAnimation.swift in Sources */,
+				F418CBDC1C174C310063A112 /* RAMAnimatedTabBarController.swift in Sources */,
+				F418CBD71C174C310063A112 /* RAMBounceAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
