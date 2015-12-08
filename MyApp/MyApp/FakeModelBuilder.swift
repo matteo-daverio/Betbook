@@ -13,7 +13,7 @@ class MenuSection: CollapsableTableViewSectionModelProtocol  {
     
     var title: String
     var isVisible: Bool
-    var items: [AnyObject]
+    var items: [String]
     
     init() {
         title = ""
@@ -23,40 +23,58 @@ class MenuSection: CollapsableTableViewSectionModelProtocol  {
 }
 
 class ModelBuilder {
+	
+	//Fixed number of option for CountryEuropeanCompetition
+	private var listOfCountryOrEuropeanCompetition: [String] = []
+	
+	private var leagueForTheCountry = [String:[String]]()
+	
+	init(){
+		addAvailableCountryOrEuropeanCompetition()
+		addLeagueForCountry()
+	}
     
-    class func buildMenu() -> [CollapsableTableViewSectionModelProtocol] {
+	func buildMenu() -> [CollapsableTableViewSectionModelProtocol] {
         
         var collector = [CollapsableTableViewSectionModelProtocol]()
         
-        for var i = 0; i < 5; i++ {
+        for var i = 0; i < self.listOfCountryOrEuropeanCompetition.count ; i++ {
             
             let section = MenuSection()
-            
-            switch i {
-            case 0:
-                section.title = "Option 1"
-                section.isVisible = true
-                section.items = [NSNull(), NSNull(), NSNull(), NSNull()]
-            case 1:
-                section.title = "Option 2"
-                section.items = [NSNull(), NSNull(), NSNull(), NSNull(), NSNull(), NSNull()]
-            case 2:
-                section.title = "Option 3"
-                section.items = [NSNull(), NSNull(), NSNull()]
-            case 3:
-                section.title = "Option 4"
-                section.items = [NSNull(), NSNull()]
-            case 4:
-                section.title = "Option 5"
-                section.items = [NSNull(), NSNull(), NSNull(), NSNull()]
-            default:
-                break
-                
-            }
-            
+			
+			section.title = self.listOfCountryOrEuropeanCompetition[i]
+			if(i > 0){
+				section.isVisible = false
+			}else{
+				section.isVisible = true
+			}
+			section.items = self.leagueForTheCountry[section.title]!
+			
+			
             collector.append(section)
         }
         
         return collector
     }
+	
+	//Initialize the array of Available Country Or European Competition
+	private func addAvailableCountryOrEuropeanCompetition(){
+		self.listOfCountryOrEuropeanCompetition.append("Italia")
+		self.listOfCountryOrEuropeanCompetition.append("Inghilterra")
+		self.listOfCountryOrEuropeanCompetition.append("Spagna")
+		self.listOfCountryOrEuropeanCompetition.append("Francia")
+		self.listOfCountryOrEuropeanCompetition.append("Germania")
+		//	self.listOfCountryOrEuropeanCompetition.append("Champions Leaugue")
+	}
+	
+	private func addLeagueForCountry(){
+		self.leagueForTheCountry["Italia"] = ["Serie A","Serie B","Coppa Italia","Super Coppa","Lega Pro 1A","Lega Pro 1B"]
+		self.leagueForTheCountry["Inghilterra"] = ["Premier League","FA Cup","Capital One Cup","Cummunity Shield","League One","League Two"]
+		self.leagueForTheCountry["Spagna"] = ["Liga","Super Coppa","Coppa del Re","Liga Segunda","Liga Segunda B","Liga Tercera"]
+		self.leagueForTheCountry["Francia"] = ["Ligue 1","Ligue 2","Coupe de France","Coupe de la Ligue","Super Coppa","National","CFA"]
+		self.leagueForTheCountry["Germania"] = ["Bundesliga","Bundesliga 2","Super Cup"]
+		self.leagueForTheCountry["Champions League"] = []
+	}
+		
+	
 }

@@ -20,6 +20,8 @@
 		F418CB9D1C1619310063A112 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CB9C1C1619310063A112 /* ViewController.swift */; };
 		F418CB9F1C16194C0063A112 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418CB9E1C16194C0063A112 /* Main.storyboard */; };
 		F418CBA11C1619690063A112 /* MenuSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F418CBA01C1619690063A112 /* MenuSectionHeaderView.xib */; };
+		F418CBAA1C16C1AB0063A112 /* CollapsableTableProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBA91C16C1AB0063A112 /* CollapsableTableProtocols.swift */; };
+		F418CBAC1C16C1EF0063A112 /* CollapsableTableScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBAB1C16C1EF0063A112 /* CollapsableTableScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		F418CB9C1C1619310063A112 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F418CB9E1C16194C0063A112 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F418CBA01C1619690063A112 /* MenuSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuSectionHeaderView.xib; sourceTree = "<group>"; };
+		F418CBA91C16C1AB0063A112 /* CollapsableTableProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsableTableProtocols.swift; sourceTree = "<group>"; };
+		F418CBAB1C16C1EF0063A112 /* CollapsableTableScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsableTableScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,8 @@
 		F418CB941C1618BF0063A112 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F418CBAB1C16C1EF0063A112 /* CollapsableTableScene.swift */,
+				F418CBA91C16C1AB0063A112 /* CollapsableTableProtocols.swift */,
 				F418C34E1C160EF00063A112 /* AppDelegate.swift */,
 				F418C3551C160EF00063A112 /* Assets.xcassets */,
 				F418CBA01C1619690063A112 /* MenuSectionHeaderView.xib */,
@@ -341,6 +347,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F418CB991C16191F0063A112 /* FakeModelBuilder.swift in Sources */,
+				F418CBAA1C16C1AB0063A112 /* CollapsableTableProtocols.swift in Sources */,
+				F418CBAC1C16C1EF0063A112 /* CollapsableTableScene.swift in Sources */,
 				F418CB9B1C16192B0063A112 /* MenuSectionHeader.swift in Sources */,
 				F418CB9D1C1619310063A112 /* ViewController.swift in Sources */,
 				F418C34F1C160EF00063A112 /* AppDelegate.swift in Sources */,

@@ -13,7 +13,7 @@ class ViewController: CollapsableTableViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let menu = ModelBuilder.buildMenu()
+    let menu = ModelBuilder().buildMenu()
     
     override func model() -> [CollapsableTableViewSectionModelProtocol]? {
         return menu
@@ -33,16 +33,16 @@ class ViewController: CollapsableTableViewController {
 }
 
 extension ViewController {
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 44.0
-    }
-    
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 44.0
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCellWithIdentifier("Cell")!
-    }
+	
+	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+		return 44.0
+	}
+	
+	func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		return 44.0
+	}
+	
+	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+		return tableView.dequeueReusableCellWithIdentifier("Cell")!
+	}
 }
