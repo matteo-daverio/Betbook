@@ -8,10 +8,10 @@
 
 import UIKit
 
-class MatchListTableViewController: UITableViewController,SoccerInformationModelDelegate {
+class MatchListTableViewController: UITableViewController,MatchListDelegate {
 
 	//My model
-	let soccerInformationModel = SingletonSoccerInformationModel().getInstance()
+	let matchListModel = MatchListRequest()
 	
 	var country: String?
 	var league: String?
@@ -21,10 +21,8 @@ class MatchListTableViewController: UITableViewController,SoccerInformationModel
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		soccerInformationModel.delegate = self
-		soccerInformationModel.selectedCountryOrEuropeanCompetition(country!)
-		soccerInformationModel.selectedLeague(league!)
-		soccerInformationModel.getMatchList()
+		matchListModel.delegate = self
+		matchListModel.getMatchList(country!, uiLeague: league!)
 		
 		
         // Uncomment the following line to preserve selection between presentations

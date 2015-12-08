@@ -28,6 +28,8 @@
 		F418CBBE1C16EA060063A112 /* SingletonSoccerInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBBD1C16EA060063A112 /* SingletonSoccerInformationModel.swift */; };
 		F418CBC01C16EA0F0063A112 /* ParserHtml.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBBF1C16EA0F0063A112 /* ParserHtml.swift */; };
 		F418CBC21C16F2240063A112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F418CBC11C16F2240063A112 /* Assets.xcassets */; };
+		F418CBC41C1727950063A112 /* MatchListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBC31C1727950063A112 /* MatchListRequest.swift */; };
+		F418CBC61C172A6A0063A112 /* StringForTheWebHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBC51C172A6A0063A112 /* StringForTheWebHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		F418CBBD1C16EA060063A112 /* SingletonSoccerInformationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonSoccerInformationModel.swift; sourceTree = "<group>"; };
 		F418CBBF1C16EA0F0063A112 /* ParserHtml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserHtml.swift; sourceTree = "<group>"; };
 		F418CBC11C16F2240063A112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F418CBC31C1727950063A112 /* MatchListRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchListRequest.swift; sourceTree = "<group>"; };
+		F418CBC51C172A6A0063A112 /* StringForTheWebHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringForTheWebHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,8 @@
 				F418CBBB1C16EA010063A112 /* SoccerInformationModel.swift */,
 				F418CB981C16191F0063A112 /* MenuModelBuilder.swift */,
 				F418CBB91C16E9DF0063A112 /* Match.swift */,
+				F418CBC31C1727950063A112 /* MatchListRequest.swift */,
+				F418CBC51C172A6A0063A112 /* StringForTheWebHelper.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -368,6 +374,8 @@
 				F418CBAA1C16C1AB0063A112 /* CollapsableTableProtocols.swift in Sources */,
 				F418CBBA1C16E9DF0063A112 /* Match.swift in Sources */,
 				F418CBAC1C16C1EF0063A112 /* CollapsableTableScene.swift in Sources */,
+				F418CBC41C1727950063A112 /* MatchListRequest.swift in Sources */,
+				F418CBC61C172A6A0063A112 /* StringForTheWebHelper.swift in Sources */,
 				F418CBB81C16E9CC0063A112 /* MatchTableViewCell.swift in Sources */,
 				F418CB9B1C16192B0063A112 /* MenuSectionHeader.swift in Sources */,
 				F418CBBE1C16EA060063A112 /* SingletonSoccerInformationModel.swift in Sources */,
