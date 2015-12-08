@@ -30,6 +30,10 @@ class MenuViewController: CollapsableTableViewController {
     override func collapsableTableView() -> UITableView? {
         return tableView
     }
+	
+	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		 self.performSegueWithIdentifier("showMatchListViewMVC", sender: self)
+	}
 }
 
 extension MenuViewController {
