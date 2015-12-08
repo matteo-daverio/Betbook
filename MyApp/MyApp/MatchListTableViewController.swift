@@ -13,14 +13,17 @@ class MatchListTableViewController: UITableViewController,SoccerInformationModel
 	//My model
 	let soccerInformationModel = SingletonSoccerInformationModel().getInstance()
 	
+	var country: String?
+	var league: String?
+	
 	var matches = [[Match]]()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
 		soccerInformationModel.delegate = self
-		soccerInformationModel.selectedCountryOrEuropeanCompetition("Italia")
-		soccerInformationModel.selectedLeague("Serie A")
+		soccerInformationModel.selectedCountryOrEuropeanCompetition(country!)
+		soccerInformationModel.selectedLeague(league!)
 		soccerInformationModel.getMatchList()
 		
 		

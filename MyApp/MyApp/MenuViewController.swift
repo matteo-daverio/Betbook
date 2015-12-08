@@ -34,6 +34,20 @@ class MenuViewController: CollapsableTableViewController {
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		 self.performSegueWithIdentifier("showMatchListViewMVC", sender: self)
 	}
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if(segue.identifier == "showMatchListViewMVC"){
+			
+			let upcoming: MatchListTableViewController = segue.destinationViewController as! MatchListTableViewController
+			
+			let indxPath = self.tableView.indexPathForSelectedRow!
+			let countyString = self.menu[indxPath.section].title
+			let leagueString = self.menu[indxPath.section].items[indxPath.row]
+			
+			upcoming.country = countyString
+			upcoming.league = leagueString
+		}
+	}
 }
 
 extension MenuViewController {
