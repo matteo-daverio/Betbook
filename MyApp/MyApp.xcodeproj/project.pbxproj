@@ -22,6 +22,12 @@
 		F418CBA11C1619690063A112 /* MenuSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F418CBA01C1619690063A112 /* MenuSectionHeaderView.xib */; };
 		F418CBAA1C16C1AB0063A112 /* CollapsableTableProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBA91C16C1AB0063A112 /* CollapsableTableProtocols.swift */; };
 		F418CBAC1C16C1EF0063A112 /* CollapsableTableScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBAB1C16C1EF0063A112 /* CollapsableTableScene.swift */; };
+		F418CBB61C16E9AD0063A112 /* MatchListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBB51C16E9AD0063A112 /* MatchListTableViewController.swift */; };
+		F418CBB81C16E9CC0063A112 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBB71C16E9CC0063A112 /* MatchTableViewCell.swift */; };
+		F418CBBA1C16E9DF0063A112 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBB91C16E9DF0063A112 /* Match.swift */; };
+		F418CBBC1C16EA010063A112 /* SoccerInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBBB1C16EA010063A112 /* SoccerInformationModel.swift */; };
+		F418CBBE1C16EA060063A112 /* SingletonSoccerInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBBD1C16EA060063A112 /* SingletonSoccerInformationModel.swift */; };
+		F418CBC01C16EA0F0063A112 /* ParserHtml.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBBF1C16EA0F0063A112 /* ParserHtml.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +69,12 @@
 		F418CBA01C1619690063A112 /* MenuSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuSectionHeaderView.xib; sourceTree = "<group>"; };
 		F418CBA91C16C1AB0063A112 /* CollapsableTableProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsableTableProtocols.swift; sourceTree = "<group>"; };
 		F418CBAB1C16C1EF0063A112 /* CollapsableTableScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsableTableScene.swift; sourceTree = "<group>"; };
+		F418CBB51C16E9AD0063A112 /* MatchListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchListTableViewController.swift; sourceTree = "<group>"; };
+		F418CBB71C16E9CC0063A112 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
+		F418CBB91C16E9DF0063A112 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		F418CBBB1C16EA010063A112 /* SoccerInformationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoccerInformationModel.swift; sourceTree = "<group>"; };
+		F418CBBD1C16EA060063A112 /* SingletonSoccerInformationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonSoccerInformationModel.swift; sourceTree = "<group>"; };
+		F418CBBF1C16EA0F0063A112 /* ParserHtml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserHtml.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +182,11 @@
 		F418CB951C1618DE0063A112 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F418CBBF1C16EA0F0063A112 /* ParserHtml.swift */,
+				F418CBBD1C16EA060063A112 /* SingletonSoccerInformationModel.swift */,
+				F418CBBB1C16EA010063A112 /* SoccerInformationModel.swift */,
 				F418CB981C16191F0063A112 /* MenuModelBuilder.swift */,
+				F418CBB91C16E9DF0063A112 /* Match.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -178,6 +194,7 @@
 		F418CB961C1618E60063A112 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F418CBB51C16E9AD0063A112 /* MatchListTableViewController.swift */,
 				F418CB9C1C1619310063A112 /* MenuViewController.swift */,
 			);
 			name = Controller;
@@ -186,6 +203,7 @@
 		F418CB971C1618EC0063A112 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F418CBB71C16E9CC0063A112 /* MatchTableViewCell.swift */,
 				F418CB9A1C16192B0063A112 /* MenuSectionHeader.swift */,
 			);
 			name = View;
@@ -348,10 +366,16 @@
 			files = (
 				F418CB991C16191F0063A112 /* MenuModelBuilder.swift in Sources */,
 				F418CBAA1C16C1AB0063A112 /* CollapsableTableProtocols.swift in Sources */,
+				F418CBBA1C16E9DF0063A112 /* Match.swift in Sources */,
 				F418CBAC1C16C1EF0063A112 /* CollapsableTableScene.swift in Sources */,
+				F418CBB81C16E9CC0063A112 /* MatchTableViewCell.swift in Sources */,
 				F418CB9B1C16192B0063A112 /* MenuSectionHeader.swift in Sources */,
+				F418CBBE1C16EA060063A112 /* SingletonSoccerInformationModel.swift in Sources */,
 				F418CB9D1C1619310063A112 /* MenuViewController.swift in Sources */,
 				F418C34F1C160EF00063A112 /* AppDelegate.swift in Sources */,
+				F418CBC01C16EA0F0063A112 /* ParserHtml.swift in Sources */,
+				F418CBB61C16E9AD0063A112 /* MatchListTableViewController.swift in Sources */,
+				F418CBBC1C16EA010063A112 /* SoccerInformationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
