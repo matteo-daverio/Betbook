@@ -15,7 +15,7 @@
 		F418CB821C1610780063A112 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = F418CB811C1610780063A112 /* Cartfile */; };
 		F418CB911C16179A0063A112 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F418CB8F1C16179A0063A112 /* Kanna.framework */; };
 		F418CB921C16179A0063A112 /* CollapsableTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F418CB901C16179A0063A112 /* CollapsableTable.framework */; };
-		F418CB991C16191F0063A112 /* FakeModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CB981C16191F0063A112 /* FakeModelBuilder.swift */; };
+		F418CB991C16191F0063A112 /* MenuModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CB981C16191F0063A112 /* MenuModelBuilder.swift */; };
 		F418CB9B1C16192B0063A112 /* MenuSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CB9A1C16192B0063A112 /* MenuSectionHeader.swift */; };
 		F418CB9D1C1619310063A112 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CB9C1C1619310063A112 /* ViewController.swift */; };
 		F418CB9F1C16194C0063A112 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418CB9E1C16194C0063A112 /* Main.storyboard */; };
@@ -56,7 +56,7 @@
 		F418CB811C1610780063A112 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Cartfile; path = ../Cartfile; sourceTree = "<group>"; };
 		F418CB8F1C16179A0063A112 /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = Carthage/Build/iOS/Kanna.framework; sourceTree = "<group>"; };
 		F418CB901C16179A0063A112 /* CollapsableTable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CollapsableTable.framework; path = Carthage/Build/iOS/CollapsableTable.framework; sourceTree = "<group>"; };
-		F418CB981C16191F0063A112 /* FakeModelBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeModelBuilder.swift; sourceTree = "<group>"; };
+		F418CB981C16191F0063A112 /* MenuModelBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModelBuilder.swift; sourceTree = "<group>"; };
 		F418CB9A1C16192B0063A112 /* MenuSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSectionHeader.swift; sourceTree = "<group>"; };
 		F418CB9C1C1619310063A112 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F418CB9E1C16194C0063A112 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 		F418CB951C1618DE0063A112 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F418CB981C16191F0063A112 /* FakeModelBuilder.swift */,
+				F418CB981C16191F0063A112 /* MenuModelBuilder.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -346,7 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F418CB991C16191F0063A112 /* FakeModelBuilder.swift in Sources */,
+				F418CB991C16191F0063A112 /* MenuModelBuilder.swift in Sources */,
 				F418CBAA1C16C1AB0063A112 /* CollapsableTableProtocols.swift in Sources */,
 				F418CBAC1C16C1EF0063A112 /* CollapsableTableScene.swift in Sources */,
 				F418CB9B1C16192B0063A112 /* MenuSectionHeader.swift in Sources */,

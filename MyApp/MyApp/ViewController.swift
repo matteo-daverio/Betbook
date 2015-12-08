@@ -43,6 +43,12 @@ extension ViewController {
 	}
 	
 	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		return tableView.dequeueReusableCellWithIdentifier("Cell")!
+		let cell = tableView.dequeueReusableCellWithIdentifier("Cell")! as UITableViewCell
+		
+		let league = menu[indexPath.section].items[indexPath.row]
+		
+		cell.textLabel?.text = league
+		
+		return cell
 	}
 }
