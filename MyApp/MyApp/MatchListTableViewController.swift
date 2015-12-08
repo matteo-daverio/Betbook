@@ -10,6 +10,8 @@ import UIKit
 
 class MatchListTableViewController: UITableViewController,MatchListDelegate {
 
+	let spinner = UIActivityIndicatorView(frame: CGRectMake(0,0,100,100))
+	
 	//My model
 	let matchListModel = MatchListRequest()
 	
@@ -21,7 +23,17 @@ class MatchListTableViewController: UITableViewController,MatchListDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
+		spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+		spinner.hidesWhenStopped = true
+		spinner.transform = CGAffineTransformMakeScale(1.5, 1.5)
+		let center = self.view.center
+		spinner.center = CGPointMake(center.x, center.y-center.y*0.15)
+		spinner.color = UIColor.blackColor()
+		spinner.backgroundColor = UIColor.whiteColor()
+		self.view.addSubview(spinner)
+		
 		matchListModel.delegate = self
+		spinner.startAnimating()
 		matchListModel.getMatchList(country!, uiLeague: league!)
 		
 		
@@ -47,6 +59,7 @@ class MatchListTableViewController: UITableViewController,MatchListDelegate {
 			}else{
 				let organizedMatches = self.organizeForDate(matchList!)
 				self.matches = organizedMatches
+				self.spinner.stopAnimating()
 				self.tableView.reloadData()
 			}
 		}
