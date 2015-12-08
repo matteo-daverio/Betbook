@@ -17,7 +17,7 @@
 		F418CB921C16179A0063A112 /* CollapsableTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F418CB901C16179A0063A112 /* CollapsableTable.framework */; };
 		F418CB991C16191F0063A112 /* MenuModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CB981C16191F0063A112 /* MenuModelBuilder.swift */; };
 		F418CB9B1C16192B0063A112 /* MenuSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CB9A1C16192B0063A112 /* MenuSectionHeader.swift */; };
-		F418CB9D1C1619310063A112 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CB9C1C1619310063A112 /* ViewController.swift */; };
+		F418CB9D1C1619310063A112 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CB9C1C1619310063A112 /* MenuViewController.swift */; };
 		F418CB9F1C16194C0063A112 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418CB9E1C16194C0063A112 /* Main.storyboard */; };
 		F418CBA11C1619690063A112 /* MenuSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F418CBA01C1619690063A112 /* MenuSectionHeaderView.xib */; };
 		F418CBAA1C16C1AB0063A112 /* CollapsableTableProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBA91C16C1AB0063A112 /* CollapsableTableProtocols.swift */; };
@@ -58,7 +58,7 @@
 		F418CB901C16179A0063A112 /* CollapsableTable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CollapsableTable.framework; path = Carthage/Build/iOS/CollapsableTable.framework; sourceTree = "<group>"; };
 		F418CB981C16191F0063A112 /* MenuModelBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModelBuilder.swift; sourceTree = "<group>"; };
 		F418CB9A1C16192B0063A112 /* MenuSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSectionHeader.swift; sourceTree = "<group>"; };
-		F418CB9C1C1619310063A112 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F418CB9C1C1619310063A112 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		F418CB9E1C16194C0063A112 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F418CBA01C1619690063A112 /* MenuSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuSectionHeaderView.xib; sourceTree = "<group>"; };
 		F418CBA91C16C1AB0063A112 /* CollapsableTableProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsableTableProtocols.swift; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 		F418CB961C1618E60063A112 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F418CB9C1C1619310063A112 /* ViewController.swift */,
+				F418CB9C1C1619310063A112 /* MenuViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -350,7 +350,7 @@
 				F418CBAA1C16C1AB0063A112 /* CollapsableTableProtocols.swift in Sources */,
 				F418CBAC1C16C1EF0063A112 /* CollapsableTableScene.swift in Sources */,
 				F418CB9B1C16192B0063A112 /* MenuSectionHeader.swift in Sources */,
-				F418CB9D1C1619310063A112 /* ViewController.swift in Sources */,
+				F418CB9D1C1619310063A112 /* MenuViewController.swift in Sources */,
 				F418C34F1C160EF00063A112 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

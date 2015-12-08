@@ -9,7 +9,7 @@
 import UIKit
 import CollapsableTable
 
-class ViewController: CollapsableTableViewController {
+class MenuViewController: CollapsableTableViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -32,7 +32,7 @@ class ViewController: CollapsableTableViewController {
     }
 }
 
-extension ViewController {
+extension MenuViewController {
 	
 	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
 		return 44.0
