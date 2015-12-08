@@ -39,25 +39,46 @@ class MatchListTableViewController: UITableViewController,SoccerInformationModel
         // Dispose of any resources that can be recreated.
     }
 	
+	// MARK: - Table view delegat
+	
 	func setMatchList(matchList: [Match]?){
 		
 		dispatch_async(dispatch_get_main_queue()){ () -> Void in
 			if( matchList == nil ){
 				print("Match non disponibili")
 			}else{
-				self.matches.insert(matchList!, atIndex: 0)
+				let organizedMatches = self.organizeForDate(matchList!)
+				self.matches = organizedMatches
 				self.tableView.reloadData()
 			}
 		}
 		
 	}
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return matches.count
+	
+	private func organizeForDate(matchList: [Match]) -> [[Match]]{
+		
+		var organizedMatchList = [[Match]]()
+		var differentDates = [String]()
+		var i = 0
+		for(; i < matchList.count; i++){
+			if( !(differentDates.contains(matchList[i].date!) )){
+				differentDates.append(matchList[i].date!)
+			}
+		}
+		
+		for(i = 0 ; i < differentDates.count; i++){
+			var matchInTheSameDate = [Match]()
+			for m in matchList{
+				if(m.date! == differentDates[i]){
+					matchInTheSameDate.append(m)
+				}
+			}
+			organizedMatchList.append(matchInTheSameDate)
+		}
+		
+		return organizedMatchList
 	}
+    // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -72,11 +93,19 @@ class MatchListTableViewController: UITableViewController,SoccerInformationModel
         let cell = tableView.dequeueReusableCellWithIdentifier(StoryBoard.CellReuseIdentifier, forIndexPath: indexPath) as! MatchTableViewCell
 
         // Configure the cell...
-		cell.match = matches[indexPath.section][indexPath.row
-		]
+		cell.match = matches[indexPath.section][indexPath.row]
 
         return cell
     }
+	
+	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+		return matches.count
+	}
+	
+	
+	override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		return (matches[section].first!.date)?.capitalizedString
+	}
 	
 
     /*
