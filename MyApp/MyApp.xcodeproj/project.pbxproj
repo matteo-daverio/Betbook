@@ -37,6 +37,8 @@
 		F418CBDB1C174C310063A112 /* RAMTransitionItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBD41C174C310063A112 /* RAMTransitionItemAnimation.swift */; };
 		F418CBDC1C174C310063A112 /* RAMAnimatedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBD51C174C310063A112 /* RAMAnimatedTabBarController.swift */; };
 		F418CBDD1C174C310063A112 /* RAMItemAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBD61C174C310063A112 /* RAMItemAnimationProtocol.swift */; };
+		F418CBE11C184A640063A112 /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBE01C184A640063A112 /* CAPSPageMenu.swift */; };
+		F418CBE51C184AF60063A112 /* MatchOddsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBE41C184AF60063A112 /* MatchOddsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		F418CBD41C174C310063A112 /* RAMTransitionItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMTransitionItemAnimation.swift; sourceTree = "<group>"; };
 		F418CBD51C174C310063A112 /* RAMAnimatedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMAnimatedTabBarController.swift; sourceTree = "<group>"; };
 		F418CBD61C174C310063A112 /* RAMItemAnimationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMItemAnimationProtocol.swift; sourceTree = "<group>"; };
+		F418CBE01C184A640063A112 /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
+		F418CBE41C184AF60063A112 /* MatchOddsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchOddsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +221,8 @@
 				F418CBC91C174C310063A112 /* RAMAnimatedTabBarController */,
 				F418CBB51C16E9AD0063A112 /* MatchListTableViewController.swift */,
 				F418CB9C1C1619310063A112 /* MenuViewController.swift */,
+				F418CBE01C184A640063A112 /* CAPSPageMenu.swift */,
+				F418CBE41C184AF60063A112 /* MatchOddsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -457,11 +463,13 @@
 				F418CBAC1C16C1EF0063A112 /* CollapsableTableScene.swift in Sources */,
 				F418CBC41C1727950063A112 /* MatchListRequest.swift in Sources */,
 				F418CBC61C172A6A0063A112 /* StringForTheWebHelper.swift in Sources */,
+				F418CBE51C184AF60063A112 /* MatchOddsViewController.swift in Sources */,
 				F418CBB81C16E9CC0063A112 /* MatchTableViewCell.swift in Sources */,
 				F418CB9B1C16192B0063A112 /* MenuSectionHeader.swift in Sources */,
 				F418CBBE1C16EA060063A112 /* SingletonSoccerInformationModel.swift in Sources */,
 				F418CB9D1C1619310063A112 /* MenuViewController.swift in Sources */,
 				F418C34F1C160EF00063A112 /* AppDelegate.swift in Sources */,
+				F418CBE11C184A640063A112 /* CAPSPageMenu.swift in Sources */,
 				F418CBC01C16EA0F0063A112 /* ParserHtml.swift in Sources */,
 				F418CBB61C16E9AD0063A112 /* MatchListTableViewController.swift in Sources */,
 				F418CBBC1C16EA010063A112 /* SoccerInformationModel.swift in Sources */,
