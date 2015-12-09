@@ -7,6 +7,7 @@
 //
 
 import Foundation
+// Nella cartella del progetto digita: carthage update --platform iOS
 import Kanna
 
 protocol MatchListDelegate {
