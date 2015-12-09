@@ -17,17 +17,20 @@ class MatchTableViewCell: UITableViewCell {
 	}
 	
 	@IBOutlet weak var homeTeamName: UILabel!
-	
+
 	@IBOutlet weak var awayTeamName: UILabel!
+
 	
 	@IBOutlet weak var homeImageView: UIImageView!
 	
 	@IBOutlet weak var awayImageView: UIImageView!
 	
+	@IBOutlet weak var hourLabel: UILabel!
 
 	func updateUI(){
 		homeTeamName?.text = match?.homeTeam!
 		awayTeamName?.text = match?.awayTeam!
+		hourLabel?.text = match?.hour!
 		homeImageView.image = UIImage(named: (match?.homeTeam!.lowercaseString)!)
 		awayImageView.image = UIImage(named: (match?.awayTeam!.lowercaseString)!)
 	}
