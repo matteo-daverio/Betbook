@@ -39,6 +39,10 @@
 		F418CBDD1C174C310063A112 /* RAMItemAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBD61C174C310063A112 /* RAMItemAnimationProtocol.swift */; };
 		F418CBE11C184A640063A112 /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBE01C184A640063A112 /* CAPSPageMenu.swift */; };
 		F418CBE51C184AF60063A112 /* MatchOddsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBE41C184AF60063A112 /* MatchOddsViewController.swift */; };
+		F418CBE71C1868D50063A112 /* OddsModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBE61C1868D50063A112 /* OddsModelBuilder.swift */; };
+		F418CBE91C186ED10063A112 /* OddsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBE81C186ED10063A112 /* OddsViewController.swift */; };
+		F418CBF51C18B2B00063A112 /* OddsMenuSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBF41C18B2B00063A112 /* OddsMenuSectionHeader.swift */; };
+		F418CBF71C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F418CBF61C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,10 @@
 		F418CBD61C174C310063A112 /* RAMItemAnimationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMItemAnimationProtocol.swift; sourceTree = "<group>"; };
 		F418CBE01C184A640063A112 /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
 		F418CBE41C184AF60063A112 /* MatchOddsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchOddsViewController.swift; sourceTree = "<group>"; };
+		F418CBE61C1868D50063A112 /* OddsModelBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsModelBuilder.swift; sourceTree = "<group>"; };
+		F418CBE81C186ED10063A112 /* OddsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsViewController.swift; sourceTree = "<group>"; };
+		F418CBF41C18B2B00063A112 /* OddsMenuSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsMenuSectionHeader.swift; sourceTree = "<group>"; };
+		F418CBF61C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsMenuSectionHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +197,7 @@
 		F418CB941C1618BF0063A112 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F418CBF61C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib */,
 				F418CBC11C16F2240063A112 /* Assets.xcassets */,
 				F418CBAB1C16C1EF0063A112 /* CollapsableTableScene.swift */,
 				F418CBA91C16C1AB0063A112 /* CollapsableTableProtocols.swift */,
@@ -211,6 +220,7 @@
 				F418CBB91C16E9DF0063A112 /* Match.swift */,
 				F418CBC31C1727950063A112 /* MatchListRequest.swift */,
 				F418CBC51C172A6A0063A112 /* StringForTheWebHelper.swift */,
+				F418CBE61C1868D50063A112 /* OddsModelBuilder.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -223,6 +233,7 @@
 				F418CB9C1C1619310063A112 /* MenuViewController.swift */,
 				F418CBE01C184A640063A112 /* CAPSPageMenu.swift */,
 				F418CBE41C184AF60063A112 /* MatchOddsViewController.swift */,
+				F418CBE81C186ED10063A112 /* OddsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -232,6 +243,7 @@
 			children = (
 				F418CBB71C16E9CC0063A112 /* MatchTableViewCell.swift */,
 				F418CB9A1C16192B0063A112 /* MenuSectionHeader.swift */,
+				F418CBF41C18B2B00063A112 /* OddsMenuSectionHeader.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -408,6 +420,7 @@
 			files = (
 				F418C3591C160EF00063A112 /* LaunchScreen.storyboard in Resources */,
 				F418CBA11C1619690063A112 /* MenuSectionHeaderView.xib in Resources */,
+				F418CBF71C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib in Resources */,
 				F418CB821C1610780063A112 /* Cartfile in Resources */,
 				F418CB9F1C16194C0063A112 /* Main.storyboard in Resources */,
 				F418CBC21C16F2240063A112 /* Assets.xcassets in Resources */,
@@ -456,6 +469,7 @@
 				F418CBDD1C174C310063A112 /* RAMItemAnimationProtocol.swift in Sources */,
 				F418CBD81C174C310063A112 /* RAMFrameItemAnimation.swift in Sources */,
 				F418CB991C16191F0063A112 /* MenuModelBuilder.swift in Sources */,
+				F418CBE91C186ED10063A112 /* OddsViewController.swift in Sources */,
 				F418CBDA1C174C310063A112 /* RAMRotationAnimation.swift in Sources */,
 				F418CBAA1C16C1AB0063A112 /* CollapsableTableProtocols.swift in Sources */,
 				F418CBD91C174C310063A112 /* RAMFumeAnimation.swift in Sources */,
@@ -465,6 +479,7 @@
 				F418CBC61C172A6A0063A112 /* StringForTheWebHelper.swift in Sources */,
 				F418CBE51C184AF60063A112 /* MatchOddsViewController.swift in Sources */,
 				F418CBB81C16E9CC0063A112 /* MatchTableViewCell.swift in Sources */,
+				F418CBF51C18B2B00063A112 /* OddsMenuSectionHeader.swift in Sources */,
 				F418CB9B1C16192B0063A112 /* MenuSectionHeader.swift in Sources */,
 				F418CBBE1C16EA060063A112 /* SingletonSoccerInformationModel.swift in Sources */,
 				F418CB9D1C1619310063A112 /* MenuViewController.swift in Sources */,
@@ -472,6 +487,7 @@
 				F418CBE11C184A640063A112 /* CAPSPageMenu.swift in Sources */,
 				F418CBC01C16EA0F0063A112 /* ParserHtml.swift in Sources */,
 				F418CBB61C16E9AD0063A112 /* MatchListTableViewController.swift in Sources */,
+				F418CBE71C1868D50063A112 /* OddsModelBuilder.swift in Sources */,
 				F418CBBC1C16EA010063A112 /* SoccerInformationModel.swift in Sources */,
 				F418CBDB1C174C310063A112 /* RAMTransitionItemAnimation.swift in Sources */,
 				F418CBDC1C174C310063A112 /* RAMAnimatedTabBarController.swift in Sources */,
@@ -615,6 +631,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = MyApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CM.MyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -631,6 +648,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = MyApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CM.MyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

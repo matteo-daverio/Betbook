@@ -48,7 +48,7 @@ class MatchOddsViewController: UIViewController {
 		
 		
 		// Customize menu (Optional)
-		var parameters: [CAPSPageMenuOption] = [
+		let parameters: [CAPSPageMenuOption] = [
 			.ScrollMenuBackgroundColor(UIColor(red: 30.0/255.0, green: 30.0/255.0, blue: 30.0/255.0, alpha: 1.0)),
 			.ViewBackgroundColor(UIColor(red: 20.0/255.0, green: 20.0/255.0, blue: 20.0/255.0, alpha: 1.0)),
 			.SelectionIndicatorColor(UIColor.orangeColor()),
@@ -69,7 +69,7 @@ class MatchOddsViewController: UIViewController {
 	}
 	
 	func didTapGoToLeft() {
-		var currentIndex = pageMenu!.currentPageIndex
+		let currentIndex = pageMenu!.currentPageIndex
 		
 		if currentIndex > 0 {
 			pageMenu!.moveToPage(currentIndex - 1)
@@ -77,7 +77,7 @@ class MatchOddsViewController: UIViewController {
 	}
 	
 	func didTapGoToRight() {
-		var currentIndex = pageMenu!.currentPageIndex
+		let currentIndex = pageMenu!.currentPageIndex
 		
 		if currentIndex < pageMenu!.controllerArray.count {
 			pageMenu!.moveToPage(currentIndex + 1)

@@ -9,7 +9,7 @@
 import Foundation
 import CollapsableTable
 
-class MenuSection: CollapsableTableViewSectionModelProtocol  {
+class CountryMenuSection: CollapsableTableViewSectionModelProtocol  {
     
     var title: String
     var isVisible: Bool
@@ -22,7 +22,7 @@ class MenuSection: CollapsableTableViewSectionModelProtocol  {
     }
 }
 
-class ModelBuilder {
+class MenuModelBuilder {
 	
 	//Fixed number of option for CountryEuropeanCompetition
 	private var listOfCountryOrEuropeanCompetition: [String] = []
@@ -40,7 +40,7 @@ class ModelBuilder {
         
         for var i = 0; i < self.listOfCountryOrEuropeanCompetition.count ; i++ {
             
-            let section = MenuSection()
+            let section = CountryMenuSection()
 			
 			section.title = self.listOfCountryOrEuropeanCompetition[i]
 			if(i > 0){

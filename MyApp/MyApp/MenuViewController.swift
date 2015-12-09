@@ -6,6 +6,8 @@
 //  Copyright © 2015 Robert Nash. All rights reserved.
 //
 
+//Accordion Menu
+
 import UIKit
 import CollapsableTable
 
@@ -13,7 +15,7 @@ class MenuViewController: CollapsableTableViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let menu = ModelBuilder().buildMenu()
+    let menu = MenuModelBuilder().buildMenu()
     
     override func model() -> [CollapsableTableViewSectionModelProtocol]? {
         return menu
