@@ -23,5 +23,5 @@ public protocol CollapsableTableViewSectionHeaderInteractionProtocol {
 public protocol CollapsableTableViewSectionModelProtocol {
     var title: String { get }
     var isVisible: Bool { get set }
-    var items: [String] { get }
+    var items: [AnyObject] { get }
 }

@@ -18,6 +18,7 @@ class Match: CustomStringConvertible {
 	var hour: String?
 	var risultatoFinaleOdds: RisultatoFinale?
 	var risultatoFinalePrimoTempoOdds: RisultatoFinale?
+	var doppiaChance: DoppiaChance?
 	var underOver: UnderOver?
 	var golNoGol: GolNoGol?
 	var golNoGolPrimoTempo: GolNoGol?
@@ -44,7 +45,9 @@ class RisultatoFinale {
 	var  tie = [Odd]()
 	var away = [Odd]()
 
-	
+	func flatArrayGivenTheBrandIndex(bIndex: Int)->[String]{
+		return [home[bIndex].value,tie[bIndex].value,away[bIndex].value]
+	}
 }
 
 class DoppiaChance {
@@ -55,6 +58,10 @@ class DoppiaChance {
 	var xDue = [Odd]()
 	// 12
 	var unoDue = [Odd]()
+	
+	func flatArrayGivenTheBrandIndex(bIndex: Int)->[String]{
+		return [unoX[bIndex].value,xDue[bIndex].value,unoDue[bIndex].value]
+	}
 }
 
 class UnderOver {
@@ -74,40 +81,63 @@ class UnderOver {
 	var over4_5 = [Odd]()
 	var under4_5 = [Odd]()
 	
-	var over5_5 = [Odd]()
-	var under5_5 = [Odd]()
+//	var over5_5 = [Odd]()
+//	var under5_5 = [Odd]()
+//	
+//	var over6_5 = [Odd]()
+//	var under6_5 = [Odd]()
+//	
+//	var over7_5 = [Odd]()
+//	var under7_5 = [Odd]()
+//	
+//	var over8_5 = [Odd]()
+//	var under8_5 = [Odd]()
+//	
+//	var over9_5 = [Odd]()
+//	var under9_5 = [Odd]()
 	
-	var over6_5 = [Odd]()
-	var under6_5 = [Odd]()
-	
-	var over7_5 = [Odd]()
-	var under7_5 = [Odd]()
-	
-	var over8_5 = [Odd]()
-	var under8_5 = [Odd]()
-	
-	var over9_5 = [Odd]()
-	var under9_5 = [Odd]()
+	func flatArrayGivenTheBrandIndex(bIndex: Int)->[String]{
+			return
+				[over0_5[bIndex].value, under0_5[bIndex].value,
+					over1_5[bIndex].value, under1_5[bIndex].value,
+					over2_5[bIndex].value, under2_5[bIndex].value,
+					over2_5[bIndex].value, under2_5[bIndex].value,
+					over3_5[bIndex].value, under3_5[bIndex].value,
+					over4_5[bIndex].value, under4_5[bIndex].value]
+//					over5_5[bIndex].value, under5_5[bIndex].value,
+//					over6_5[bIndex].value, under6_5[bIndex].value,
+//					over7_5[bIndex].value, under7_5[bIndex].value,
+//					over8_5[bIndex].value, under8_5[bIndex].value,
+//					over9_5[bIndex].value, under9_5[bIndex].value]
+	}
 }
 
 class GolNoGol {
 	
 	var gol = [Odd]()
 	var noGol = [Odd]()
+	
+	func flatArrayGivenTheBrandIndex(bIndex: Int)->[String]{
+		return [gol[bIndex].value,noGol[bIndex].value]
+	}
 }
 
 class PariDispari {
 	
 	var pari = [Odd]()
 	var dispari = [Odd]()
+	
+	func flatArrayGivenTheBrandIndex(bIndex: Int)->[String]{
+		return [pari[bIndex].value, dispari[bIndex].value]
+	}
 }
 
 class Odd : CustomStringConvertible{
-	var brand: String?
-	var value: String?
+	var brand: String = ""
+	var value: String = ""
 	var best: Bool = false
 	
 	var description: String {
-		return brand! + " " + value! + " " + "\(best)"
+		return brand + " " + value + " " + "\(best)"
 	}
 }

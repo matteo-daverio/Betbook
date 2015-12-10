@@ -47,7 +47,7 @@ class MenuViewController: CollapsableTableViewController {
 			let leagueString = self.menu[indxPath.section].items[indxPath.row]
 			
 			upcoming.country = countyString
-			upcoming.league = leagueString
+			upcoming.league = leagueString as? String
 		}
 	}
 }
@@ -67,7 +67,7 @@ extension MenuViewController {
 		
 		let league = menu[indexPath.section].items[indexPath.row]
 		
-		cell.textLabel?.text = league
+		cell.textLabel?.text = league as? String
 		
 		return cell
 	}

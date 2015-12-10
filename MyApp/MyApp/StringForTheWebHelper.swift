@@ -235,8 +235,8 @@ class StringForTheWebHelper {
 		self.dictionaryOfKindOfBet["Doppia Chance"] = "doppia-chance"
 		self.dictionaryOfKindOfBet["Under/Over"] = "totale-gol-under-over"
 		self.dictionaryOfKindOfBet["Gol/No Gol"] = "entrambe-le-squadre-a-segno"
-		self.dictionaryOfKindOfBet["Primo Tempo Gol/No Gol"] = "entrambe-le-squadre-a-segno-primo-tempo"
-		self.dictionaryOfKindOfBet["Secondo Tempo Gol/No Gol"] = "entrambe-le-squadre-a-segno-secondo-tempo"
+		self.dictionaryOfKindOfBet["Primo Tempo Gol/No Gol"] = "entrambe-le-squadre-a-segno-1-tempo"
+		self.dictionaryOfKindOfBet["Secondo Tempo Gol/No Gol"] = "entrambe-le-squadre-a-segno-2-tempo"
 		self.dictionaryOfKindOfBet["Pari/Dispari"] = "gol-totali-pari-dispari"
 		
 	}

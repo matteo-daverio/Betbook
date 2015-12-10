@@ -43,6 +43,7 @@
 		F418CBE91C186ED10063A112 /* OddsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBE81C186ED10063A112 /* OddsViewController.swift */; };
 		F418CBF51C18B2B00063A112 /* OddsMenuSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBF41C18B2B00063A112 /* OddsMenuSectionHeader.swift */; };
 		F418CBF71C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F418CBF61C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib */; };
+		F418CBF91C1983DF0063A112 /* OddsMatchHttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBF81C1983DF0063A112 /* OddsMatchHttpRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		F418CBE81C186ED10063A112 /* OddsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsViewController.swift; sourceTree = "<group>"; };
 		F418CBF41C18B2B00063A112 /* OddsMenuSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsMenuSectionHeader.swift; sourceTree = "<group>"; };
 		F418CBF61C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsMenuSectionHeaderView.xib; sourceTree = "<group>"; };
+		F418CBF81C1983DF0063A112 /* OddsMatchHttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsMatchHttpRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 				F418CBC31C1727950063A112 /* MatchListRequest.swift */,
 				F418CBC51C172A6A0063A112 /* StringForTheWebHelper.swift */,
 				F418CBE61C1868D50063A112 /* OddsModelBuilder.swift */,
+				F418CBF81C1983DF0063A112 /* OddsMatchHttpRequest.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				F418CBBC1C16EA010063A112 /* SoccerInformationModel.swift in Sources */,
 				F418CBDB1C174C310063A112 /* RAMTransitionItemAnimation.swift in Sources */,
 				F418CBDC1C174C310063A112 /* RAMAnimatedTabBarController.swift in Sources */,
+				F418CBF91C1983DF0063A112 /* OddsMatchHttpRequest.swift in Sources */,
 				F418CBD71C174C310063A112 /* RAMBounceAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

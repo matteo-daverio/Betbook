@@ -13,7 +13,7 @@ class OddsMenuSection: CollapsableTableViewSectionModelProtocol  {
 	
 	var title: String
 	var isVisible: Bool
-	var items: [String]
+	var items: [AnyObject]
 	
 	init() {
 		title = ""
@@ -22,12 +22,22 @@ class OddsMenuSection: CollapsableTableViewSectionModelProtocol  {
 	}
 }
 
+class Item {
+	var name: String?
+	var val: String?
+	
+	init(name: String, val: String){
+		self.name = name
+		self.val = val
+	}
+}
+
 class OddsModelBuilder {
 	
 	//Fixed kinds of odds
 	private var listOfKindOfBet: [String] = []
 	
-	private var fieldsForTheKindOfBet = [String:[String]]()
+	private var fieldsForTheKindOfBet = [String:[Item]]()
 	
 	init(){
 		addAvailableKindOfBet()
@@ -50,7 +60,7 @@ class OddsModelBuilder {
 			}else{
 				section.isVisible = true
 			}
-				section.items = self.fieldsForTheKindOfBet[section.title]!
+				section.items = (self.fieldsForTheKindOfBet[section.title]!)
 			
 			
 			collector.append(section)
@@ -64,16 +74,7 @@ class OddsModelBuilder {
 		self.listOfKindOfBet.append("Esito Finale")
 		self.listOfKindOfBet.append("Primo Tempo")
 		self.listOfKindOfBet.append("Doppia Chance")
-		self.listOfKindOfBet.append("Under/Over 0.5")
-		self.listOfKindOfBet.append("Under/Over 1.5")
-		self.listOfKindOfBet.append("Under/Over 2.5")
-		self.listOfKindOfBet.append("Under/Over 3.5")
-		self.listOfKindOfBet.append("Under/Over 4.5")
-//		self.listOfKindOfBet.append("Under/Over 5.5")
-//		self.listOfKindOfBet.append("Under/Over 6.5")
-//		self.listOfKindOfBet.append("Under/Over 7.5")
-//		self.listOfKindOfBet.append("Under/Over 8.5")
-//		self.listOfKindOfBet.append("Under/Over 9.5")
+		self.listOfKindOfBet.append("Under/Over")
 		self.listOfKindOfBet.append("Gol/No Gol")
 		self.listOfKindOfBet.append("Primo Tempo Gol/No Gol")
 		self.listOfKindOfBet.append("Secondo Tempo Gol/No Gol")
@@ -81,23 +82,37 @@ class OddsModelBuilder {
 	}
 	
 	private func addFieldForKindOfBet(){
-		self.fieldsForTheKindOfBet["Esito Finale"] = ["1","X","2"]
-		self.fieldsForTheKindOfBet["Primo Tempo"] = ["1","X","2"]
-		self.fieldsForTheKindOfBet["Doppia Chance"] = ["1X","X2","12"]
-		self.fieldsForTheKindOfBet["Under/Over 0.5"] = ["Over","Under"]
-		self.fieldsForTheKindOfBet["Under/Over 1.5"] = ["Over","Under"]
-		self.fieldsForTheKindOfBet["Under/Over 2.5"] = ["Over","Under"]
-		self.fieldsForTheKindOfBet["Under/Over 3.5"] = ["Over","Under"]
-		self.fieldsForTheKindOfBet["Under/Over 4.5"] = ["Over","Under"]
-//		self.fieldsForTheKindOfBet["Under/Over 5.5"] = ["Over","Under"]
-//		self.fieldsForTheKindOfBet["Under/Over 6.5"] = ["Over","Under"]
-//		self.fieldsForTheKindOfBet["Under/Over 7.5"] = ["Over","Under"]
-//		self.fieldsForTheKindOfBet["Under/Over 8.5"] = ["Over","Under"]
-//		self.fieldsForTheKindOfBet["Under/Over 9.5"] = ["Over","Under"]
-		self.fieldsForTheKindOfBet["Gol/No Gol"] = ["Gol","No Gol"]
-		self.fieldsForTheKindOfBet["Primo Tempo Gol/No Gol"] = ["Gol","No Gol"]
-		self.fieldsForTheKindOfBet["Secondo Tempo Gol/No Gol"] = ["Gol","No Gol"]
-		self.fieldsForTheKindOfBet["Pari/Dispari"] = ["Pari","Dispari"]
+		self.fieldsForTheKindOfBet["Esito Finale"] = [Item(name: "1",val: ""),Item(name: "X",val: ""),Item(name: "2",val: "")]
+		self.fieldsForTheKindOfBet["Primo Tempo"] =  [Item(name: "1",val: ""),Item(name: "X",val: ""),Item(name: "2",val: "")]
+		self.fieldsForTheKindOfBet["Doppia Chance"] = [Item(name: "1X",val: ""),Item(name: "X2",val: ""),Item(name: "12",val: "")]
+		self.fieldsForTheKindOfBet["Under/Over"] =
+			[Item(name: "Over 0.5", val: ""),Item(name: "Under 0.5",val: ""),
+				Item(name: "Over 1.5", val: ""),Item(name: "Under 1.5",val: ""),
+				Item(name: "Over 2.5", val: ""),Item(name: "Under 2.5",val: ""),
+				Item(name: "Over 3.5", val: ""),Item(name: "Under 3.5",val: ""),
+				Item(name: "Over 4.5", val: ""),Item(name: "Under 4.5",val: ""),
+//				Item(name: "Over 5.5", val: ""),Item(name: "Under 5.5",val: ""),
+//				Item(name: "Over 6.5", val: ""),Item(name: "Under 6.5",val: ""),
+//				Item(name: "Over 8.5", val: ""),Item(name: "Under 7.5",val: ""),
+//				Item(name: "Over 9.5", val: ""),Item(name: "Under 9.5",val: ""),
+		]
+		self.fieldsForTheKindOfBet["Gol/No Gol"] =
+			[Item(name: "Gol", val: ""),Item(name: "No Gol", val: "")]
 		
+		self.fieldsForTheKindOfBet["Primo Tempo Gol/No Gol"] =
+			[Item(name: "Gol", val: ""),Item(name: "No Gol", val: "")]
+		
+		self.fieldsForTheKindOfBet["Secondo Tempo Gol/No Gol"] =
+			[Item(name: "Gol", val: ""),Item(name: "No Gol", val: "")]
+		
+		self.fieldsForTheKindOfBet["Pari/Dispari"] = [Item(name: "Pari", val: ""),Item(name: "Dispari", val: "")]
+		
+		
+		
+		
+	}
+	
+	func getNumberOfBrand() -> Int{
+		return listOfKindOfBet.count
 	}
 }

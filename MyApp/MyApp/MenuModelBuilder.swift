@@ -13,7 +13,7 @@ class CountryMenuSection: CollapsableTableViewSectionModelProtocol  {
     
     var title: String
     var isVisible: Bool
-    var items: [String]
+    var items: [AnyObject]
     
     init() {
         title = ""

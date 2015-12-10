@@ -16,15 +16,26 @@ class ParserHtml {
 	private var listOfBrands: [String] = []
 	private var dictionaryTeam = [String: NameTeamWebSite]()
 	private var tr_class = "diff-row eventTableRow bc"
+	private var prova = "TableRow bc"
 	//Nella doppia chance ad esempio indica che non ci sono quote per il brand
 	private var np_o = "np o"
-	private var bc_co_o = "bc co o"
-	private var bc_co_o_b = "bc co o b"
+	private var bc_co_o = "bc bs o"
+	private var bc_co_o_b = "bc bs o b"
 	
 	
 	init(){
 		addAvailableBrands()
 		addAllTeams()
+	}
+	
+	func getIndexOfBrand(brand: String) -> Int {
+		var i = 0
+		for(; i < listOfBrands.count; i++){
+			if(brand == listOfBrands[i]){
+				return i
+			}
+		}
+		return 0
 	}
 	
 	//Initialize the array of Available kind of Brands
@@ -372,27 +383,27 @@ class ParserHtml {
 					underOver.over4_5.append(odd)
 				case "Under 4.5":
 					underOver.under4_5.append(odd)
-				case "Over 5.5":
-					underOver.over5_5.append(odd)
-				case "Under 5.5":
-					underOver.under5_5.append(odd)
-				case "Over 6.5":
-					underOver.over6_5.append(odd)
-				case "Under 6.5":
-					underOver.under6_5.append(odd)
-				case "Over 7.5":
-					underOver.over7_5.append(odd)
-				case "Under 7.5":
-					underOver.under7_5.append(odd)
-				case "Over 8.5":
-					underOver.over8_5.append(odd)
-				case "Under 8.5":
-					underOver.under8_5.append(odd)
-				case "Over 9.5":
-					underOver.over9_5.append(odd)
-				case "Under 9.5":
-					underOver.under9_5.append(odd)
-					
+//				case "Over 5.5":
+//					underOver.over5_5.append(odd)
+//				case "Under 5.5":
+//					underOver.under5_5.append(odd)
+//				case "Over 6.5":
+//					underOver.over6_5.append(odd)
+//				case "Under 6.5":
+//					underOver.under6_5.append(odd)
+//				case "Over 7.5":
+//					underOver.over7_5.append(odd)
+//				case "Under 7.5":
+//					underOver.under7_5.append(odd)
+//				case "Over 8.5":
+//					underOver.over8_5.append(odd)
+//				case "Under 8.5":
+//					underOver.under8_5.append(odd)
+//				case "Over 9.5":
+//					underOver.over9_5.append(odd)
+//				case "Under 9.5":
+//					underOver.under9_5.append(odd)
+//					
 				default: break
 				}
 				//Fine singolo ciclo per coppia quota brand
@@ -414,8 +425,10 @@ class ParserHtml {
 		let golNoGol = GolNoGol()
 		
 		var countOdd = 0
+		
 		for tr in bodyTable!.css("tr, class, data-bname") {
 			
+			let a = tr["class"]
 			if(tr["class"] != tr_class){
 				continue
 			}
@@ -443,8 +456,9 @@ class ParserHtml {
 					odd.brand = self.listOfBrands[countOdd]
 					odd.value = td.text!
 				case np_o:
-					countOdd++
-					continue
+					odd.best = false
+					odd.brand = self.listOfBrands[countOdd]
+					odd.value = ""
 				default: continue
 					
 				}
@@ -577,7 +591,7 @@ class ParserHtml {
 			self.dictionaryTeam["Empoli"] = setNames(["Empoli"])
 			self.dictionaryTeam["Fiorentina"] = setNames(["Fiorentina"])
 			self.dictionaryTeam["Frosinone"] = setNames(["Frosinone"])
-			self.dictionaryTeam["Genoa"] = setNames(["Geneo"])
+			self.dictionaryTeam["Genoa"] = setNames(["Genoa"])
 			self.dictionaryTeam["Verona"] = setNames(["Verona"])
 			self.dictionaryTeam["Inter"] = setNames(["Inter"])
 			self.dictionaryTeam["Juventus"] = setNames(["Juventus"])

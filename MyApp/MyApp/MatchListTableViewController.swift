@@ -23,6 +23,9 @@ class MatchListTableViewController: UITableViewController,MatchListDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
+		//Importantissimo
+		matchListModel.delegate = self
+		
 		spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
 		spinner.hidesWhenStopped = true
 		spinner.transform = CGAffineTransformMakeScale(1.5, 1.5)
@@ -32,7 +35,7 @@ class MatchListTableViewController: UITableViewController,MatchListDelegate {
 		spinner.backgroundColor = UIColor.whiteColor()
 		self.view.addSubview(spinner)
 		
-		matchListModel.delegate = self
+		
 		spinner.startAnimating()
 		matchListModel.getMatchList(country!, uiLeague: league!)
 		

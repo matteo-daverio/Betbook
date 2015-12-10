@@ -11,14 +11,14 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="76"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_section_header_image" translatesAutoresizingMaskIntoConstraints="NO" id="fN9-kT-DGY">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_section_header_image-1" translatesAutoresizingMaskIntoConstraints="NO" id="fN9-kT-DGY">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="76"/>
                     <animations/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GzI-zS-Xig">
                     <rect key="frame" x="554" y="19" width="38" height="38"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="B9558AB4-2187-4F32-9298-8AD6373022E6" translatesAutoresizingMaskIntoConstraints="NO" id="dOL-ar-ynU">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down_arrow-1" translatesAutoresizingMaskIntoConstraints="NO" id="dOL-ar-ynU">
                             <rect key="frame" x="9" y="13" width="20" height="12"/>
                             <animations/>
                         </imageView>
@@ -60,31 +60,7 @@
         </view>
     </objects>
     <resources>
-        <image name="B9558AB4-2187-4F32-9298-8AD6373022E6" width="20" height="12">
-            <mutableData key="keyedArchiveRepresentation">
-YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
-GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
-DBIAwAAAgAKACtISCRMVWk5TLm9iamVjdHOhFIADgAnSEgkXGqIYGYAEgAWACBAA0h0JHh9fEBROU1RJ
-RkZSZXByZXNlbnRhdGlvboAGgAdPEQKKTU0AKgAAAegACgAhACYADAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAMACYAIQAKsxvJs8XKiHoABwAAAAAAAAAAAAAAAAAAAAAAAAAAAAeGesXKybO9G/8C/2j///b4
-gW0AAwAAAAAAAAAAAAAAAAAAAAAAA4Ft9fj///9o/wIAAAAA/3D//+7ybV4AAQAAAAAAAAAAAAAAAAAB
-bV7u8v//+nEAAAAAAAAAAAAA/4T//+nqWVAAAAAAAAAAAAAAAABWUOnq////hAAAAAAAAAAAAAAAAP8B
-/Zf//+ThSUIAAAAAAAAAAElC4OH///2X/wEAAAAAAAAAAAAAAAAAAP8H/qr//9jXNTUAAAAANTXZ1v//
-/qr/BwAAAAAAAAAAAAAAAAAAAAAAANsO/7v//8/KGigaKM/K////u9sOAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAOkX/sr//8G9wrz///7K6RcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAh/9j//////9jwIQAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8u/+b/5v8uAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAP9M/0wAAAAAAAAAAAAAAAAAAAAAAAAADQEAAAMAAAABABQAAAEBAAMAAAABAAwAAAEC
-AAMAAAACAAgACAEDAAMAAAABAAEAAAEGAAMAAAABAAEAAAERAAQAAAABAAAACAESAAMAAAABAAEAAAEV
-AAMAAAABAAIAAAEWAAMAAAABAAwAAAEXAAQAAAABAAAB4AEcAAMAAAABAAEAAAFSAAMAAAABAAIAAAFT
-AAMAAAACAAEAAQAAAADSIiMkJVokY2xhc3NuYW1lWCRjbGFzc2VzXxAQTlNCaXRtYXBJbWFnZVJlcKMm
-JyhfEBBOU0JpdG1hcEltYWdlUmVwWk5TSW1hZ2VSZXBYTlNPYmplY3TSIiMqK1dOU0FycmF5oioo0iIj
-LS5eTlNNdXRhYmxlQXJyYXmjLSoo0zAxCTIzNFdOU1doaXRlXE5TQ29sb3JTcGFjZUQwIDAAEAOAC9Ii
-IzY3V05TQ29sb3KiNijSIiM5OldOU0ltYWdlojkoXxAPTlNLZXllZEFyY2hpdmVy0T0+VHJvb3SAAQAI
-ABEAGgAjAC0AMgA3AEUASwBUAFsAaABvAHcAeQB+AIAAggCHAJIAlACWAJgAnQCgAKIApACmAKgArQDE
-AMYAyANWA1sDZgNvA4IDhgOZA6QDrQOyA7oDvQPCA9ED1QPcA+QD8QP2A/gD+gP/BAcECgQPBBcEGgQs
-BC8ENAAAAAAAAAIBAAAAAAAAAD8AAAAAAAAAAAAAAAAAAAQ2A
-</mutableData>
-        </image>
-        <image name="_section_header_image" width="414" height="52"/>
+        <image name="_section_header_image-1" width="414" height="52"/>
+        <image name="down_arrow-1" width="20" height="12"/>
     </resources>
 </document>
