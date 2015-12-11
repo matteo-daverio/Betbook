@@ -15,12 +15,19 @@ class OddsViewController: CollapsableTableViewController, OddsMatchDelegate{
 	
 	@IBOutlet weak var tableView: UITableView!
 	
+	var delegate: UIViewController?
+	
 	let menu = OddsModelBuilder().buildMenu()
 	let oddsHttpRequester = OddsMatchHttpRequest()
+	var stringForTheWebHelper = StringForTheWebHelper()
 	
 	var brandPosition: Int?
 	
-	var brand: String?
+	var brand: String?{
+		didSet{
+			self.brandPosition = stringForTheWebHelper.giveIndexOfTheBrand(self.brand!)
+		}
+	}
 	var homeTeam: String?
 	var awayTeam: String?
 	var selectedCountryOrEuropeanCompetition: String?
@@ -28,11 +35,14 @@ class OddsViewController: CollapsableTableViewController, OddsMatchDelegate{
 	
 	var numberOfAvailableOdds = OddsModelBuilder().getNumberOfBrand()
 	
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		self.brandPosition = 1
+		self.tableView.registerNib(UINib(nibName: "OddsTableViewCell", bundle: nil), forCellReuseIdentifier: "OddCell")
+		
+		self.brandPosition = 13
+		print("Da eliminare viewDidLoad()OddsViewC")
+		
 		oddsHttpRequester.delegate = self
 		
 		//	self.brandPosition = ParserHtml().getIndexOfBrand(brand!)
@@ -101,7 +111,7 @@ class OddsViewController: CollapsableTableViewController, OddsMatchDelegate{
 					itemsEsitoFinale[i].val = itemsValue![i]
 				}
 			}
-				self.tableView.reloadData()
+			self.tableView.reloadData()
 			
 			
 		}
@@ -118,7 +128,7 @@ class OddsViewController: CollapsableTableViewController, OddsMatchDelegate{
 					itemsEsitoFinalePrimoTempo[i].val = itemsValue![i]
 				}
 			}
-				self.tableView.reloadData()
+			self.tableView.reloadData()
 		}
 	}
 	
@@ -162,7 +172,6 @@ class OddsViewController: CollapsableTableViewController, OddsMatchDelegate{
 					itemsGolNoGol[i].val = itemsValue![i]
 				}
 			}
-			print("Ciao")
 			self.tableView.reloadData()
 		}
 	}

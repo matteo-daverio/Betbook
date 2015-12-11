@@ -111,6 +111,9 @@ class StringForTheWebHelper {
 		self.listOfBrands.append("Totosi")
 	}
 	
+	func giveIndexOfTheBrand(brand: String) -> Int{
+		return self.listOfBrands.indexOf(brand)!
+	}
 	
 	
 	

@@ -188,8 +188,8 @@ class ParserHtml {
 					odd.brand = self.listOfBrands[countOdd]
 					odd.value = td.text!
 				case np_o:
-					countOdd++
-					continue
+					odd.best = false
+					odd.brand = self.listOfBrands[countOdd]
 				default: continue
 				}
 				switch(result!){
@@ -285,8 +285,8 @@ class ParserHtml {
 					odd.brand = self.listOfBrands[countOdd]
 					odd.value = td.text!
 				case np_o:
-					countOdd++
-					continue
+					odd.best = false
+					odd.brand = self.listOfBrands[countOdd]
 				default: continue
 				}
 				
@@ -355,8 +355,8 @@ class ParserHtml {
 					odd.brand = self.listOfBrands[countOdd]
 					odd.value = td.text!
 				case np_o:
-					countOdd++
-					continue
+					odd.best = false
+					odd.brand = self.listOfBrands[countOdd]
 				default: continue
 				
 				}
@@ -457,7 +457,6 @@ class ParserHtml {
 				case np_o:
 					odd.best = false
 					odd.brand = self.listOfBrands[countOdd]
-					odd.value = ""
 				default: continue
 					
 				}
@@ -525,8 +524,8 @@ class ParserHtml {
 					odd.brand = self.listOfBrands[countOdd]
 					odd.value = td.text!
 				case np_o:
-					countOdd++
-					continue
+					odd.best = false
+					odd.brand = self.listOfBrands[countOdd]
 				default: continue
 					
 				}

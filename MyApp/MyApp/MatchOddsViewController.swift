@@ -10,6 +10,24 @@ import UIKit
 class MatchOddsViewController: UIViewController {
 
 	var pageMenu : CAPSPageMenu?
+	var homeTeam: String?
+	var awayTeam: String?
+	var selectedCountryOrEuropeanCompetition: String?
+	var selectedLeague: String?
+	
+	private func helperFunctionInitializeController(brand: String,selectedCountryOrEuropeanCompetition: String, selectedLeague: String, homeTeam: String, awayTeam: String) -> OddsViewController{
+		
+		let viewController = OddsViewController()
+		viewController.title = brand
+		viewController.brand = brand
+		viewController.selectedCountryOrEuropeanCompetition = selectedCountryOrEuropeanCompetition
+		viewController.selectedLeague = selectedLeague
+		viewController.homeTeam = homeTeam
+		viewController.awayTeam = awayTeam
+		viewController.delegate = self
+		
+		return viewController
+	}
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
@@ -32,19 +50,24 @@ class MatchOddsViewController: UIViewController {
 		// Initialize view controllers to display and place in array
 		var controllerArray : [UIViewController] = []
 		
+		
+		
 		//Questi saranno i controller ognuno con le quote associate al suo brand
 
-		let snaiController: UIViewController = UIViewController()
-		snaiController.title = "Snai"
-		controllerArray.append(snaiController)
+		self.selectedLeague = "Serie A"
+		self.selectedCountryOrEuropeanCompetition = "Italia"
+		self.homeTeam = "Genoa"
+		self.awayTeam = "Bologna"
 		
-		let betClickController: UIViewController = UIViewController()
-		snaiController.title = "BetClik"
+		let bwinController = helperFunctionInitializeController("Bwin", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague!, homeTeam: self.homeTeam!, awayTeam: self.awayTeam!)
+		controllerArray.append(bwinController)
+		
+		let betClickController = helperFunctionInitializeController("BetClick.it", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague!, homeTeam: self.homeTeam!, awayTeam: self.awayTeam!)
 		controllerArray.append(betClickController)
 		
-		let LottomaticaController: UIViewController = UIViewController()
-		snaiController.title = "Lottomatica"
+		let LottomaticaController = helperFunctionInitializeController("Lottomatica", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague!, homeTeam: self.homeTeam!, awayTeam: self.awayTeam!)
 		controllerArray.append(LottomaticaController)
+		
 		
 		
 		// Customize menu (Optional)
