@@ -98,7 +98,6 @@ class ParserHtml {
 						
 						if(td["class"] == "time"){
 							currentHour = td.text!
-							print(currentHour)
 							continue
 						}
 						
