@@ -11,14 +11,14 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="76"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_section_header_image-1" translatesAutoresizingMaskIntoConstraints="NO" id="fN9-kT-DGY">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_section_header_image" translatesAutoresizingMaskIntoConstraints="NO" id="fN9-kT-DGY">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="76"/>
                     <animations/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GzI-zS-Xig">
                     <rect key="frame" x="554" y="19" width="38" height="38"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down_arrow-1" translatesAutoresizingMaskIntoConstraints="NO" id="dOL-ar-ynU">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="dOL-ar-ynU">
                             <rect key="frame" x="9" y="13" width="20" height="12"/>
                             <animations/>
                         </imageView>
@@ -60,7 +60,7 @@
         </view>
     </objects>
     <resources>
-        <image name="_section_header_image-1" width="414" height="52"/>
-        <image name="down_arrow-1" width="20" height="12"/>
+        <image name="_section_header_image" width="414" height="52"/>
+        <image name="down_arrow" width="20" height="12"/>
     </resources>
 </document>
