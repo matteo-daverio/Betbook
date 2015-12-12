@@ -23,7 +23,7 @@ class StringForTheWebHelper {
 	private var listOfBrands: [String] = []
 	
 	//Dictionary that associate the normal string of a coutry to the string for thr web url
-	private var dictionaryOfCountryOrEuropeanCompetition = [String:String]()
+	var dictionaryOfCountryOrEuropeanCompetition = [String:String]()
 	
 	//Dictionary that associate the normal string of a league to the string for thr web url
 	var dictionaryOfLeagues = [String:String]()

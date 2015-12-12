@@ -10,10 +10,10 @@ import UIKit
 class MatchOddsViewController: UIViewController {
 
 	var pageMenu : CAPSPageMenu?
-	var homeTeam: String?
-	var awayTeam: String?
-	var selectedCountryOrEuropeanCompetition: String?
-	var selectedLeague: String?
+	var homeTeam: String!
+	var awayTeam: String!
+	var selectedCountryOrEuropeanCompetition: String!
+	var selectedLeague: String!
 	
 	private func helperFunctionInitializeController(brand: String,selectedCountryOrEuropeanCompetition: String, selectedLeague: String, homeTeam: String, awayTeam: String) -> OddsViewController{
 		
@@ -34,16 +34,17 @@ class MatchOddsViewController: UIViewController {
 		
 		// MARK: - UI Setup
 		
-		self.title = "PAGE MENU"
+		self.title = homeTeam.capitalizedString + "VS" + awayTeam.capitalizedString
+		self.navigationController?.navigationBar.translucent = false
 		self.navigationController?.navigationBar.barTintColor = UIColor(red: 30.0/255.0, green: 30.0/255.0, blue: 30.0/255.0, alpha: 1.0)
 		self.navigationController?.navigationBar.shadowImage = UIImage()
 		self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-		self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+		self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
 		self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
 		self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.orangeColor()]
 		
-		self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "<-", style: UIBarButtonItemStyle.Done, target: self, action: "didTapGoToLeft")
-		self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "->", style: UIBarButtonItemStyle.Done, target: self, action: "didTapGoToRight")
+//		self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Done, target: self, action: "didTapGoToLeft")
+//		self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "->", style: UIBarButtonItemStyle.Done, target: self, action: "didTapGoToRight")
 		
 		// MARK: - Scroll menu setup
 		
@@ -53,19 +54,14 @@ class MatchOddsViewController: UIViewController {
 		
 		
 		//Questi saranno i controller ognuno con le quote associate al suo brand
-
-		self.selectedLeague = "Serie A"
-		self.selectedCountryOrEuropeanCompetition = "Italia"
-		self.homeTeam = "Genoa"
-		self.awayTeam = "Bologna"
 		
-		let bwinController = helperFunctionInitializeController("Bwin", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague!, homeTeam: self.homeTeam!, awayTeam: self.awayTeam!)
+		let bwinController = helperFunctionInitializeController("Bwin", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
 		controllerArray.append(bwinController)
 		
-		let betClickController = helperFunctionInitializeController("BetClick.it", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague!, homeTeam: self.homeTeam!, awayTeam: self.awayTeam!)
+		let betClickController = helperFunctionInitializeController("BetClick.it", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
 		controllerArray.append(betClickController)
 		
-		let LottomaticaController = helperFunctionInitializeController("Lottomatica", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague!, homeTeam: self.homeTeam!, awayTeam: self.awayTeam!)
+		let LottomaticaController = helperFunctionInitializeController("Lottomatica", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
 		controllerArray.append(LottomaticaController)
 		
 		

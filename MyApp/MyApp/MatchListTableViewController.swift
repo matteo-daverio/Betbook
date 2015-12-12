@@ -122,21 +122,17 @@ class MatchListTableViewController: UITableViewController,MatchListDelegate {
 	}
 	
 	
-	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		self.performSegueWithIdentifier("showMatchOddsViewMVC", sender: self)
-	}
-	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if(segue.identifier == "showMatchOddsViewMVC"){
 			
 			let upcoming: MatchOddsViewController = segue.destinationViewController as! MatchOddsViewController
 			
 			let indexPath = self.tableView.indexPathForSelectedRow!
-//			let countyString = self.menu[indxPath.section].title
-//			let leagueString = self.menu[indxPath.section].items[indxPath.row]
 			
-			upcoming.selectedCountryOrEuropeanCompetition = self.country!
-			upcoming.selectedLeague = league!
+			let helper = StringForTheWebHelper()
+			
+			upcoming.selectedCountryOrEuropeanCompetition = helper.dictionaryOfCountryOrEuropeanCompetition[self.country!]
+			upcoming.selectedLeague = helper.dictionaryOfLeagues[self.league!]
 			let cell = self.tableView.cellForRowAtIndexPath(indexPath) as! MatchTableViewCell
 			upcoming.homeTeam = cell.homeTeamName.text!
 			upcoming.awayTeam = cell.awayTeamName.text!

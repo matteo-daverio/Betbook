@@ -31,13 +31,13 @@ class OddsMatchHttpRequest {
 	
 	private var parserHtml = ParserHtml()
 	
-	var homeTeam: String?
+	var homeTeam: String!
 	
-	var awayTeam: String?
+	var awayTeam: String!
 	
-	var selectedCountryOrEuropeanCompetition: String?
+	var selectedCountryOrEuropeanCompetition: String!
 	
-	var selectedLeague: String?
+	var selectedLeague: String!
 	
 	//Base path to achieve the http request
 	private let basePath = "https://www.confrontaquote.it/calcio"

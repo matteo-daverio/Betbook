@@ -28,33 +28,24 @@ class OddsViewController: CollapsableTableViewController, OddsMatchDelegate{
 			self.brandPosition = stringForTheWebHelper.giveIndexOfTheBrand(self.brand!)
 		}
 	}
-	var homeTeam: String?
-	var awayTeam: String?
-	var selectedCountryOrEuropeanCompetition: String?
-	var selectedLeague: String?
+	var homeTeam: String!
+	var awayTeam: String!
+	var selectedCountryOrEuropeanCompetition: String!
+	var selectedLeague: String!
 	
 	var numberOfAvailableOdds = OddsModelBuilder().getNumberOfBrand()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		self.oddsHttpRequester.homeTeam = self.homeTeam
+		self.oddsHttpRequester.awayTeam = self.awayTeam
+		self.oddsHttpRequester.selectedCountryOrEuropeanCompetition = self.selectedCountryOrEuropeanCompetition
+		self.oddsHttpRequester.selectedLeague = self.selectedLeague
+		
 		self.tableView.registerNib(UINib(nibName: "OddsTableViewCell", bundle: nil), forCellReuseIdentifier: "OddCell")
 		
-		self.brandPosition = 13
-		print("Da eliminare viewDidLoad()OddsViewC")
-		
 		oddsHttpRequester.delegate = self
-		
-		//	self.brandPosition = ParserHtml().getIndexOfBrand(brand!)
-		//	oddsHttpRequester.homeTeam = homeTeam!
-		oddsHttpRequester.homeTeam = "Genoa"
-		//	oddsHttpRequester.awayTeam = awayTeam!
-		oddsHttpRequester.awayTeam = "Bologna"
-		//  oddsHttpRequester.selectedCountryOrEuropeanCompetition = selectedCountryOrEuropeanCompetition!
-		oddsHttpRequester.selectedCountryOrEuropeanCompetition = "italia"
-		//  oddsHttpRequester.selectedLeague = selectedLeague!
-		oddsHttpRequester.selectedLeague = "serie-a"
-		
 		
 		//Odds for the final result
 		oddsHttpRequester.getOddsRisultatoFinaleForMatch()

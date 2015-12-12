@@ -47,6 +47,7 @@
 		F440CCAA1C1B39D700BE9F08 /* OddsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F440CCA91C1B39D700BE9F08 /* OddsViewController.xib */; };
 		F440CCAC1C1B3EB000BE9F08 /* OddsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */; };
 		F440CCAE1C1B3F5A00BE9F08 /* OddsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */; };
+		F4E151F91C1C198700F055D5 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E151F81C1C198700F055D5 /* libxml2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		F440CCA91C1B39D700BE9F08 /* OddsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsViewController.xib; sourceTree = "<group>"; };
 		F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsTableViewCell.xib; sourceTree = "<group>"; };
 		F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsTableViewCell.swift; sourceTree = "<group>"; };
+		F4E151F81C1C198700F055D5 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = ../../../../opt/vagrant/embedded/lib/libxml2.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E151F91C1C198700F055D5 /* libxml2.dylib in Frameworks */,
 				F418CB911C16179A0063A112 /* Kanna.framework in Frameworks */,
 				F418CB921C16179A0063A112 /* CollapsableTable.framework in Frameworks */,
 			);
@@ -149,6 +152,7 @@
 				F418C3621C160EF00063A112 /* MyAppTests */,
 				F418C36D1C160EF00063A112 /* MyAppUITests */,
 				F418C34C1C160EF00063A112 /* Products */,
+				F4E151F81C1C198700F055D5 /* libxml2.dylib */,
 				F418CB931C1618640063A112 /* FrameWork */,
 			);
 			sourceTree = "<group>";
@@ -649,6 +653,10 @@
 				INFOPLIST_FILE = MyApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/vagrant/embedded/lib,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = CM.MyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -666,6 +674,10 @@
 				INFOPLIST_FILE = MyApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/vagrant/embedded/lib,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = CM.MyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
