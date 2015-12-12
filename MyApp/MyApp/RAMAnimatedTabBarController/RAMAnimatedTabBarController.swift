@@ -25,13 +25,15 @@ import UIKit
 class RAMAnimatedTabBarItem: UITabBarItem {
     
     @IBOutlet weak var animation: RAMItemAnimation!
-    @IBInspectable var textColor: UIColor = UIColor.blackColor()
+    @IBInspectable var textColor: UIColor = UIColor.whiteColor()
     
     func playAnimation(icon: UIImageView, textLabel: UILabel) {
         
         assert(animation != nil, "add animation in UITabBarItem")
         if animation != nil {
             animation.playAnimation(icon, textLabel: textLabel)
+			//Scritta sotto l'icona item bar
+			textLabel.textColor = UIColor.whiteColor()
         }
     }
     
@@ -44,6 +46,7 @@ class RAMAnimatedTabBarItem: UITabBarItem {
     func selectedState(icon: UIImageView, textLabel: UILabel) {
         if animation != nil {
             animation.selectedState(icon, textLabel: textLabel)
+			textLabel.textColor = UIColor.whiteColor()
         }
     }
 }
@@ -80,11 +83,12 @@ class RAMAnimatedTabBarController: UITabBarController {
                 
                 let icon = UIImageView(image: item.image)
                 icon.translatesAutoresizingMaskIntoConstraints = false
-                icon.tintColor = UIColor.clearColor()
+                icon.tintColor = UIColor.whiteColor()
                 
                 // text
                 let textLabel = UILabel()
                 textLabel.text = item.title
+				//Colore backgraund dell test dell'icon bar item
                 textLabel.backgroundColor = UIColor.clearColor()
                 textLabel.textColor = item.textColor
                 textLabel.font = UIFont.systemFontOfSize(10)
@@ -179,7 +183,8 @@ class RAMAnimatedTabBarController: UITabBarController {
     
     func createViewContainer() -> UIView {
         let viewContainer = UIView();
-        viewContainer.backgroundColor = UIColor.clearColor() // for test
+		//Colore bella barra contenente gli items bar
+        viewContainer.backgroundColor = UIColor.clearColor()
         viewContainer.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(viewContainer)
         

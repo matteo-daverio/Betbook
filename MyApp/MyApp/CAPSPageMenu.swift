@@ -107,11 +107,11 @@ public class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureReco
     
     public var selectionIndicatorColor : UIColor = UIColor.whiteColor()
     public var selectedMenuItemLabelColor : UIColor = UIColor.whiteColor()
-    public var unselectedMenuItemLabelColor : UIColor = UIColor.lightGrayColor()
-    public var scrollMenuBackgroundColor : UIColor = UIColor.blackColor()
-    public var viewBackgroundColor : UIColor = UIColor.whiteColor()
+    public var unselectedMenuItemLabelColor : UIColor = UIColor.whiteColor()
+    public var scrollMenuBackgroundColor : UIColor = UIColor.whiteColor()
+    public var viewBackgroundColor : UIColor = UIColor.clearColor()
     public var bottomMenuHairlineColor : UIColor = UIColor.whiteColor()
-    public var menuItemSeparatorColor : UIColor = UIColor.lightGrayColor()
+    public var menuItemSeparatorColor : UIColor = UIColor.whiteColor()
     
     public var menuItemFont : UIFont = UIFont.systemFontOfSize(15.0)
     public var menuItemSeparatorPercentageHeight : CGFloat = 0.2

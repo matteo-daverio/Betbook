@@ -36,7 +36,7 @@ class MatchOddsViewController: UIViewController {
 		
 		self.title = homeTeam.capitalizedString + "VS" + awayTeam.capitalizedString
 		self.navigationController?.navigationBar.translucent = false
-		self.navigationController?.navigationBar.barTintColor = UIColor(red: 30.0/255.0, green: 30.0/255.0, blue: 30.0/255.0, alpha: 1.0)
+		self.navigationController?.navigationBar.barTintColor = UIColor(red: 20.0/255.0, green: 29.0/255.0, blue: 74.0/255.0, alpha: 1.0)
 		self.navigationController?.navigationBar.shadowImage = UIImage()
 		self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
 		self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
@@ -68,10 +68,10 @@ class MatchOddsViewController: UIViewController {
 		
 		// Customize menu (Optional)
 		let parameters: [CAPSPageMenuOption] = [
-			.ScrollMenuBackgroundColor(UIColor(red: 30.0/255.0, green: 30.0/255.0, blue: 30.0/255.0, alpha: 1.0)),
-			.ViewBackgroundColor(UIColor(red: 20.0/255.0, green: 20.0/255.0, blue: 20.0/255.0, alpha: 1.0)),
+			.ScrollMenuBackgroundColor(UIColor(red: 20.0/255.0, green: 29.0/255.0, blue: 74.0/255.0, alpha: 1.0)),
+			.ViewBackgroundColor(UIColor(red: 20.0/255.0, green: 29.0/255.0, blue: 74.0/255.0, alpha: 1.0)),
 			.SelectionIndicatorColor(UIColor.orangeColor()),
-			.BottomMenuHairlineColor(UIColor(red: 70.0/255.0, green: 70.0/255.0, blue: 80.0/255.0, alpha: 1.0)),
+			.BottomMenuHairlineColor(UIColor(red: 20.0/255.0, green: 29.0/255.0, blue: 74.0/255.0, alpha: 1.0)),
 			.MenuItemFont(UIFont(name: "HelveticaNeue", size: 13.0)!),
 			.MenuHeight(40.0),
 			.MenuItemWidth(90.0),

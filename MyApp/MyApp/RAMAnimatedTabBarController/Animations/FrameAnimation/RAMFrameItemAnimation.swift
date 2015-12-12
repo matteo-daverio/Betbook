@@ -55,7 +55,6 @@ class RAMFrameItemAnimation: RAMItemAnimation {
     }
 
     override func playAnimation(icon : UIImageView, textLabel : UILabel) {
-
         playFrameAnimation(icon, images:animationImages)
         textLabel.textColor = textSelectedColor
     }
