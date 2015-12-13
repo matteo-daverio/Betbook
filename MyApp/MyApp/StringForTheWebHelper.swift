@@ -136,9 +136,9 @@ class StringForTheWebHelper {
 		self.listOfLeague.append("Serie A")
 		self.listOfLeague.append("Serie B")
 		self.listOfLeague.append("Coppa Italia")
-		self.listOfLeague.append("Super Coppa")
-		self.listOfLeague.append("Lega Pro 1A")
-		self.listOfLeague.append("Lega Pro 1B")
+//		self.listOfLeague.append("Super Coppa")
+//		self.listOfLeague.append("Lega Pro 1A")
+//		self.listOfLeague.append("Lega Pro 1B")
 		
 		//English championships
 		self.listOfLeague.append("Premier League")

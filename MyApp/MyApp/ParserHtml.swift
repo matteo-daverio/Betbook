@@ -38,6 +38,44 @@ class ParserHtml {
 		return 0
 	}
 	
+	//Helper function that tells us if the row analized is good or not
+	private func tr_class(input: String?) ->Bool {
+		if(input == nil){
+			return false
+		}
+		
+		if(input == tr_class){
+			return true
+		}else{
+			let arrayOfWords = input!.componentsSeparatedByString(" ")
+			for w in arrayOfWords {
+				switch(w){
+					case "eventTableRow":
+						return true
+					case "diff-row":
+						return true
+				default:
+						break
+				}
+			}
+		}
+		return false
+	}
+	
+	//Helper function that help us tu dedect if the odd considere is the best or is empty or is a normal one
+	private func switchHelper(specifica: String, value: String) -> Int{
+		if(value == "0"){
+			return 3
+		}
+		
+		let arrayOfElementSpecifica = specifica.componentsSeparatedByString(" ")
+		if(arrayOfElementSpecifica.last! == "b"){
+			return 2
+		}
+		
+		return 1
+	}
+	
 	//Initialize the array of Available kind of Brands
 	private func addAvailableBrands(){
 		self.listOfBrands.append("BetClick.it")
@@ -158,7 +196,7 @@ class ParserHtml {
 		var countOdd = 0
 		for tr in bodyTable!.css("tr, class, data-bname") {
 			
-			if(tr["class"] != tr_class){
+			if(!(tr_class(tr["class"]!))){
 				continue
 			}
 			
@@ -168,26 +206,30 @@ class ParserHtml {
 			//Inizializzo il counter per i brand
 			countOdd = 0;
 			
-			for td in tr.css("td, class"){
+			for td in tr.css("td, class, data-odig"){
 				
 				let odd = Odd()
 				let a = td["class"]
-				if(a == nil || nameTeamWeb == nil){
+				let b = td["data-odig"]
+				if(a == nil || nameTeamWeb == nil || b == nil){
 					continue
 				}
 				
-				switch(td["class"]!){
+				//Where to go
+				let w = switchHelper(a!, value: b!)
+				
+				switch(w){
 					
-				case bc_co_o:
+				case 1:
 					odd.best = false
 					odd.brand = self.listOfBrands[countOdd]
 					odd.value = td.text!
 					
-				case bc_co_o_b:
+				case 2:
 					odd.best = true
 					odd.brand = self.listOfBrands[countOdd]
 					odd.value = td.text!
-				case np_o:
+				case 3:
 					odd.best = false
 					odd.brand = self.listOfBrands[countOdd]
 				default: continue
@@ -210,12 +252,12 @@ class ParserHtml {
 			//Fine controllo tutte quote per un evento
 		}
 		
-		print(homeTeam)
-		print(risultatoFinale.home)
-		print(tie)
-		print(risultatoFinale.tie)
-		print(awayTeam)
-		print(risultatoFinale.away)
+//		print(homeTeam)
+//		print(risultatoFinale.home)
+//		print(tie)
+//		print(risultatoFinale.tie)
+//		print(awayTeam)
+//		print(risultatoFinale.away)
 		
 		return risultatoFinale
 	}
@@ -250,7 +292,7 @@ class ParserHtml {
 		var countOdd = 0
 		for tr in bodyTable!.css("tr, class, data-bname") {
 			
-			if(tr["class"] != tr_class){
+			if(!(tr_class(tr["class"]!))){
 				continue
 			}
 			
@@ -265,26 +307,30 @@ class ParserHtml {
 			//Inizializzo il counter per i brand
 			countOdd = 0;
 			
-			for td in tr.css("td, class"){
+			for td in tr.css("td, class, data-odig"){
 				
 				let odd = Odd()
 				let a = td["class"]
-				if(a == nil){
+				let b = td["data-odig"]
+				if(a == nil || nameTeamWeb == nil || b == nil){
 					continue
 				}
 				
-				switch(td["class"]!){
+				//Where to go
+				let w = switchHelper(a!, value: b!)
+				
+				switch(w){
 					
-				case bc_co_o:
+				case 1:
 					odd.best = false
 					odd.brand = self.listOfBrands[countOdd]
 					odd.value = td.text!
 					
-				case bc_co_o_b:
+				case 2:
 					odd.best = true
 					odd.brand = self.listOfBrands[countOdd]
 					odd.value = td.text!
-				case np_o:
+				case 3:
 					odd.best = false
 					odd.brand = self.listOfBrands[countOdd]
 				default: continue
@@ -308,11 +354,11 @@ class ParserHtml {
 			//Fine controllo tutte quote per un evento
 		}
 
-		print(" ")
-		print("Doppia Chance")
-		print(doppiaChance.unoX)
-		print(doppiaChance.xDue)
-		print(doppiaChance.unoDue)
+//		print(" ")
+//		print("Doppia Chance")
+//		print(doppiaChance.unoX)
+//		print(doppiaChance.xDue)
+//		print(doppiaChance.unoDue)
 		
 		return doppiaChance
 	}
@@ -331,30 +377,37 @@ class ParserHtml {
 		var countOdd = 0
 		for tr in bodyTable!.css("tr, class, data-bname") {
 		
+			if(!(tr_class(tr["class"]))){
+				continue
+			}
 			
 			//Inizializzo il counter per i brand
 			countOdd = 0;
 			
-			for td in tr.css("td, class"){
+			for td in tr.css("td, class, data-odig"){
 				
 				let odd = Odd()
 				let a = td["class"]
-				if(a == nil){
+				let b = td["data-odig"]
+				if(a == nil || nameTeamWeb == nil || b == nil){
 					continue
 				}
 				
-				switch(td["class"]!){
+				//Where to go
+				let w = switchHelper(a!, value: b!)
+				
+				switch(w){
 					
-				case bc_co_o:
+				case 1:
 					odd.best = false
 					odd.brand = self.listOfBrands[countOdd]
 					odd.value = td.text!
 					
-				case bc_co_o_b:
+				case 2:
 					odd.best = true
 					odd.brand = self.listOfBrands[countOdd]
 					odd.value = td.text!
-				case np_o:
+				case 3:
 					odd.best = false
 					odd.brand = self.listOfBrands[countOdd]
 				default: continue
@@ -427,34 +480,37 @@ class ParserHtml {
 		
 		for tr in bodyTable!.css("tr, class, data-bname") {
 			
-			let a = tr["class"]
-			if(tr["class"] != tr_class){
+			if(!(tr_class(tr["class"]))){
 				continue
 			}
 			
 			//Inizializzo il counter per i brand
 			countOdd = 0;
 			
-			for td in tr.css("td, class"){
+			for td in tr.css("td, class, data-odig"){
 				
 				let odd = Odd()
 				let a = td["class"]
-				if(a == nil){
+				let b = td["data-odig"]
+				if(a == nil || nameTeamWeb == nil || b == nil){
 					continue
 				}
 			
-				switch(td["class"]!){
+				//Where to go
+				let w = switchHelper(a!, value: b!)
+				
+				switch(w){
 					
-				case bc_co_o:
+				case 1:
 					odd.best = false
 					odd.brand = self.listOfBrands[countOdd]
 					odd.value = td.text!
 					
-				case bc_co_o_b:
+				case 2:
 					odd.best = true
 					odd.brand = self.listOfBrands[countOdd]
 					odd.value = td.text!
-				case np_o:
+				case 3:
 					odd.best = false
 					odd.brand = self.listOfBrands[countOdd]
 				default: continue
@@ -475,10 +531,10 @@ class ParserHtml {
 			}
 		}
 		
-		print(" ")
-		print("Gol noGol")
-		print(golNoGol.gol)
-		print(golNoGol.noGol)
+//		print(" ")
+//		print("Gol noGol")
+//		print(golNoGol.gol)
+//		print(golNoGol.noGol)
 		
 		return golNoGol
 	}
@@ -497,33 +553,37 @@ class ParserHtml {
 		var countOdd = 0
 		for tr in bodyTable!.css("tr, class, data-bname") {
 			
-			if(tr["class"] != tr_class){
+			if(!(tr_class(tr["class"]))){
 				continue
 			}
 			
 			//Inizializzo il counter per i brand
 			countOdd = 0;
 			
-			for td in tr.css("td, class"){
+			for td in tr.css("td, class, data-odig"){
 				
 				let odd = Odd()
 				let a = td["class"]
-				if(a == nil){
+				let b = td["data-odig"]
+				if(a == nil || nameTeamWeb == nil || b == nil){
 					continue
 				}
 				
-				switch(td["class"]!){
+				//Where to go
+				let w = switchHelper(a!, value: b!)
+				
+				switch(w){
 					
-				case bc_co_o:
+				case 1:
 					odd.best = false
 					odd.brand = self.listOfBrands[countOdd]
 					odd.value = td.text!
 					
-				case bc_co_o_b:
+				case 2:
 					odd.best = true
 					odd.brand = self.listOfBrands[countOdd]
 					odd.value = td.text!
-				case np_o:
+				case 3:
 					odd.best = false
 					odd.brand = self.listOfBrands[countOdd]
 				default: continue
@@ -544,10 +604,10 @@ class ParserHtml {
 			}
 		}
 		
-		print(" ")
-		print("Pari Dispari")
-		print(pariDispari.pari)
-		print(pariDispari.dispari)
+//		print(" ")
+//		print("Pari Dispari")
+//		print(pariDispari.pari)
+//		print(pariDispari.dispari)
 		
 		return pariDispari
 	}

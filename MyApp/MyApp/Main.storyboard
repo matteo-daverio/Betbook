@@ -228,7 +228,7 @@
                     <connections>
                         <segue destination="La8-UB-2WS" kind="relationship" relationship="viewControllers" id="zqi-bS-XKp"/>
                         <segue destination="6Sr-YU-b8S" kind="relationship" relationship="viewControllers" id="Xge-Fg-tlp"/>
-                        <segue destination="9e1-vW-Bxb" kind="relationship" relationship="viewControllers" id="LwJ-yZ-m2k"/>
+                        <segue destination="l14-nl-7nr" kind="relationship" relationship="viewControllers" id="LwJ-yZ-m2k"/>
                         <segue destination="u68-zQ-QWE" kind="relationship" relationship="viewControllers" id="cma-FD-NsM"/>
                     </connections>
                 </tabBarController>
@@ -304,7 +304,7 @@
             </objects>
             <point key="canvasLocation" x="426" y="1185"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="Ke8-Fx-C63">
             <objects>
                 <viewController id="9e1-vW-Bxb" sceneMemberID="viewController">
@@ -313,26 +313,17 @@
                         <viewControllerLayoutGuide type="bottom" id="5Sq-Th-Xbq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Czf-a0-TDy">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="icon_user" id="ZlQ-oj-Oyl" customClass="RAMAnimatedTabBarItem" customModule="MyApp" customModuleProvider="target">
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                        <connections>
-                            <outlet property="animation" destination="6q8-pI-h6j" id="PZe-ap-f4g"/>
-                        </connections>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="U7E-fo-sx0"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4oy-3p-uNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="6q8-pI-h6j" customClass="RAMBounceAnimation" customModule="MyApp" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="426" y="1951"/>
+            <point key="canvasLocation" x="1238" y="1951"/>
         </scene>
         <!--Perfect-->
         <scene sceneID="1YF-7T-lZb">
@@ -372,6 +363,36 @@
             </objects>
             <point key="canvasLocation" x="426" y="-822"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="fHc-V2-mIg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l14-nl-7nr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="icon_user" id="ZlQ-oj-Oyl" customClass="RAMAnimatedTabBarItem" customModule="MyApp" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="animation" destination="iNj-Kf-Rcd" id="HTj-BS-vsk"/>
+                        </connections>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="HdZ-6Y-0ZI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.064243052120000005" green="0.077430080040000002" blue="0.2476047237" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9e1-vW-Bxb" kind="relationship" relationship="rootViewController" id="D0y-Zn-tf9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PFs-ga-eA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="iNj-Kf-Rcd" customClass="RAMBounceAnimation" customModule="MyApp" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="426" y="1951"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Tools_00028" width="30" height="30"/>
@@ -379,4 +400,5 @@
         <image name="icon_pin" width="30" height="30"/>
         <image name="icon_user" width="30" height="30"/>
     </resources>
+    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
 </document>

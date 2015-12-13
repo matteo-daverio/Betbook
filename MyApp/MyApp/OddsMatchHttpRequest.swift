@@ -57,8 +57,6 @@ class OddsMatchHttpRequest {
 		
 		let path = basePath + slash + selectedCountryOrEuropeanCompetition! + slash + selectedLeague! + slash + match + slash + kindOfBet!
 		
-		print(path)
-		
 		let url = NSURL(string: path)
 		
 		let session = NSURLSession.sharedSession()
@@ -227,8 +225,6 @@ class OddsMatchHttpRequest {
 				
 		let url = NSURL(string: path)
 		
-		print(path)
-		
 		let session = NSURLSession.sharedSession()
 		
 		let task = session.dataTaskWithURL(url!) { (data: NSData?, respons: NSURLResponse?, error: NSError?) -> Void in
@@ -259,8 +255,6 @@ class OddsMatchHttpRequest {
 		let match = homeTeam!.lowercaseString + "-" + awayTeam!.lowercaseString
 		
 		let path = basePath + slash + selectedCountryOrEuropeanCompetition! + slash + selectedLeague! + slash + match + slash + kindOfBet!
-		
-		print(path)
 		
 		let url = NSURL(string: path)
 		

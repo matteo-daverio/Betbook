@@ -27,7 +27,6 @@
 		F418CBBC1C16EA010063A112 /* SoccerInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBBB1C16EA010063A112 /* SoccerInformationModel.swift */; };
 		F418CBBE1C16EA060063A112 /* SingletonSoccerInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBBD1C16EA060063A112 /* SingletonSoccerInformationModel.swift */; };
 		F418CBC01C16EA0F0063A112 /* ParserHtml.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBBF1C16EA0F0063A112 /* ParserHtml.swift */; };
-		F418CBC21C16F2240063A112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F418CBC11C16F2240063A112 /* Assets.xcassets */; };
 		F418CBC41C1727950063A112 /* MatchListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBC31C1727950063A112 /* MatchListRequest.swift */; };
 		F418CBC61C172A6A0063A112 /* StringForTheWebHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBC51C172A6A0063A112 /* StringForTheWebHelper.swift */; };
 		F418CBD71C174C310063A112 /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBCC1C174C310063A112 /* RAMBounceAnimation.swift */; };
@@ -44,10 +43,10 @@
 		F418CBF51C18B2B00063A112 /* OddsMenuSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBF41C18B2B00063A112 /* OddsMenuSectionHeader.swift */; };
 		F418CBF71C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F418CBF61C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib */; };
 		F418CBF91C1983DF0063A112 /* OddsMatchHttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBF81C1983DF0063A112 /* OddsMatchHttpRequest.swift */; };
+		F435ED961C1D7F4D004D8BAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F435ED951C1D7F4D004D8BAA /* Assets.xcassets */; };
 		F440CCAA1C1B39D700BE9F08 /* OddsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F440CCA91C1B39D700BE9F08 /* OddsViewController.xib */; };
 		F440CCAC1C1B3EB000BE9F08 /* OddsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */; };
 		F440CCAE1C1B3F5A00BE9F08 /* OddsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */; };
-		F4E151F91C1C198700F055D5 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E151F81C1C198700F055D5 /* libxml2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +93,6 @@
 		F418CBBB1C16EA010063A112 /* SoccerInformationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoccerInformationModel.swift; sourceTree = "<group>"; };
 		F418CBBD1C16EA060063A112 /* SingletonSoccerInformationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonSoccerInformationModel.swift; sourceTree = "<group>"; };
 		F418CBBF1C16EA0F0063A112 /* ParserHtml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserHtml.swift; sourceTree = "<group>"; };
-		F418CBC11C16F2240063A112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F418CBC31C1727950063A112 /* MatchListRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchListRequest.swift; sourceTree = "<group>"; };
 		F418CBC51C172A6A0063A112 /* StringForTheWebHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringForTheWebHelper.swift; sourceTree = "<group>"; };
 		F418CBCC1C174C310063A112 /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBounceAnimation.swift; sourceTree = "<group>"; };
@@ -111,6 +109,7 @@
 		F418CBF41C18B2B00063A112 /* OddsMenuSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsMenuSectionHeader.swift; sourceTree = "<group>"; };
 		F418CBF61C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsMenuSectionHeaderView.xib; sourceTree = "<group>"; };
 		F418CBF81C1983DF0063A112 /* OddsMatchHttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsMatchHttpRequest.swift; sourceTree = "<group>"; };
+		F435ED951C1D7F4D004D8BAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F440CCA91C1B39D700BE9F08 /* OddsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsViewController.xib; sourceTree = "<group>"; };
 		F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsTableViewCell.xib; sourceTree = "<group>"; };
 		F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsTableViewCell.swift; sourceTree = "<group>"; };
@@ -122,7 +121,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4E151F91C1C198700F055D5 /* libxml2.dylib in Frameworks */,
 				F418CB911C16179A0063A112 /* Kanna.framework in Frameworks */,
 				F418CB921C16179A0063A112 /* CollapsableTable.framework in Frameworks */,
 			);
@@ -209,8 +207,8 @@
 		F418CB941C1618BF0063A112 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F435ED951C1D7F4D004D8BAA /* Assets.xcassets */,
 				F418CBF61C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib */,
-				F418CBC11C16F2240063A112 /* Assets.xcassets */,
 				F418CBAB1C16C1EF0063A112 /* CollapsableTableScene.swift */,
 				F418CBA91C16C1AB0063A112 /* CollapsableTableProtocols.swift */,
 				F418C34E1C160EF00063A112 /* AppDelegate.swift */,
@@ -434,6 +432,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F435ED961C1D7F4D004D8BAA /* Assets.xcassets in Resources */,
 				F418C3591C160EF00063A112 /* LaunchScreen.storyboard in Resources */,
 				F418CBA11C1619690063A112 /* MenuSectionHeaderView.xib in Resources */,
 				F440CCAA1C1B39D700BE9F08 /* OddsViewController.xib in Resources */,
@@ -441,7 +440,6 @@
 				F418CBF71C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib in Resources */,
 				F418CB821C1610780063A112 /* Cartfile in Resources */,
 				F418CB9F1C16194C0063A112 /* Main.storyboard in Resources */,
-				F418CBC21C16F2240063A112 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

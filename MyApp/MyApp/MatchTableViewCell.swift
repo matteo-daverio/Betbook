@@ -32,6 +32,15 @@ class MatchTableViewCell: UITableViewCell {
 		awayTeamName?.text = match?.awayTeam!
 		hourLabel?.text = match?.hour!
 		homeImageView.image = UIImage(named: (match?.homeTeam!.lowercaseString)!)
+		
+		if(homeImageView.image == nil){
+			homeImageView.image = UIImage(named: "default")
+		}
+		
 		awayImageView.image = UIImage(named: (match?.awayTeam!.lowercaseString)!)
+		
+		if(awayImageView.image == nil){
+			awayImageView.image = UIImage(named: "default")
+		}
 	}
 }

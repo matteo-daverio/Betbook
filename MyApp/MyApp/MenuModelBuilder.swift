@@ -68,7 +68,10 @@ class MenuModelBuilder {
 	}
 	
 	private func addLeagueForCountry(){
-		self.leagueForTheCountry["Italia"] = ["Serie A","Serie B","Coppa Italia","Super Coppa","Lega Pro 1A","Lega Pro 1B"]
+		self.leagueForTheCountry["Italia"] =
+			["Serie A","Serie B","Coppa Italia","Super Coppa"
+			//,"Lega Pro 1A","Lega Pro 1B"]
+			]
 		self.leagueForTheCountry["Inghilterra"] = ["Premier League","FA Cup","Capital One Cup","Cummunity Shield","League One","League Two"]
 		self.leagueForTheCountry["Spagna"] = ["Liga","Super Coppa","Coppa del Re","Liga Segunda","Liga Segunda B","Liga Tercera"]
 		self.leagueForTheCountry["Francia"] = ["Ligue 1","Ligue 2","Coupe de France","Coupe de la Ligue","Super Coppa","National","CFA"]
