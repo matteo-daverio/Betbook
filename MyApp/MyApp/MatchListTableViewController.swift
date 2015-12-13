@@ -69,12 +69,75 @@ class MatchListTableViewController: UITableViewController,MatchListDelegate {
 		
 	}
 	
-	private func organizeForDate(matchList: [Match]) -> [[Match]]{
+	private func helperMatchDate(match: Match) -> String{
+		
+		let date = match.date
+		
+		var arrayWordsInDate = date?.componentsSeparatedByString(" ")
+		
+		let day = arrayWordsInDate![1]
+		var mese = ""
+		let year = arrayWordsInDate![3]
+		let hour = match.hour!
+		
+		
+		switch((arrayWordsInDate![2]).capitalizedString){
+		case "Gennaio":
+			mese = "1"
+		case "Febbraio":
+			mese = "2"
+		case "Marzo":
+			mese = "3"
+		case "Aprile":
+			mese = "4"
+		case "Maggio":
+			mese = "5"
+		case "Giugno":
+			mese = "6"
+		case "Luglio":
+			mese = "7"
+		case "Agosto":
+			mese = "8"
+		case "Settembre":
+			mese = "9"
+		case "Ottobre":
+			mese = "10"
+		case "Novembre":
+			mese = "11"
+		case "Dicembre":
+			mese = "12"
+		default:
+			break
+		}
+		
+		return day + "-" + mese + "-" + year + " " + hour
+		
+	}
+	
+	private func organizeForDate(var matchList: [Match]) -> [[Match]]{
 		
 		var organizedMatchList = [[Match]]()
+		
 		var differentDates = [String]()
+		
+		let formatter = NSDateFormatter()
+		formatter.dateFormat = "dd-MM-yyyy HH:mm"
+		formatter.timeZone = NSTimeZone(abbreviation: "GTM")
+		
+		let currentDate = NSDate().dateByAddingTimeInterval(3600)
+
 		var i = 0
-		for(; i < matchList.count; i++){
+	
+		for(matchList; i < matchList.count; i++){
+			let mDate = formatter.dateFromString(helperMatchDate(matchList[i]))?.dateByAddingTimeInterval(3600)
+			
+			if(mDate?.compare(currentDate) == NSComparisonResult.OrderedAscending){
+				matchList.removeAtIndex(i)
+				i--
+			}
+		}
+		
+		for(i = 0; i < matchList.count; i++){
 			if( !(differentDates.contains(matchList[i].date!) )){
 				differentDates.append(matchList[i].date!)
 			}
@@ -121,6 +184,14 @@ class MatchListTableViewController: UITableViewController,MatchListDelegate {
 		return (matches[section].first!.date)?.capitalizedString
 	}
 	
+	override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+		
+		view.tintColor = UIColor(red: 20.0/255.0, green: 29.0/255.0, blue: 74.0/255.0, alpha: 1.0)
+		
+		let headerView = view as! UITableViewHeaderFooterView
+		headerView.textLabel?.textColor = UIColor.whiteColor()
+
+	}
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if(segue.identifier == "showMatchOddsViewMVC"){
@@ -136,6 +207,7 @@ class MatchListTableViewController: UITableViewController,MatchListDelegate {
 			let cell = self.tableView.cellForRowAtIndexPath(indexPath) as! MatchTableViewCell
 			upcoming.homeTeam = cell.homeTeamName.text!
 			upcoming.awayTeam = cell.awayTeamName.text!
+			
 		}
 	}
 

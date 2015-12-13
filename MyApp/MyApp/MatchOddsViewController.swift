@@ -100,7 +100,7 @@ class MatchOddsViewController: UIViewController {
 		let parameters: [CAPSPageMenuOption] = [
 			.ScrollMenuBackgroundColor(UIColor(red: 20.0/255.0, green: 29.0/255.0, blue: 74.0/255.0, alpha: 1.0)),
 			.ViewBackgroundColor(UIColor(red: 20.0/255.0, green: 29.0/255.0, blue: 74.0/255.0, alpha: 1.0)),
-			.SelectionIndicatorColor(UIColor.orangeColor()),
+			.SelectionIndicatorColor(UIColor.whiteColor()),
 			.BottomMenuHairlineColor(UIColor(red: 20.0/255.0, green: 29.0/255.0, blue: 74.0/255.0, alpha: 1.0)),
 			.MenuItemFont(UIFont(name: "HelveticaNeue", size: 13.0)!),
 			.MenuHeight(40.0),

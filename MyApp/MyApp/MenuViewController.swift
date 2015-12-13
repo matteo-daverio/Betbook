@@ -68,6 +68,7 @@ extension MenuViewController {
 		let league = menu[indexPath.section].items[indexPath.row]
 		
 		cell.textLabel?.text = league as? String
+		cell.backgroundColor = UIColor(red: 250.0/255.0, green: 250.0/255.0, blue: 250.0/255.0, alpha: 0.85)
 		
 		return cell
 	}
