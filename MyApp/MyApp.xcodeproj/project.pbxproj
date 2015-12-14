@@ -115,7 +115,6 @@
 		F440CCA91C1B39D700BE9F08 /* OddsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsViewController.xib; sourceTree = "<group>"; };
 		F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsTableViewCell.xib; sourceTree = "<group>"; };
 		F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsTableViewCell.swift; sourceTree = "<group>"; };
-		F4E151F81C1C198700F055D5 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = ../../../../opt/vagrant/embedded/lib/libxml2.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +152,6 @@
 				F418C3621C160EF00063A112 /* MyAppTests */,
 				F418C36D1C160EF00063A112 /* MyAppUITests */,
 				F418C34C1C160EF00063A112 /* Products */,
-				F4E151F81C1C198700F055D5 /* libxml2.dylib */,
 				F418CB931C1618640063A112 /* FrameWork */,
 			);
 			sourceTree = "<group>";
