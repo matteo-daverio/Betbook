@@ -44,6 +44,7 @@
 		F418CBF71C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F418CBF61C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib */; };
 		F418CBF91C1983DF0063A112 /* OddsMatchHttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418CBF81C1983DF0063A112 /* OddsMatchHttpRequest.swift */; };
 		F435ED961C1D7F4D004D8BAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F435ED951C1D7F4D004D8BAA /* Assets.xcassets */; };
+		F435EE811C1EC4B4004D8BAA /* AKPickerView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F435EE801C1EC4B4004D8BAA /* AKPickerView.framework */; };
 		F440CCAA1C1B39D700BE9F08 /* OddsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F440CCA91C1B39D700BE9F08 /* OddsViewController.xib */; };
 		F440CCAC1C1B3EB000BE9F08 /* OddsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */; };
 		F440CCAE1C1B3F5A00BE9F08 /* OddsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */; };
@@ -110,6 +111,7 @@
 		F418CBF61C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsMenuSectionHeaderView.xib; sourceTree = "<group>"; };
 		F418CBF81C1983DF0063A112 /* OddsMatchHttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsMatchHttpRequest.swift; sourceTree = "<group>"; };
 		F435ED951C1D7F4D004D8BAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F435EE801C1EC4B4004D8BAA /* AKPickerView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AKPickerView.framework; path = Carthage/Build/iOS/AKPickerView.framework; sourceTree = "<group>"; };
 		F440CCA91C1B39D700BE9F08 /* OddsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsViewController.xib; sourceTree = "<group>"; };
 		F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsTableViewCell.xib; sourceTree = "<group>"; };
 		F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsTableViewCell.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F435EE811C1EC4B4004D8BAA /* AKPickerView.framework in Frameworks */,
 				F418CB911C16179A0063A112 /* Kanna.framework in Frameworks */,
 				F418CB921C16179A0063A112 /* CollapsableTable.framework in Frameworks */,
 			);
@@ -198,6 +201,7 @@
 		F418CB931C1618640063A112 /* FrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				F435EE801C1EC4B4004D8BAA /* AKPickerView.framework */,
 				F418CB8F1C16179A0063A112 /* Kanna.framework */,
 				F418CB901C16179A0063A112 /* CollapsableTable.framework */,
 			);
@@ -334,7 +338,7 @@
 				F418C3471C160EF00063A112 /* Sources */,
 				F418C3481C160EF00063A112 /* Frameworks */,
 				F418C3491C160EF00063A112 /* Resources */,
-				F418CBA21C161BCA0063A112 /* ShellScript */,
+				F418CBA21C161BCA0063A112 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -460,7 +464,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		F418CBA21C161BCA0063A112 /* ShellScript */ = {
+		F418CBA21C161BCA0063A112 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -468,7 +472,9 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Kanna.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/CollapsableTable.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AKPickerView.framework",
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

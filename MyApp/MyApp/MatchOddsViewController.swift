@@ -148,6 +148,5 @@ class MatchOddsViewController: UIViewController {
 	override func shouldAutomaticallyForwardRotationMethods() -> Bool {
 		return true
 	}
-
-
+	
 }
