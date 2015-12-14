@@ -30,7 +30,7 @@ class MatchListTableViewController: UITableViewController,MatchListDelegate {
 		spinner.hidesWhenStopped = true
 		spinner.transform = CGAffineTransformMakeScale(1.5, 1.5)
 		let center = self.view.center
-		spinner.center = CGPointMake(center.x, center.y-center.y*0.15)
+		spinner.center = CGPointMake(center.x, center.y-center.y*0.30)
 		spinner.color = UIColor.blackColor()
 		spinner.backgroundColor = UIColor.whiteColor()
 		self.view.addSubview(spinner)

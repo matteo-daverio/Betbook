@@ -23,7 +23,7 @@ class MatchListRequest {
 	private var parserHtml = ParserHtml()
 	
 	//Base path to achieve the http request
-	private let basePath = "https://www.confrontaquote.it/calcio"
+	private let basePath = "http://www.confrontaquote.it/calcio"
 	
 	//Helper string
 	private let slash = "/"

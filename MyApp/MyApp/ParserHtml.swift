@@ -25,7 +25,7 @@ class ParserHtml {
 	
 	init(){
 		addAvailableBrands()
-		addAllTeams()
+		addAllTeamsExceptions()
 	}
 	
 	func getIndexOfBrand(brand: String) -> Int {
@@ -372,6 +372,13 @@ class ParserHtml {
 			return nil
 		}
 		
+		//TODO attenzione alle squadre tipo ac milan
+		let arrayNames = nameTeamWeb!["data-sname"]?.componentsSeparatedByString(" v ")
+		
+		if(arrayNames == nil){
+			return nil
+		}
+		
 		let underOver = UnderOver()
 		
 		var countOdd = 0
@@ -474,6 +481,13 @@ class ParserHtml {
 			return nil
 		}
 		
+		//TODO attenzione alle squadre tipo ac milan
+		let arrayNames = nameTeamWeb!["data-sname"]?.componentsSeparatedByString(" v ")
+		
+		if(arrayNames == nil){
+			return nil
+		}
+		
 		let golNoGol = GolNoGol()
 		
 		var countOdd = 0
@@ -545,6 +559,13 @@ class ParserHtml {
 		let nameTeamWeb = doc.css("table").first
 		let bodyTable = arrayBody.first
 		if(bodyTable == nil || nameTeamWeb == nil){
+			return nil
+		}
+		
+		//TODO attenzione alle squadre tipo ac milan
+		let arrayNames = nameTeamWeb!["data-sname"]?.componentsSeparatedByString(" v ")
+		
+		if(arrayNames == nil){
 			return nil
 		}
 		
@@ -637,7 +658,7 @@ class ParserHtml {
 	
 	
 	
-	private func addAllTeams(){
+	private func addAllTeamsExceptions(){
 		
 		//Itaia
 		
@@ -725,6 +746,14 @@ class ParserHtml {
 			check = left
 		}
 		
+		if(homeT == check){
+			return 0
+		}
+		
+		if(awayT == check){
+			return 1
+		}
+		
 		if(dictionaryTeam[homeT]!.possibleNames.contains(check!)){
 			return 0
 		}
@@ -739,6 +768,14 @@ class ParserHtml {
 	private func getFinalResultCase(home: String, away: String, check: String)->Int?{
 		if(check == "Pareggio" || check == "Draw"){
 			return 1
+		}
+		
+		if(home == check){
+			return 0
+		}
+		
+		if(away == check){
+			return 2
 		}
 		
 		if(dictionaryTeam[home]!.possibleNames.contains(check)){

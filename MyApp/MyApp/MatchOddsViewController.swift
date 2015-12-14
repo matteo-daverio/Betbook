@@ -51,18 +51,10 @@ class MatchOddsViewController: UIViewController {
 		// Initialize view controllers to display and place in array
 		var controllerArray : [UIViewController] = []
 		
-		
-		
 		//Questi saranno i controller ognuno con le quote associate al suo brand
-		
-		let betFairController = helperFunctionInitializeController("Betfair", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
-		controllerArray.append(betFairController)
 		
 		let betClickController = helperFunctionInitializeController("BetClick.it", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
 		controllerArray.append(betClickController)
-		
-		let paddyPController = helperFunctionInitializeController("PaddyPower", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
-		controllerArray.append(paddyPController)
 		
 		let bwinController = helperFunctionInitializeController("Bwin", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
 		controllerArray.append(bwinController)
@@ -70,17 +62,26 @@ class MatchOddsViewController: UIViewController {
 		let wHillController = helperFunctionInitializeController("William Hill", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
 		controllerArray.append(wHillController)
 		
-		let LottomaticaController = helperFunctionInitializeController("Lottomatica", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
-		controllerArray.append(LottomaticaController)
-		
 		let gazzaController = helperFunctionInitializeController("GazzaBet", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
 		controllerArray.append(gazzaController)
+		
+		let iziPController = helperFunctionInitializeController("Iziplay", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
+		controllerArray.append(iziPController)
 		
 		let uniBController = helperFunctionInitializeController("Unibet", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
 		controllerArray.append(uniBController)
 		
 		let netBController = helperFunctionInitializeController("NetBet", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
 		controllerArray.append(netBController)
+		
+		let bahController = helperFunctionInitializeController("Bet-At-Home", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
+		controllerArray.append(bahController)
+		
+		let paddyPController = helperFunctionInitializeController("PaddyPower", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
+		controllerArray.append(paddyPController)
+		
+		let sisalController = helperFunctionInitializeController("Sisal Matchpoint", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
+		controllerArray.append(sisalController)
 		
 		let betFController = helperFunctionInitializeController("BetFlag", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
 		controllerArray.append(betFController)
@@ -90,6 +91,12 @@ class MatchOddsViewController: UIViewController {
 		
 		let euroBController = helperFunctionInitializeController("Eurobet", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
 		controllerArray.append(euroBController)
+		
+		let betFairController = helperFunctionInitializeController("Betfair", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
+		controllerArray.append(betFairController)
+		
+		let LottomaticaController = helperFunctionInitializeController("Lottomatica", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
+		controllerArray.append(LottomaticaController)
 		
 		let totoController = helperFunctionInitializeController("Totosi", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
 		controllerArray.append(totoController)

@@ -14,6 +14,7 @@ class OddsViewController: CollapsableTableViewController, OddsMatchDelegate{
 	// MARK: - Property
 	
 	@IBOutlet weak var tableView: UITableView!
+	let spinner = UIActivityIndicatorView(frame: CGRectMake(0,0,100,100))
 	
 	var delegate: UIViewController?
 	
@@ -43,6 +44,19 @@ class OddsViewController: CollapsableTableViewController, OddsMatchDelegate{
 		self.oddsHttpRequester.selectedCountryOrEuropeanCompetition = self.selectedCountryOrEuropeanCompetition
 		self.oddsHttpRequester.selectedLeague = self.selectedLeague
 		
+		spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+		spinner.hidesWhenStopped = true
+		spinner.transform = CGAffineTransformMakeScale(1.5, 1.5)
+		let center = self.delegate!.view.center
+		spinner.center = CGPointMake(center.x, center.y-center.y*0.30)
+		spinner.color = UIColor.blackColor()
+		spinner.backgroundColor = UIColor.clearColor()
+		self.delegate?.view.addSubview(spinner)
+		self.delegate?.view.bringSubviewToFront(spinner)
+		spinner.startAnimating()
+		
+		self.delegate?.reloadInputViews()
+		
 		self.tableView.registerNib(UINib(nibName: "OddsTableViewCell", bundle: nil), forCellReuseIdentifier: "OddCell")
 		
 		oddsHttpRequester.delegate = self
@@ -70,6 +84,7 @@ class OddsViewController: CollapsableTableViewController, OddsMatchDelegate{
 		
 		//Odds for odd or even
 		oddsHttpRequester.getOddsPariDispariForMatch()
+
 		
 	}
 	override func model() -> [CollapsableTableViewSectionModelProtocol]? {
@@ -205,6 +220,8 @@ class OddsViewController: CollapsableTableViewController, OddsMatchDelegate{
 					itemsPariDispari[i].val = itemsValue![i]
 				}
 			}
+
+			self.spinner.stopAnimating()
 			self.tableView.reloadData()
 		}
 	}
@@ -230,6 +247,8 @@ extension OddsViewController {
 		
 		cell.textLabel?.text = betItem.name!
 		cell.detailTextLabel?.text = betItem.val!
+//		cell.detailTextLabel?.backgroundColor = UIColor(red: 20.0/255.0, green: 29.0/255.0, blue: 74.0/255.0, alpha: 1.0)
+//		cell.detailTextLabel?.textColor = UIColor.whiteColor()
 		
 		return cell
 	}
