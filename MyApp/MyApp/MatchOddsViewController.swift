@@ -80,7 +80,7 @@ class MatchOddsViewController: UIViewController {
 		let paddyPController = helperFunctionInitializeController("PaddyPower", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
 		controllerArray.append(paddyPController)
 		
-		let sisalController = helperFunctionInitializeController("Sisal Matchpoint", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
+		let sisalController = helperFunctionInitializeController("Sisal", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)
 		controllerArray.append(sisalController)
 		
 		let betFController = helperFunctionInitializeController("BetFlag", selectedCountryOrEuropeanCompetition: self.selectedCountryOrEuropeanCompetition!, selectedLeague: self.selectedLeague, homeTeam: self.homeTeam, awayTeam: self.awayTeam)

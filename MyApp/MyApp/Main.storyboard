@@ -304,26 +304,68 @@
             </objects>
             <point key="canvasLocation" x="426" y="1185"/>
         </scene>
-        <!--View Controller-->
+        <!--Eureka-->
         <scene sceneID="Ke8-Fx-C63">
             <objects>
-                <viewController id="9e1-vW-Bxb" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tw8-Un-MRm"/>
-                        <viewControllerLayoutGuide type="bottom" id="5Sq-Th-Xbq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Czf-a0-TDy">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="U7E-fo-sx0"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4oy-3p-uNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="6q8-pI-h6j" customClass="RAMBounceAnimation" customModule="MyApp" customModuleProvider="target"/>
+                <viewController id="9e1-vW-Bxb" customClass="BetViewController" customModule="MyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wQY-ly-xiw"/>
+                        <viewControllerLayoutGuide type="bottom" id="wsx-Xz-Q5Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hkd-hE-bTN">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="npF-wM-68L" customClass="AKPickerView" customModule="MyApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                <color key="backgroundColor" red="0.064243052120000005" green="0.077430080040000002" blue="0.2476047237" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="C7x-gb-jhm"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightedTextColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j7A-ib-lBL">
+                                <rect key="frame" x="0.0" y="58" width="600" height="429"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9e1-vW-Bxb" id="0Q3-48-uCO"/>
+                                    <outlet property="delegate" destination="9e1-vW-Bxb" id="9Iu-G0-mbU"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="j7A-ib-lBL" secondAttribute="trailing" constant="-20" id="4ia-Hu-I5P"/>
+                            <constraint firstItem="npF-wM-68L" firstAttribute="leading" secondItem="Hkd-hE-bTN" secondAttribute="leadingMargin" constant="-20" id="CU9-qz-jRp"/>
+                            <constraint firstItem="npF-wM-68L" firstAttribute="top" secondItem="wQY-ly-xiw" secondAttribute="bottom" id="Gfi-EB-wP4"/>
+                            <constraint firstItem="wsx-Xz-Q5Z" firstAttribute="top" secondItem="j7A-ib-lBL" secondAttribute="bottom" id="GkF-xg-a1U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="npF-wM-68L" secondAttribute="trailing" constant="-20" id="ILB-9l-mLf"/>
+                            <constraint firstItem="j7A-ib-lBL" firstAttribute="top" secondItem="npF-wM-68L" secondAttribute="bottom" constant="8" id="XrW-G8-x3I"/>
+                            <constraint firstItem="j7A-ib-lBL" firstAttribute="leading" secondItem="Hkd-hE-bTN" secondAttribute="leadingMargin" constant="-20" id="cqG-ng-V1F"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Eureka" id="U7E-fo-sx0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pFM-1k-qRs">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="pickerView" destination="npF-wM-68L" id="ckb-na-PLd"/>
+                        <outlet property="tableView" destination="j7A-ib-lBL" id="3qe-UA-dMS"/>
+                    </connections>
+                </viewController>
             </objects>
-            <point key="canvasLocation" x="1238" y="1951"/>
+            <point key="canvasLocation" x="1361" y="1939"/>
         </scene>
         <!--Perfect-->
         <scene sceneID="1YF-7T-lZb">
@@ -382,6 +424,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.064243052120000005" green="0.077430080040000002" blue="0.2476047237" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

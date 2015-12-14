@@ -105,7 +105,7 @@ class StringForTheWebHelper {
 		self.listOfBrands.append("NetBet")
 		self.listOfBrands.append("Bet-At-Home")
 		self.listOfBrands.append("PaddyPower")
-		self.listOfBrands.append("Sisal Matchpoint")
+		self.listOfBrands.append("Sisal")
 		self.listOfBrands.append("BetFlag")
 		self.listOfBrands.append("Sport Yes")
 		self.listOfBrands.append("Eurobet")
