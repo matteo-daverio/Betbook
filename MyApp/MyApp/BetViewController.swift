@@ -125,7 +125,7 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 		return true
 	}
 	
-	private func isAlreadyIn(bet: Bet) -> Bool {
+	private func ifIsAlreadyInUpdate(bet: Bet) -> Bool {
 		
 		for(var i = 0; i < listOfBet.count; i++) {
 			let b = listOfBet[i]
@@ -139,13 +139,29 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 		return false
 	}
 	
+	func isAlreadyIn(bet: Bet) -> Bool {
+		for(var i = 0; i < listOfBet.count; i++) {
+			let b = listOfBet[i]
+		
+			if( b.homeTeam! == bet.homeTeam &&
+				b.awayTeam! == bet.awayTeam! &&
+				b.date! == bet.date! &&
+				b.kindOfBet == bet.kindOfBet! &&
+				b.bet == bet.bet!){
+					return true
+			
+			}
+		}
+		return false
+	}
+	
 	 func tryAddThisMatchEvent(bet: Bet) -> Bool {
 		
 		if(!checkSameBrand(bet)){
 			return false
 		}
 		
-		if(isAlreadyIn(bet)){
+		if(ifIsAlreadyInUpdate(bet)){
 		
 			if(self.tableView != nil){
 					self.tableView.reloadData()
@@ -163,6 +179,17 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 			}
 			return true
 		}
+	}
+	
+	func removeThisBet(bet: Bet) -> Bool{
+		for(var i = 0; i < listOfBet.count; i++) {
+			let b = listOfBet[i]
+			if(b.homeTeam! == bet.homeTeam && b.awayTeam! == bet.awayTeam! && b.date! == bet.date!){
+				listOfBet.removeAtIndex(i)
+				return true
+			}
+		}
+		return false
 	}
 	
 	// MARK: - UITableViewDataSource

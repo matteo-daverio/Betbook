@@ -257,11 +257,17 @@ extension OddsViewController{
 			let betItem = (menu[indexPath.section].items[indexPath.row]) as! Item
 		
 			let bet = Bet(homeTeam: self.match.homeTeam!, awayTeam: self.match.awayTeam!, date: self.match.date!, hour: self.match.hour!, league: self.match.league!, country: self.match.country!, kindOfBet: kindOfBet, bet: betItem.name!, betValue: betItem.val!, brand: self.brand!)
+		if(!myBetController.isAlreadyIn(bet)){
 		
-		if(myBetController.tryAddThisMatchEvent(bet)){
-			cell.contentView.backgroundColor = UIColor.greenColor()
+			if(myBetController.tryAddThisMatchEvent(bet)){
+				cell.contentView.backgroundColor = UIColor.greenColor()
+			}else{
+				print("Pop up to do")
+			}
 		}else{
-			print("Pop up to do")
+			myBetController.removeThisBet(bet)
+			cell.contentView.backgroundColor = UIColor.whiteColor()
+			cell.backgroundColor = UIColor.whiteColor()
 		}
 	}
 	
@@ -273,10 +279,6 @@ extension OddsViewController{
 	}
 	
 	func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-		let cell = tableView.cellForRowAtIndexPath(indexPath) as! OddsTableViewCell
-		
-			cell.contentView.backgroundColor = UIColor.whiteColor()
-		
 	}
 	
 	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
