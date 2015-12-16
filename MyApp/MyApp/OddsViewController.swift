@@ -41,7 +41,8 @@ class OddsViewController: CollapsableTableViewController, OddsMatchDelegate{
 		super.viewDidLoad()
 		
 		//Importantissimo
-		self.tableView.allowsMultipleSelection = true
+		self.tableView.allowsSelection = false
+		self.tableView.allowsMultipleSelection = false
 		
 		self.oddsHttpRequester.homeTeam = self.homeTeam
 		self.oddsHttpRequester.awayTeam = self.awayTeam
@@ -226,6 +227,7 @@ class OddsViewController: CollapsableTableViewController, OddsMatchDelegate{
 			}
 
 			self.spinner.stopAnimating()
+			self.tableView.allowsSelection = true
 			self.tableView.reloadData()
 		}
 	}
@@ -245,29 +247,36 @@ extension OddsViewController{
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		let cell = tableView.cellForRowAtIndexPath(indexPath) as! OddsTableViewCell
-		cell.contentView.backgroundColor = UIColor.greenColor()
+			
+			let myBetControllerNavigator = self.tabBarController?.viewControllers![TabBarEnum.Bet.rawValue] as! UINavigationController
 		
-		let myBetControllerNavigator = self.tabBarController?.viewControllers![TabBarEnum.Bet.rawValue] as! UINavigationController
-		
-		let myBetController = myBetControllerNavigator.viewControllers[0] as! BetViewController
+			let myBetController = myBetControllerNavigator.viewControllers[0] as! BetViewController
 		
 		
-		let kindOfBet = menu[indexPath.section].title
-		let betItem = (menu[indexPath.section].items[indexPath.row]) as! Item
+			let kindOfBet = menu[indexPath.section].title
+			let betItem = (menu[indexPath.section].items[indexPath.row]) as! Item
 		
-		let bet = Bet(homeTeam: self.match.homeTeam!, awayTeam: self.match.awayTeam!, date: self.match.date!, hour: self.match.hour!, league: self.match.league!, country: self.match.country!, kindOfBet: kindOfBet, bet: betItem.name!, betValue: betItem.val!, brand: self.brand!)
+			let bet = Bet(homeTeam: self.match.homeTeam!, awayTeam: self.match.awayTeam!, date: self.match.date!, hour: self.match.hour!, league: self.match.league!, country: self.match.country!, kindOfBet: kindOfBet, bet: betItem.name!, betValue: betItem.val!, brand: self.brand!)
 		
-		myBetController.tryAddThisMatchEvent(bet)
+		if(myBetController.tryAddThisMatchEvent(bet)){
+			cell.contentView.backgroundColor = UIColor.greenColor()
+		}else{
+			print("Pop up to do")
+		}
 	}
 	
 	func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
 		let cell = tableView.cellForRowAtIndexPath(indexPath) as! OddsTableViewCell
-		cell.contentView.backgroundColor = UIColor.greenColor()
+	
+		cell.backgroundView?.backgroundColor = UIColor.greenColor()
+		
 	}
 	
 	func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
 		let cell = tableView.cellForRowAtIndexPath(indexPath) as! OddsTableViewCell
-		cell.contentView.backgroundColor = UIColor.whiteColor()
+		
+			cell.contentView.backgroundColor = UIColor.whiteColor()
+		
 	}
 	
 	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -285,21 +294,32 @@ extension OddsViewController{
 		
 		var cellGreen = false
 		
+		let kindOfBet = menu[indexPath.section].title
+		let bet = betItem.name!
+		
 		for b in arrayBet {
 			if( b.homeTeam! == self.homeTeam &&
 				b.awayTeam == self.awayTeam  &&
-				b.date == self.match.date!){
+				b.date == self.match.date!   &&
+				b.kindOfBet! == kindOfBet    &&
+				b.bet! == bet                &&
+				b.brand! == self.brand!){
 				cellGreen = true
 					break
 			}
 		}
 		
+		if(cellGreen){
+			cell.backgroundColor = UIColor.greenColor()
+		}else{
+			cell.backgroundColor = UIColor.whiteColor()
+		}
+		
 		cell.textLabel?.text = betItem.name!
 		cell.detailTextLabel?.text = betItem.val!
 		
-		if(cellGreen){
-			cell.backgroundView?.backgroundColor = UIColor.greenColor()
-		}
+//		cell.backgroundColor = UIColor.greenColor()
+		
 		
 		return cell
 	}

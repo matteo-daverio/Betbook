@@ -32,6 +32,7 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 		
 		self.pickerView.delegate = self
 		self.pickerView.dataSource = self
+		self.tableView.allowsSelection = false
 		
 		self.tableView.registerNib(UINib(nibName: "BetTableViewCell", bundle: nil), forCellReuseIdentifier: "BetCell")
 		
@@ -126,27 +127,42 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 	
 	private func isAlreadyIn(bet: Bet) -> Bool {
 		
-		for b in listOfBet {
-			
+		for(var i = 0; i < listOfBet.count; i++) {
+			let b = listOfBet[i]
 			if( b.homeTeam! == bet.homeTeam && b.awayTeam! == bet.awayTeam! && b.date! == bet.date!){
+				b.kindOfBet = bet.kindOfBet!
+				b.bet = bet.bet!
+				b.betValue = bet.betValue!
 				return true
 			}
 		}
-		
 		return false
 	}
 	
 	 func tryAddThisMatchEvent(bet: Bet) -> Bool {
 		
-		if(checkSameBrand(bet) && !isAlreadyIn(bet)){
+		if(!checkSameBrand(bet)){
+			return false
+		}
+		
+		if(isAlreadyIn(bet)){
+		
+			if(self.tableView != nil){
+					self.tableView.reloadData()
+				}
+			
+			return true
+		
+		}else{
+			
 			self.listOfBet.append(bet)
+			
 			if(self.tableView != nil){
 				self.tableView.reloadData()
+			
 			}
 			return true
 		}
-		
-		return false
 	}
 	
 	// MARK: - UITableViewDataSource
