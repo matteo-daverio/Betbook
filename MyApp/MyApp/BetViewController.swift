@@ -14,42 +14,40 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 	
 	@IBOutlet weak var tableView: UITableView!
 	
-	private var listOfBet = [Match]()
+	@IBAction func addOtherMatch(sender: UIBarButtonItem) {
+		(self.tabBarController as! RAMAnimatedTabBarController).setSelectIndex(from: TabBarEnum.Bet.rawValue, to: TabBarEnum.Search.rawValue )
+	}
+	 var listOfBet = [Bet]()
 	
-	let titles = ["BetClick.it  ", "  Bwin  ", "  William Hill  ", "  GazzaBet  ", "  Iziplay  ",
-		"  Unibet  ", "  NetBet  ", "  Bet-At-Home  ", "  PaddyPower  ", "  Sisal  ", "  BetFlag  ", "  Sport Yes  ", "  Eurobet  ", "  Betfair  ", "  Lottomatica  ", "  Totosi  "]
+	private var selectedBrand:String?
+	
+	let titles = ["BetClick.it", "Bwin", "William Hill", "GazzaBet", "Iziplay",
+		"Unibet", "NetBet", "Bet-At-Home", "PaddyPower", "Sisal", "BetFlag", "Sport Yes", "Eurobet", "Betfair", "Lottomatica", "Totosi"]
+	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		self.selectedBrand = titles[0]
+		
 		self.pickerView.delegate = self
 		self.pickerView.dataSource = self
 		
 		self.tableView.registerNib(UINib(nibName: "BetTableViewCell", bundle: nil), forCellReuseIdentifier: "BetCell")
 		
+		self.pickerView.interitemSpacing = 20.0
 		self.pickerView.font = UIFont(name: "HelveticaNeue-Light", size: 20)!
 		self.pickerView.highlightedFont = UIFont(name: "HelveticaNeue", size: 20)!
 		self.pickerView.pickerViewStyle = .Wheel
-		self.pickerView.maskDisabled = false
-		
-		let prova = Match(homeTeam: "", awayTeam: "", date: "", hour: "")
-		listOfBet.append(prova)
-		listOfBet.append(prova)
+		self.pickerView.maskDisabled = true
 		
 		self.pickerView.reloadData()
+		self.tableView.reloadData()
 	}
 	
-//	override public func viewDidLoad() {
-//		super.viewDidLoad()
-//		
-//		if let
-//			tableView = self.collapsableTableView(),
-//			nibName = self.sectionHeaderNibName(),
-//			reuseID = self.sectionHeaderReuseIdentifier()
-//		{
-//			let nib = UINib(nibName: nibName, bundle: nil)
-//			tableView.registerNib(nib, forHeaderFooterViewReuseIdentifier: reuseID)
-//		}
-//	}
+	override func viewWillAppear(animated: Bool) {
+		self.tableView.reloadData()
+	}
 	
 	// MARK: - AKPickerViewDataSource
 	
@@ -76,7 +74,7 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 	// MARK: - AKPickerViewDelegate
 	
 	func pickerView(pickerView: AKPickerView, didSelectItem item: Int) {
-		print("Your favorite city is \(self.titles[item])")
+		self.selectedBrand = "\(self.titles[item])"
 	}
 	
 	/*
@@ -115,12 +113,53 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 	
 	*/
 	
+	private func checkSameBrand(bet: Bet) -> Bool {
+		
+		for b in listOfBet {
+			if(b.brand! != bet.brand!){
+				return false
+			}
+		}
+		
+		return true
+	}
+	
+	private func isAlreadyIn(bet: Bet) -> Bool {
+		
+		for b in listOfBet {
+			
+			if( b.homeTeam! == bet.homeTeam && b.awayTeam! == bet.awayTeam! && b.date! == bet.date!){
+				return true
+			}
+		}
+		
+		return false
+	}
+	
+	 func tryAddThisMatchEvent(bet: Bet) -> Bool {
+		
+		if(checkSameBrand(bet) && !isAlreadyIn(bet)){
+			self.listOfBet.append(bet)
+			if(self.tableView != nil){
+				self.tableView.reloadData()
+			}
+			return true
+		}
+		
+		return false
+	}
+	
 	// MARK: - UITableViewDataSource
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCellWithIdentifier("BetCell", forIndexPath: indexPath) as! BetTableViewCell
 		
 		// Configure the cell..
+		
+		let bet = listOfBet[indexPath.row]
+		
+		cell.bet = bet
+		
 		return cell
 
 	}

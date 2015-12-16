@@ -54,7 +54,7 @@ class MatchListRequest {
 		let task = session.dataTaskWithURL(url!) { (data: NSData?, respons: NSURLResponse?, error: NSError?) -> Void in
 			
 			if let doc = Kanna.HTML(html: data!, encoding: NSUTF8StringEncoding) {
-				matchList = self.parserHtml.getMatchListFromHtml(doc)
+				matchList = self.parserHtml.getMatchListFromHtml(doc,country: uiCountryOrEuropeanCompetition, league: uiLeague)
 			}
 			
 			if self.delegate != nil{

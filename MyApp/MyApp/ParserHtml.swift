@@ -102,7 +102,7 @@ class ParserHtml {
 	
 	
 	//This function takes out the list of events from an html page and gives back an array of matches (if available)
-	func getMatchListFromHtml(doc: HTMLDocument)->[Match]?{
+	func getMatchListFromHtml(doc: HTMLDocument, country: String, league: String)->[Match]?{
 		
 		let arrayBody = doc.css("tbody")
 		let bodyTable = arrayBody.first
@@ -159,7 +159,7 @@ class ParserHtml {
 						}
 					}
 				}
-				let match = Match(homeTeam: currentHomeTeam!, awayTeam: currentAwayTeam!, date: currentDate!, hour: currentHour!)
+				let match = Match(homeTeam: currentHomeTeam!, awayTeam: currentAwayTeam!, date: currentDate!, hour: currentHour!, country: country, league: league)
 				if(arrayMatch == nil){
 					arrayMatch = [Match]()
 				}

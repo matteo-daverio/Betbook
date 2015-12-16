@@ -226,10 +226,10 @@
                         <color key="selectedImageTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="La8-UB-2WS" kind="relationship" relationship="viewControllers" id="zqi-bS-XKp"/>
-                        <segue destination="6Sr-YU-b8S" kind="relationship" relationship="viewControllers" id="Xge-Fg-tlp"/>
-                        <segue destination="l14-nl-7nr" kind="relationship" relationship="viewControllers" id="LwJ-yZ-m2k"/>
                         <segue destination="u68-zQ-QWE" kind="relationship" relationship="viewControllers" id="cma-FD-NsM"/>
+                        <segue destination="La8-UB-2WS" kind="relationship" relationship="viewControllers" id="zqi-bS-XKp"/>
+                        <segue destination="l14-nl-7nr" kind="relationship" relationship="viewControllers" id="LwJ-yZ-m2k"/>
+                        <segue destination="6Sr-YU-b8S" kind="relationship" relationship="viewControllers" id="Xge-Fg-tlp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Sn-jP-pJx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -304,11 +304,9 @@
             </objects>
             <point key="canvasLocation" x="426" y="1185"/>
         </scene>
-        <!--Eureka-->
+        <!--Bet View Controller-->
         <scene sceneID="Ke8-Fx-C63">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4oy-3p-uNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="6q8-pI-h6j" customClass="RAMBounceAnimation" customModule="MyApp" customModuleProvider="target"/>
                 <viewController id="9e1-vW-Bxb" customClass="BetViewController" customModule="MyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wQY-ly-xiw"/>
@@ -353,9 +351,12 @@
                             <constraint firstItem="j7A-ib-lBL" firstAttribute="leading" secondItem="Hkd-hE-bTN" secondAttribute="leadingMargin" constant="-20" id="cqG-ng-V1F"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Eureka" id="U7E-fo-sx0">
+                    <navigationItem key="navigationItem" id="U7E-fo-sx0">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pFM-1k-qRs">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="addOtherMatch:" destination="9e1-vW-Bxb" id="rUn-24-5xb"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -364,6 +365,8 @@
                         <outlet property="tableView" destination="j7A-ib-lBL" id="3qe-UA-dMS"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4oy-3p-uNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="6q8-pI-h6j" customClass="RAMBounceAnimation" customModule="MyApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1361" y="1939"/>
         </scene>
@@ -446,5 +449,5 @@
         <image name="icon_pin" width="30" height="30"/>
         <image name="icon_user" width="30" height="30"/>
     </resources>
-    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

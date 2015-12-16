@@ -207,6 +207,9 @@ class MatchListTableViewController: UITableViewController,MatchListDelegate {
 			let cell = self.tableView.cellForRowAtIndexPath(indexPath) as! MatchTableViewCell
 			upcoming.homeTeam = cell.homeTeamName.text!
 			upcoming.awayTeam = cell.awayTeamName.text!
+			cell.match!.country = self.country!
+			cell.match!.league = self.league!
+			upcoming.match = cell.match!
 			
 		}
 	}

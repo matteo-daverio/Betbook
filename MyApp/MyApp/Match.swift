@@ -12,6 +12,8 @@ class Match: CustomStringConvertible {
 	
 	//Properties
 	
+	var country: String?
+	var league: String?
 	var homeTeam: String?
 	var awayTeam: String?
 	var date: String?
@@ -31,7 +33,7 @@ class Match: CustomStringConvertible {
 	
 	//Methods
 
-	init(homeTeam: String, awayTeam: String, date: String, hour: String){
+	init(homeTeam: String, awayTeam: String, date: String, hour: String, country: String, league: String){
 		self.homeTeam = homeTeam
 		self.awayTeam = awayTeam
 		self.date = date

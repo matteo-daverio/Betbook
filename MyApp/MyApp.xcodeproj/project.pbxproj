@@ -49,6 +49,8 @@
 		F435EE851C1EC804004D8BAA /* BetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435EE841C1EC804004D8BAA /* BetViewController.swift */; };
 		F435EEC51C1F30B9004D8BAA /* BetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F435EEC41C1F30B9004D8BAA /* BetTableViewCell.xib */; };
 		F435EEC71C1F3187004D8BAA /* BetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435EEC61C1F3187004D8BAA /* BetTableViewCell.swift */; };
+		F435EECF1C204DEE004D8BAA /* Bet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435EECE1C204DEE004D8BAA /* Bet.swift */; };
+		F435EED11C207C37004D8BAA /* TabBarEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435EED01C207C37004D8BAA /* TabBarEnum.swift */; };
 		F440CCAA1C1B39D700BE9F08 /* OddsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F440CCA91C1B39D700BE9F08 /* OddsViewController.xib */; };
 		F440CCAC1C1B3EB000BE9F08 /* OddsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */; };
 		F440CCAE1C1B3F5A00BE9F08 /* OddsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */; };
@@ -120,6 +122,8 @@
 		F435EE841C1EC804004D8BAA /* BetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetViewController.swift; sourceTree = "<group>"; };
 		F435EEC41C1F30B9004D8BAA /* BetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetTableViewCell.xib; sourceTree = "<group>"; };
 		F435EEC61C1F3187004D8BAA /* BetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetTableViewCell.swift; sourceTree = "<group>"; };
+		F435EECE1C204DEE004D8BAA /* Bet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bet.swift; sourceTree = "<group>"; };
+		F435EED01C207C37004D8BAA /* TabBarEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarEnum.swift; sourceTree = "<group>"; };
 		F440CCA91C1B39D700BE9F08 /* OddsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsViewController.xib; sourceTree = "<group>"; };
 		F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsTableViewCell.xib; sourceTree = "<group>"; };
 		F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsTableViewCell.swift; sourceTree = "<group>"; };
@@ -245,6 +249,8 @@
 				F418CBC51C172A6A0063A112 /* StringForTheWebHelper.swift */,
 				F418CBE61C1868D50063A112 /* OddsModelBuilder.swift */,
 				F418CBF81C1983DF0063A112 /* OddsMatchHttpRequest.swift */,
+				F435EECE1C204DEE004D8BAA /* Bet.swift */,
+				F435EED01C207C37004D8BAA /* TabBarEnum.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -505,6 +511,7 @@
 				F418CBE91C186ED10063A112 /* OddsViewController.swift in Sources */,
 				F418CBDA1C174C310063A112 /* RAMRotationAnimation.swift in Sources */,
 				F418CBAA1C16C1AB0063A112 /* CollapsableTableProtocols.swift in Sources */,
+				F435EED11C207C37004D8BAA /* TabBarEnum.swift in Sources */,
 				F435EE831C1EC768004D8BAA /* AKPickerView.swift in Sources */,
 				F418CBD91C174C310063A112 /* RAMFumeAnimation.swift in Sources */,
 				F418CBBA1C16E9DF0063A112 /* Match.swift in Sources */,
@@ -530,6 +537,7 @@
 				F418CBDC1C174C310063A112 /* RAMAnimatedTabBarController.swift in Sources */,
 				F418CBF91C1983DF0063A112 /* OddsMatchHttpRequest.swift in Sources */,
 				F418CBD71C174C310063A112 /* RAMBounceAnimation.swift in Sources */,
+				F435EECF1C204DEE004D8BAA /* Bet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
