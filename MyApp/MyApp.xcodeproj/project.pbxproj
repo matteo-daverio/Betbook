@@ -51,6 +51,8 @@
 		F435EEC71C1F3187004D8BAA /* BetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435EEC61C1F3187004D8BAA /* BetTableViewCell.swift */; };
 		F435EECF1C204DEE004D8BAA /* Bet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435EECE1C204DEE004D8BAA /* Bet.swift */; };
 		F435EED11C207C37004D8BAA /* TabBarEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435EED01C207C37004D8BAA /* TabBarEnum.swift */; };
+		F435EED51C21AC91004D8BAA /* BetEngineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F435EED41C21AC91004D8BAA /* BetEngineTableViewCell.xib */; };
+		F435EED71C21B5F6004D8BAA /* BetEngineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435EED61C21B5F6004D8BAA /* BetEngineTableViewCell.swift */; };
 		F440CCAA1C1B39D700BE9F08 /* OddsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F440CCA91C1B39D700BE9F08 /* OddsViewController.xib */; };
 		F440CCAC1C1B3EB000BE9F08 /* OddsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */; };
 		F440CCAE1C1B3F5A00BE9F08 /* OddsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */; };
@@ -124,6 +126,8 @@
 		F435EEC61C1F3187004D8BAA /* BetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetTableViewCell.swift; sourceTree = "<group>"; };
 		F435EECE1C204DEE004D8BAA /* Bet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bet.swift; sourceTree = "<group>"; };
 		F435EED01C207C37004D8BAA /* TabBarEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarEnum.swift; sourceTree = "<group>"; };
+		F435EED41C21AC91004D8BAA /* BetEngineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetEngineTableViewCell.xib; sourceTree = "<group>"; };
+		F435EED61C21B5F6004D8BAA /* BetEngineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetEngineTableViewCell.swift; sourceTree = "<group>"; };
 		F440CCA91C1B39D700BE9F08 /* OddsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsViewController.xib; sourceTree = "<group>"; };
 		F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsTableViewCell.xib; sourceTree = "<group>"; };
 		F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsTableViewCell.swift; sourceTree = "<group>"; };
@@ -233,6 +237,7 @@
 				F440CCA91C1B39D700BE9F08 /* OddsViewController.xib */,
 				F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */,
 				F435EEC41C1F30B9004D8BAA /* BetTableViewCell.xib */,
+				F435EED41C21AC91004D8BAA /* BetEngineTableViewCell.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 				F418CBF41C18B2B00063A112 /* OddsMenuSectionHeader.swift */,
 				F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */,
 				F435EEC61C1F3187004D8BAA /* BetTableViewCell.swift */,
+				F435EED61C21B5F6004D8BAA /* BetEngineTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -453,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F435ED961C1D7F4D004D8BAA /* Assets.xcassets in Resources */,
+				F435EED51C21AC91004D8BAA /* BetEngineTableViewCell.xib in Resources */,
 				F418C3591C160EF00063A112 /* LaunchScreen.storyboard in Resources */,
 				F435EEC51C1F30B9004D8BAA /* BetTableViewCell.xib in Resources */,
 				F418CBA11C1619690063A112 /* MenuSectionHeaderView.xib in Resources */,
@@ -506,6 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F418CBDD1C174C310063A112 /* RAMItemAnimationProtocol.swift in Sources */,
+				F435EED71C21B5F6004D8BAA /* BetEngineTableViewCell.swift in Sources */,
 				F418CBD81C174C310063A112 /* RAMFrameItemAnimation.swift in Sources */,
 				F418CB991C16191F0063A112 /* MenuModelBuilder.swift in Sources */,
 				F418CBE91C186ED10063A112 /* OddsViewController.swift in Sources */,

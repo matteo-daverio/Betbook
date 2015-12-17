@@ -22,6 +22,13 @@ class BetTableViewCell: UITableViewCell {
 		
 	@IBOutlet weak var betValueLabel: UILabel!
 	
+	
+	@IBAction func deleteBet() {
+		self.delegate?.removeThisBet(self.bet!)
+	}
+	
+	var delegate: BetViewController?
+	
 	var bet: Bet? {
 		didSet{
 			updateUI()
@@ -47,11 +54,11 @@ class BetTableViewCell: UITableViewCell {
 			leagueImage.image = UIImage(named: "default")
 		}
 		
-		self.dateHourLabel.text = ((bet?.date)!.capitalizedString) + "  " + (bet?.hour)!
-		self.teamsLabel.text = (bet?.homeTeam!.capitalizedString)! + " vs " + (bet?.awayTeam!.capitalizedString)!
-		self.kindOfBetLabel.text = bet?.kindOfBet!
-		self.betLabel.text = bet?.bet!
-		self.betValueLabel.text = bet?.betValue!
+		self.dateHourLabel.text = ((bet?.date)!.uppercaseString) + "  " + (bet?.hour)!
+		self.teamsLabel.text = (bet?.homeTeam!.uppercaseString)! + " - " + (bet?.awayTeam!.uppercaseString)!
+		self.kindOfBetLabel.text = (bet?.kindOfBet!)! + ":"
+		self.betLabel.text = (bet?.bet!.uppercaseString)
+		self.betValueLabel.text = (bet?.betValue!.uppercaseString)
 	
 	}
 	

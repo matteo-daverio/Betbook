@@ -24,17 +24,24 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 	let titles = ["BetClick.it", "Bwin", "William Hill", "GazzaBet", "Iziplay",
 		"Unibet", "NetBet", "Bet-At-Home", "PaddyPower", "Sisal", "BetFlag", "Sport Yes", "Eurobet", "Betfair", "Lottomatica", "Totosi"]
 	
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		self.tableView.tableFooterView = UIView(frame: CGRect.zero)
 		self.selectedBrand = titles[0]
+		
+		self.tableView.backgroundColor = UIColor(red: 215.0/255.0, green: 227.0/255.0, blue: 244.0/255.0, alpha: 1.0)
+		self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+		self.tableView.separatorColor = UIColor.clearColor()
+		
 		
 		self.pickerView.delegate = self
 		self.pickerView.dataSource = self
 		self.tableView.allowsSelection = false
 		
 		self.tableView.registerNib(UINib(nibName: "BetTableViewCell", bundle: nil), forCellReuseIdentifier: "BetCell")
+		
+		self.tableView.registerNib(UINib(nibName: "BetEngineTableViewCell", bundle: nil),forCellReuseIdentifier: "EngineBetCell")
 		
 		self.pickerView.interitemSpacing = 20.0
 		self.pickerView.font = UIFont(name: "HelveticaNeue-Light", size: 20)!
@@ -43,10 +50,24 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 		self.pickerView.maskDisabled = true
 		
 		self.pickerView.reloadData()
+		
 		self.tableView.reloadData()
 	}
 	
 	override func viewWillAppear(animated: Bool) {
+		if(listOfBet.count > 0){
+			print(listOfBet[0].brand!)
+			for(var i = 0; i < listOfBet.count ; i++){
+				if(listOfBet[0].brand! == titles[i]){
+					print(listOfBet[0].brand!)
+					print(titles[i])
+					pickerView.scrollToItem(i)
+					pickerView.scrollToItem(i, animated: true)
+					pickerView.selectItem(i, animated: true)
+					pickerView.reloadData()
+				}
+			}
+		}
 		self.tableView.reloadData()
 	}
 	
@@ -186,6 +207,7 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 			let b = listOfBet[i]
 			if(b.homeTeam! == bet.homeTeam && b.awayTeam! == bet.awayTeam! && b.date! == bet.date!){
 				listOfBet.removeAtIndex(i)
+				self.tableView.reloadData()
 				return true
 			}
 		}
@@ -195,25 +217,41 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 	// MARK: - UITableViewDataSource
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("BetCell", forIndexPath: indexPath) as! BetTableViewCell
 		
-		// Configure the cell..
-		
-		let bet = listOfBet[indexPath.row]
-		
-		cell.bet = bet
-		
-		return cell
-
+		if( indexPath.row != tableView.numberOfRowsInSection(indexPath.section) - 1){
+			let cell = tableView.dequeueReusableCellWithIdentifier("BetCell", forIndexPath: indexPath) as! BetTableViewCell
+			
+			// Configure the cell
+			let bet = listOfBet[indexPath.row]
+			cell.bet = bet
+			cell.delegate = self
+			cell.backgroundColor = UIColor.clearColor()
+			return cell
+		}else{
+			
+			let cell = tableView.dequeueReusableCellWithIdentifier("EngineBetCell", forIndexPath: indexPath) as! BetEngineTableViewCell
+			cell.separatorInset = UIEdgeInsetsMake(0, cell.bounds.size.width, 0, 0)
+			cell.backgroundColor = UIColor.clearColor()
+			return cell
+		}
 	}
 	
+	
+	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return listOfBet.count
+		if(listOfBet.count > 0){
+			return self.listOfBet.count + 1
+		}else{
+			return 0
+		}
 	}
 	
 	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-		
-		return 87
+		if( indexPath.row < listOfBet.count){
+			return 71
+		}else{
+			return 156
+		}
 	}
 	
 	

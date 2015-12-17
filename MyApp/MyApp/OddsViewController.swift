@@ -37,6 +37,10 @@ class OddsViewController: CollapsableTableViewController, OddsMatchDelegate{
 	
 	var numberOfAvailableOdds = OddsModelBuilder().getNumberOfBrand()
 	
+	override func viewWillAppear(animated: Bool) {
+		self.tableView.reloadData()
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -315,6 +319,7 @@ extension OddsViewController{
 			cell.backgroundColor = UIColor.greenColor()
 		}else{
 			cell.backgroundColor = UIColor.whiteColor()
+			cell.backgroundView?.backgroundColor = UIColor.whiteColor()
 		}
 		
 		cell.textLabel?.text = betItem.name!
