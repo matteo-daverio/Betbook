@@ -53,6 +53,9 @@
 		F435EED11C207C37004D8BAA /* TabBarEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435EED01C207C37004D8BAA /* TabBarEnum.swift */; };
 		F435EED51C21AC91004D8BAA /* BetEngineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F435EED41C21AC91004D8BAA /* BetEngineTableViewCell.xib */; };
 		F435EED71C21B5F6004D8BAA /* BetEngineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435EED61C21B5F6004D8BAA /* BetEngineTableViewCell.swift */; };
+		F435EEDD1C24649B004D8BAA /* BetEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435EEDC1C24649B004D8BAA /* BetEngine.swift */; };
+		F435EEE01C256A43004D8BAA /* SBPickerSelector.xib in Resources */ = {isa = PBXBuildFile; fileRef = F435EEDF1C256A43004D8BAA /* SBPickerSelector.xib */; };
+		F435EEE41C256A59004D8BAA /* SBPickerSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = F435EEE31C256A59004D8BAA /* SBPickerSelector.m */; };
 		F440CCAA1C1B39D700BE9F08 /* OddsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F440CCA91C1B39D700BE9F08 /* OddsViewController.xib */; };
 		F440CCAC1C1B3EB000BE9F08 /* OddsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */; };
 		F440CCAE1C1B3F5A00BE9F08 /* OddsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */; };
@@ -128,6 +131,11 @@
 		F435EED01C207C37004D8BAA /* TabBarEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarEnum.swift; sourceTree = "<group>"; };
 		F435EED41C21AC91004D8BAA /* BetEngineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetEngineTableViewCell.xib; sourceTree = "<group>"; };
 		F435EED61C21B5F6004D8BAA /* BetEngineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetEngineTableViewCell.swift; sourceTree = "<group>"; };
+		F435EEDC1C24649B004D8BAA /* BetEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetEngine.swift; sourceTree = "<group>"; };
+		F435EEDF1C256A43004D8BAA /* SBPickerSelector.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SBPickerSelector.xib; sourceTree = "<group>"; };
+		F435EEE11C256A4A004D8BAA /* SBPickerSelector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBPickerSelector.h; sourceTree = "<group>"; };
+		F435EEE21C256A58004D8BAA /* MyApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		F435EEE31C256A59004D8BAA /* SBPickerSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBPickerSelector.m; sourceTree = "<group>"; };
 		F440CCA91C1B39D700BE9F08 /* OddsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsViewController.xib; sourceTree = "<group>"; };
 		F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsTableViewCell.xib; sourceTree = "<group>"; };
 		F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsTableViewCell.swift; sourceTree = "<group>"; };
@@ -225,6 +233,7 @@
 		F418CB941C1618BF0063A112 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F435EEE51C256A80004D8BAA /* SbPickerSelector */,
 				F435ED951C1D7F4D004D8BAA /* Assets.xcassets */,
 				F418CBF61C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib */,
 				F418CBAB1C16C1EF0063A112 /* CollapsableTableScene.swift */,
@@ -256,6 +265,7 @@
 				F418CBF81C1983DF0063A112 /* OddsMatchHttpRequest.swift */,
 				F435EECE1C204DEE004D8BAA /* Bet.swift */,
 				F435EED01C207C37004D8BAA /* TabBarEnum.swift */,
+				F435EEDC1C24649B004D8BAA /* BetEngine.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -348,6 +358,17 @@
 				F418CBD41C174C310063A112 /* RAMTransitionItemAnimation.swift */,
 			);
 			path = TransitionAniamtions;
+			sourceTree = "<group>";
+		};
+		F435EEE51C256A80004D8BAA /* SbPickerSelector */ = {
+			isa = PBXGroup;
+			children = (
+				F435EEE21C256A58004D8BAA /* MyApp-Bridging-Header.h */,
+				F435EEE11C256A4A004D8BAA /* SBPickerSelector.h */,
+				F435EEE31C256A59004D8BAA /* SBPickerSelector.m */,
+				F435EEDF1C256A43004D8BAA /* SBPickerSelector.xib */,
+			);
+			name = SbPickerSelector;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,6 +487,7 @@
 				F440CCAA1C1B39D700BE9F08 /* OddsViewController.xib in Resources */,
 				F440CCAC1C1B3EB000BE9F08 /* OddsTableViewCell.xib in Resources */,
 				F418CBF71C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib in Resources */,
+				F435EEE01C256A43004D8BAA /* SBPickerSelector.xib in Resources */,
 				F418CB821C1610780063A112 /* Cartfile in Resources */,
 				F418CB9F1C16194C0063A112 /* Main.storyboard in Resources */,
 			);
@@ -522,6 +544,7 @@
 				F435EED11C207C37004D8BAA /* TabBarEnum.swift in Sources */,
 				F435EE831C1EC768004D8BAA /* AKPickerView.swift in Sources */,
 				F418CBD91C174C310063A112 /* RAMFumeAnimation.swift in Sources */,
+				F435EEDD1C24649B004D8BAA /* BetEngine.swift in Sources */,
 				F418CBBA1C16E9DF0063A112 /* Match.swift in Sources */,
 				F418CBAC1C16C1EF0063A112 /* CollapsableTableScene.swift in Sources */,
 				F418CBC41C1727950063A112 /* MatchListRequest.swift in Sources */,
@@ -532,6 +555,7 @@
 				F418CBF51C18B2B00063A112 /* OddsMenuSectionHeader.swift in Sources */,
 				F418CB9B1C16192B0063A112 /* MenuSectionHeader.swift in Sources */,
 				F418CBBE1C16EA060063A112 /* SingletonSoccerInformationModel.swift in Sources */,
+				F435EEE41C256A59004D8BAA /* SBPickerSelector.m in Sources */,
 				F418CB9D1C1619310063A112 /* MenuViewController.swift in Sources */,
 				F418C34F1C160EF00063A112 /* AppDelegate.swift in Sources */,
 				F418CBE11C184A640063A112 /* CAPSPageMenu.swift in Sources */,
@@ -679,6 +703,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -693,6 +718,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CM.MyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyApp/MyApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -700,6 +727,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -714,6 +742,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CM.MyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyApp/MyApp-Bridging-Header.h";
 			};
 			name = Release;
 		};

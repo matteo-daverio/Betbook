@@ -22,6 +22,9 @@ class OddsViewController: CollapsableTableViewController, OddsMatchDelegate{
 	let oddsHttpRequester = OddsMatchHttpRequest()
 	var stringForTheWebHelper = StringForTheWebHelper()
 	
+	var myBetControllerNavigator: UINavigationController?
+	var myBetController: BetViewController?
+	
 	var brandPosition: Int?
 	
 	var brand: String?{
@@ -43,6 +46,10 @@ class OddsViewController: CollapsableTableViewController, OddsMatchDelegate{
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+//		self.myBetControllerNavigator = self.tabBarController?.viewControllers![TabBarEnum.Bet.rawValue] as? UINavigationController
+//		
+//		self.myBetController = self.myBetControllerNavigator!.viewControllers[0] as? BetViewController
 		
 		//Importantissimo
 		self.tableView.allowsSelection = false
@@ -292,11 +299,8 @@ extension OddsViewController{
 		let betItem = menu[indexPath.section].items[indexPath.row] as! Item
 		
 		//Prova
-		let myBetControllerNavigator = self.tabBarController?.viewControllers![TabBarEnum.Bet.rawValue] as! UINavigationController
 		
-		let myBetController = myBetControllerNavigator.viewControllers[0] as! BetViewController
-		
-		let arrayBet = myBetController.listOfBet
+		let arrayBet = myBetController!.listOfBet
 		
 		var cellGreen = false
 		

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewDelegate, UITableViewDataSource, UITableViewDelegate {
+class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewDelegate, UITableViewDataSource, UITableViewDelegate{
 
 	@IBOutlet weak var pickerView: AKPickerView!
 	
@@ -56,7 +56,7 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 	
 	override func viewWillAppear(animated: Bool) {
 		if(listOfBet.count > 0){
-			print(listOfBet[0].brand!)
+
 			for(var i = 0; i < listOfBet.count ; i++){
 				if(listOfBet[0].brand! == titles[i]){
 					print(listOfBet[0].brand!)
@@ -70,6 +70,11 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 		}
 		self.tableView.reloadData()
 	}
+	
+	private func updateCalculus(){
+		
+	}
+
 	
 	// MARK: - AKPickerViewDataSource
 	
@@ -198,6 +203,9 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 				self.tableView.reloadData()
 			
 			}
+			
+			self.updateCalculus()
+			
 			return true
 		}
 	}
@@ -232,6 +240,9 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 			let cell = tableView.dequeueReusableCellWithIdentifier("EngineBetCell", forIndexPath: indexPath) as! BetEngineTableViewCell
 			cell.separatorInset = UIEdgeInsetsMake(0, cell.bounds.size.width, 0, 0)
 			cell.backgroundColor = UIColor.clearColor()
+			cell.delegate = self
+			cell.updateUI()
+			
 			return cell
 		}
 	}

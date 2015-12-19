@@ -27,6 +27,8 @@ class MatchOddsViewController: UIViewController {
 		viewController.awayTeam = awayTeam
 		viewController.delegate = self
 		viewController.match = match
+		viewController.myBetControllerNavigator = self.tabBarController?.viewControllers![TabBarEnum.Bet.rawValue] as? UINavigationController
+		viewController.myBetController = viewController.myBetControllerNavigator!.viewControllers[0] as? BetViewController
 		
 		return viewController
 	}
