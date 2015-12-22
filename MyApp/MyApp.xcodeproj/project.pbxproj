@@ -344,8 +344,6 @@
 		F418C3421C160EF00063A112 = {
 			isa = PBXGroup;
 			children = (
-				0BFA99991C26EB2000D2CE2D /* UITextField_Shake.framework */,
-				0BFA99971C26EB1500D2CE2D /* TVButton.framework */,
 				F418C34D1C160EF00063A112 /* MyApp */,
 				F418C3621C160EF00063A112 /* MyAppTests */,
 				F418C36D1C160EF00063A112 /* MyAppUITests */,
@@ -397,6 +395,8 @@
 		F418CB931C1618640063A112 /* FrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				0BFA99971C26EB1500D2CE2D /* TVButton.framework */,
+				0BFA99991C26EB2000D2CE2D /* UITextField_Shake.framework */,
 				F435EE801C1EC4B4004D8BAA /* AKPickerView.framework */,
 				F418CB8F1C16179A0063A112 /* Kanna.framework */,
 				F418CB901C16179A0063A112 /* CollapsableTable.framework */,

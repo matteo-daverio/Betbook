@@ -32,6 +32,8 @@ class StringForTheWebHelper {
 	
 	private var dictionaryOfKindOfBet = [String:String]()
 	
+	private var leagueForCountry = [String:[String]]()
+	
 	
 	//Methods
 	
@@ -45,6 +47,7 @@ class StringForTheWebHelper {
 		addToDictionaryOfCountryOrEuropeanCompetitionDictionary()
 		addToDictionaryOfLeagues()
 		addToDictionaryOfKindOfBet()
+		addLeagueForCountry()
 		
 	}
 	
@@ -247,4 +250,84 @@ class StringForTheWebHelper {
 		
 	}
 	
+	private func addLeagueForCountry(){
+		self.leagueForCountry["Italia"] = ["Serie A","Serie B","Coppa Italia","Super Coppa"]
+		self.leagueForCountry["Inghilterra"] = ["Premier League","FA Cup","Capital One Cup","Cummunity Shield","League One","League Two"]
+		self.leagueForCountry["Spagna"] = ["Liga","Super Coppa","Coppa del Re","Liga Segunda","Liga Segunda B"]
+		self.leagueForCountry["Francia"] = ["Ligue 1","Ligue 2","Coupe de France","Coupe de la Ligue","Super Coppa","National","CFA"]
+		self.leagueForCountry["Germania"] = ["Bundesliga","Bundesliga 2","Super Cup"]
+	}
+	
+	func getAvailableCountry() -> [String]{
+		
+		var nations = [String]()
+		
+		for n in listOfCountryOrEuropeanCompetition {
+			nations.append(n)
+		}
+		
+		return nations
+	}
+	
+	func getAvailableLague(country: String) -> [String]{
+		var league = [String]()
+		
+		for l in self.leagueForCountry[country]! {
+			league.append(l)
+		}
+		
+		return league
+	}
+	
+	func getAvailableOutcome() -> [String]{
+		
+		let outcomes =
+		[	"Esito Finale",
+			"Primo Tempo",
+			"Doppia Chance",
+			"Under/Over 0.5",
+			"Under/Over 1.5",
+			"Under/Over 2.5",
+			"Under/Over 3.5",
+			"Under/Over 4.5",
+			"Gol/No Gol",
+			"Primo Tempo Gol/No Gol",
+			"Secondo Tempo Gol/No Gol",
+			"Pari/Dispari"]
+		
+		return outcomes
+	}
+	
+	func getAvailableValueForKindOfBet(betKind: String) -> [String]{
+		
+		switch(betKind){
+		case "Esito Finale":
+			return ["1","X","2"]
+		case "Primo Tempo":
+			return ["1","X","2"]
+		case "Doppia Chance":
+			return ["1X","X2","12"]
+		case "Under/Over 0.5":
+			return ["Under","Over"]
+		case "Under/Over 1.5":
+			return ["Under","Over"]
+		case "Under/Over 2.5":
+			return ["Under","Over"]
+		case "Under/Over 3.5":
+			return ["Under","Over"]
+		case "Under/Over 4.5":
+			return ["Under","Over"]
+		case "Gol/No Gol":
+			return ["Gol","No Gol"]
+		case "Primo Tempo Gol/No Gol":
+			return ["Gol","No Gol"]
+		case "Secondo Tempo Gol/No Gol":
+			return ["Gol","No Gol"]
+		case "Pari/Dispari":
+			return ["Pari","Dispari"]
+		default:
+			return []
+			
+		}
+	}
 }

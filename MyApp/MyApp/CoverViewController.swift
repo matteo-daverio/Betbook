@@ -10,55 +10,238 @@ import UIKit
 import UITextField_Shake
 
 
-class CoverViewController: UIViewController {
-    
+class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, SBPickerSelectorDelegate, MatchListDelegate {
+	
+	@IBOutlet weak var scrollView: UIScrollView!
+	
     @IBOutlet weak var textFieldBet: HighlightedTextField!
     
     @IBOutlet weak var textFieldVictory: HighlightedTextField!
     
-    @IBOutlet weak var calculateButton: UIButton!
-    
     @IBOutlet weak var selectNation: HighlightedTextField!
-    
-    @IBOutlet weak var selectNationButton: UIButton!
+	
+	private var nationPicker: SBPickerSelector = SBPickerSelector.picker()
+	
+	@IBAction func showNationPicker(sender: UIButton) {
+		
+		//*********************
+		//setup here your picker
+		//*********************
+		
+		self.nationPicker.pickerData = self.populateNation() //picker content
+		self.nationPicker.delegate = self
+		self.nationPicker.pickerType = SBPickerSelectorType.Text
+		self.nationPicker.doneButtonTitle = "Done"
+		self.nationPicker.cancelButtonTitle = "Cancel"
+		
+		let point: CGPoint = view.convertPoint(sender.frame.origin, fromView: sender.superview)
+		var frame: CGRect = sender.frame
+		frame.origin = point
+		self.nationPicker.showPickerIpadFromRect(frame, inView: view)
+		
+	}
     
     @IBOutlet weak var selectLeague: HighlightedTextField!
-    
-    @IBOutlet weak var selectLeagueButton: UIButton!
+	
+	private var leaguePicker: SBPickerSelector = SBPickerSelector.picker()
+	
+	@IBAction func showLeaguePicker(sender: UIButton) {
+		
+		if (!invalidField(selectNation)) {
+			// TODO: invalidare match e outcome se selezionato qualcosa di diverso
+			
+			self.leaguePicker.pickerData = self.populateLeague()
+			self.leaguePicker.delegate = self
+			self.leaguePicker.pickerType = SBPickerSelectorType.Text
+			self.leaguePicker.doneButtonTitle = "Done"
+			self.leaguePicker.cancelButtonTitle = "Cancel"
+			
+			//		let view = self.view
+			
+			let point: CGPoint = view.convertPoint(sender.frame.origin, fromView: sender.superview)
+			var frame: CGRect = sender.frame
+			frame.origin = point
+			
+			self.leaguePicker.showPickerIpadFromRect(frame, inView: view)
+			
+		} else {
+			selectNation.shake()
+		}
+	}
+	
+	
+	@IBOutlet weak var matchListButton: UIButton!
     
     @IBOutlet weak var selectMatch: HighlightedTextField!
-    
-    @IBOutlet weak var selectMatchButton: UIButton!
-    
-    @IBOutlet weak var selectOutcome: HighlightedTextField!
-    
-    @IBOutlet weak var selectOutcomeButton: UIButton!
-    
-    
-    
-    
+	
+	private var matchListPicker: SBPickerSelector = SBPickerSelector.picker()
+	
+	@IBAction func showMatchList(sender: AnyObject) {
+		
+		if (!invalidField(selectLeague)) {
+			// TODO: invalidare outcome se selezionato qualcosa di diverso
+			
+			if(self.matches == nil){
+				matchListModel.getMatchList(self.selectNation.text!, uiLeague: self.selectLeague.text!)
+				spinner.startAnimating()
+			}else{
+				
+				self.spinner.stopAnimating()
+				
+				self.matchListPicker.delegate = self
+				self.matchListPicker.pickerType = SBPickerSelectorType.Text
+				self.matchListPicker.doneButtonTitle = "Done"
+				self.matchListPicker.cancelButtonTitle = "Cancel"
+				
+				let sender = self.matchListButton
+				
+				let point: CGPoint = self.view.convertPoint(sender.frame.origin, fromView: sender.superview)
+				var frame: CGRect = sender.frame
+				frame.origin = point
+				
+				self.matchListPicker.showPickerIpadFromRect(frame, inView: self.view)
+			}
+		
+			
+			
+		} else {
+			selectLeague.shake()
+		}
+		
+	}
+	
+    @IBOutlet weak var selectKindOfBet: HighlightedTextField!
+	
+	private var kindOfBetPicker: SBPickerSelector = SBPickerSelector.picker()
+	
+	@IBAction func showKindOfBetList(sender: UIButton) {
+		
+		if (!invalidField(selectMatch)) {
+			
+			
+			//*********************
+			//setup here your picker
+			//*********************
+			
+			self.kindOfBetPicker.pickerData = self.populateKindOfBet() //picker content
+			self.kindOfBetPicker.delegate = self
+			self.kindOfBetPicker.pickerType = SBPickerSelectorType.Text
+			self.kindOfBetPicker.doneButtonTitle = "Done"
+			self.kindOfBetPicker.cancelButtonTitle = "Cancel"
+			
+			let point: CGPoint = view.convertPoint(sender.frame.origin, fromView: sender.superview)
+			var frame: CGRect = sender.frame
+			frame.origin = point
+			self.kindOfBetPicker.showPickerIpadFromRect(frame, inView: view)
+			
+			
+		} else {
+			selectMatch.shake()
+		}
+	}
+	
+	
+	@IBOutlet weak var selectValeOfBet: HighlightedTextField!
+	
+	private var valueOfBetPicker: SBPickerSelector = SBPickerSelector.picker()
+	
+	
+	@IBAction func showValueOfBet(sender: UIButton) {
+		
+		if (!invalidField(selectKindOfBet)) {
+		
+			self.valueOfBetPicker.pickerData = self.populateValueOfBet()
+			
+			self.valueOfBetPicker.delegate = self
+			self.valueOfBetPicker.pickerType = SBPickerSelectorType.Text
+			self.valueOfBetPicker.doneButtonTitle = "Done"
+			self.valueOfBetPicker.cancelButtonTitle = "Cancel"
+			
+			let point: CGPoint = view.convertPoint(sender.frame.origin, fromView: sender.superview)
+			var frame: CGRect = sender.frame
+			frame.origin = point
+			self.valueOfBetPicker.showPickerIpadFromRect(frame, inView: view)
+			
+		} else {
+			selectKindOfBet.shake()
+		}
+	}
+	
+	
+    @IBOutlet weak var calculateButton: UIButton!
+	
+	let matchListModel = MatchListRequest()
+	
+	var matches: [Match]?{
+		didSet{
+			self.matchListPicker.pickerData = populateMatchList()
+		}
+	}
+	
+	let spinner = UIActivityIndicatorView(frame: CGRectMake(0,0,100,100))
+	
+	
+	
+	
+	
     override func viewDidLoad() {
         
         super.viewDidLoad()
+		
+		//Importantissimo
+		matchListModel.delegate = self
+		
+		spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+		spinner.hidesWhenStopped = true
+		spinner.transform = CGAffineTransformMakeScale(1.5, 1.5)
+		let center = self.view.center
+		spinner.center = CGPointMake(center.x, center.y-center.y*0.30)
+		spinner.color = UIColor.blackColor()
+		spinner.backgroundColor = UIColor.clearColor()
+		self.view.addSubview(spinner)
+	
+		scrollView.scrollEnabled = true
+		
+		scrollView.contentSize = self.view.frame.size
         
         self.view.backgroundColor = UIColor(red: 248/255, green: 246/255, blue: 246/255, alpha: 1)
         
-        let screenWidth = self.view.frame.size.width
-        let screenHeight = self.view.frame.size.height
-        
-        createBetField(screenWidth, screenHeight: screenHeight)
-        createVictoryField(screenWidth, screenHeight: screenHeight)
-        createMatchSelector(screenWidth, screenHeight: screenHeight)
-        createButton(screenWidth, screenHeight: screenHeight)
+        createBetField()
+        createVictoryField()
+        createMatchSelector()
+        createButton()
         
     }
+	
+	override func shouldAutorotate() -> Bool {
+		return false
+	}
+	
+	override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+		return UIInterfaceOrientationMask.Portrait
+	}
+	
+	func textFieldDidBeginEditing(textField: UITextField) {
+		scrollView.setContentOffset(CGPointMake(0, 300), animated: true)
+	}
+	
+	func textFieldShouldReturn(textField: UITextField) -> Bool {
+		
+		textField.resignFirstResponder()
+		
+		return true
+	}
+	
+	func textFieldDidEndEditing(textField: UITextField) {
+		scrollView.setContentOffset(CGPointMake(0, 0), animated: true)
+	}
     
-    func createBetField(screenWidth: CGFloat, screenHeight: CGFloat) {
+    func createBetField() {
         
         //let textFieldFrameBet = CGRect(x: 20, y: screenHeight / 8, width: screenWidth - (2 * 20), height: 40)
         //textFieldBet = HighlightedTextField(frame: textFieldFrameBet)
         
-        textFieldBet.frame = CGRect(x: 20, y: screenHeight / 8, width: screenWidth - (2 * 20), height: 40)
+//        textFieldBet.frame = CGRect(x: 20, y: screenHeight / 8, width: screenWidth - (2 * 20), height: 40)
         textFieldBet.borderStyle = UITextBorderStyle.None
         textFieldBet.borderInactiveColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
         textFieldBet.borderActiveColor = UIColor(red: 90/255, green: 190/255, blue: 246/255, alpha: 1)
@@ -70,7 +253,7 @@ class CoverViewController: UIViewController {
         
     }
     
-    func createVictoryField(screenWidth: CGFloat, screenHeight: CGFloat) {
+    func createVictoryField() {
         
         //let textFieldFrameVictory = CGRect(x: 20, y: screenHeight / 4, width: screenWidth - (2 * 20), height: 40)
         //textFieldVictory = HoshiTextField(frame: textFieldFrameVictory)
@@ -86,7 +269,7 @@ class CoverViewController: UIViewController {
         
     }
     
-    func createMatchSelector(screenWidth: CGFloat, screenHeight: CGFloat) {
+    func createMatchSelector() {
         
         createNationSection()
         createLeagueSection()
@@ -95,11 +278,13 @@ class CoverViewController: UIViewController {
         
     }
     
-    func createButton(screenWidth: CGFloat, screenHeight: CGFloat) {
+    func createButton() {
         
         //let calculateButton = TVButton(frame: CGRect(x: 40, y: 300, width: 80, height: 40))
+		
+		self.calculateButton.frame.size = CGSize(width: 100, height: 100)
         
-        calculateButton.backgroundColor = UIColor.redColor()
+        calculateButton.backgroundColor = UIColor(red: 215.0/255.0, green: 227.0/255.0, blue: 244.0/255.0, alpha: 1.0)
         //let background = TVButtonLayer(image: UIImage(named: "")!)
         //let pattern = TVButtonLayer(image: UIImage(named: "")!)
         //let top = TVButtonLayer(image: UIImage(named: "")!)
@@ -121,9 +306,9 @@ class CoverViewController: UIViewController {
         selectNation.placeholder = "Nazione:    (ex. Italia)"
         selectNation.upperPlaceholder = "Nazione:"
         
-        // Button Creation
-        selectNationButton.addTarget(self, action: "selectNation:", forControlEvents: .TouchUpInside)
-        
+//        // Button Creation
+//        selectNationButton.addTarget(self, action: "selectNation:", forControlEvents: .TouchUpInside)
+		
     }
     
     func createLeagueSection() {
@@ -136,9 +321,9 @@ class CoverViewController: UIViewController {
         selectLeague.placeholder = "Campionato:    (ex. Serie A)"
         selectLeague.upperPlaceholder = "Campionato:"
         
-        // Button Creation
-        selectLeagueButton.addTarget(self, action: "selectLeague:", forControlEvents: .TouchUpInside)
-        
+//        // Button Creation
+//        selectLeagueButton.addTarget(self, action: "selectLeague:", forControlEvents: .TouchUpInside)
+		
     }
     
     func createMatchSection() {
@@ -151,24 +336,24 @@ class CoverViewController: UIViewController {
         selectMatch.placeholder = "Partita:    (ex. Milan - Inter)"
         selectMatch.upperPlaceholder = "Partita:"
         
-        // Button Creation
-        selectMatchButton.addTarget(self, action: "selectMatch:", forControlEvents: .TouchUpInside)
-        
+//        // Button Creation
+//        selectMatchButton.addTarget(self, action: "selectMatch:", forControlEvents: .TouchUpInside)
+		
     }
     
     func createOutcomeSection() {
         
         // TextField Creation
-        selectOutcome.borderStyle = UITextBorderStyle.None
-        selectOutcome.borderInactiveColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
-        selectOutcome.borderActiveColor = UIColor(red: 90/255, green: 190/255, blue: 246/255, alpha: 1)
-        selectOutcome.placeholderColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
-        selectOutcome.placeholder = "Risultato:    (ex. 1)"
-        selectOutcome.upperPlaceholder = "Risultato:"
+        selectKindOfBet.borderStyle = UITextBorderStyle.None
+        selectKindOfBet.borderInactiveColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
+        selectKindOfBet.borderActiveColor = UIColor(red: 90/255, green: 190/255, blue: 246/255, alpha: 1)
+        selectKindOfBet.placeholderColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
+        selectKindOfBet.placeholder = "Risultato:    (ex. 1)"
+        selectKindOfBet.upperPlaceholder = "Risultato:"
         
-        // Button Creation
-        selectOutcomeButton.addTarget(self, action: "selectOutcome:", forControlEvents: .TouchUpInside)
-        
+//        // Button Creation
+//        selectOutcomeButton.addTarget(self, action: "selectOutcome:", forControlEvents: .TouchUpInside)
+		
     }
     
     
@@ -219,23 +404,23 @@ class CoverViewController: UIViewController {
             textFieldBet.shake()
             if (invalidVictoryField()) {
                 textFieldVictory.shake()
-                if (invalidField(selectOutcome)) {
-                    selectOutcome.shake()
+                if (invalidField(selectKindOfBet)) {
+                    selectKindOfBet.shake()
                 }
             } else {
-                if (invalidField(selectOutcome)) {
-                    selectOutcome.shake()
+                if (invalidField(selectKindOfBet)) {
+                    selectKindOfBet.shake()
                 }
             }
         } else {
             if (invalidVictoryField()) {
                 textFieldVictory.shake()
-                if (invalidField(selectOutcome)) {
-                    selectOutcome.shake()
+                if (invalidField(selectKindOfBet)) {
+                    selectKindOfBet.shake()
                 }
             } else {
-                if (invalidField(selectOutcome)) {
-                    selectOutcome.shake()
+                if (invalidField(selectKindOfBet)) {
+                    selectKindOfBet.shake()
                 } else {
                     
                     // valid input
@@ -269,5 +454,82 @@ class CoverViewController: UIViewController {
         }
         return false
     }
-    
+	
+	func setMatchList(matchList: [Match]?){
+		
+		dispatch_async(dispatch_get_main_queue()){ () -> Void in
+			if( matchList == nil ){
+				print("Match non disponibili")
+			}else{
+				self.matches = matchList!
+				self.spinner.stopAnimating()
+				
+				self.matchListPicker.delegate = self
+				self.matchListPicker.pickerType = SBPickerSelectorType.Text
+				self.matchListPicker.doneButtonTitle = "Done"
+				self.matchListPicker.cancelButtonTitle = "Cancel"
+				
+				let sender = self.matchListButton
+				
+				let point: CGPoint = self.view.convertPoint(sender.frame.origin, fromView: sender.superview)
+				var frame: CGRect = sender.frame
+				frame.origin = point
+				
+				self.matchListPicker.showPickerIpadFromRect(frame, inView: self.view)
+				
+			}
+		}
+		
+	}
+	
+	
+	//MARK: SBPickerSelectorDelegate
+	func pickerSelector(selector: SBPickerSelector!, selectedValue value: String!, index idx: Int) {
+		
+		switch(selector){
+		case self.nationPicker:
+			self.selectNation.text = value
+		case self.leaguePicker:
+			self.selectLeague.text = value
+		case self.matchListPicker:
+			self.selectMatch.text = value
+		case self.kindOfBetPicker:
+			self.selectKindOfBet.text = value
+		case self.valueOfBetPicker:
+			self.selectValeOfBet.text = value
+		default: break
+		}
+	}
+
+	
+	
+	
+	/////////////
+	
+	private func populateNation() -> [String]{
+		return StringForTheWebHelper().getAvailableCountry()
+	}
+	
+	private func populateLeague() -> [String]{
+			return StringForTheWebHelper().getAvailableLague(self.selectNation.text!)
+	}
+	
+	private func populateMatchList() -> [String]{
+		
+		var listOfMatches = [String]()
+		
+		for m in self.matches! {
+			listOfMatches.append(m.homeTeam! + " " + m.awayTeam!)
+		}
+		
+		return listOfMatches
+	}
+	
+	private func populateKindOfBet() -> [String]{
+		return StringForTheWebHelper().getAvailableOutcome()
+	}
+	
+	private func populateValueOfBet() -> [String]{
+		return StringForTheWebHelper().getAvailableValueForKindOfBet(self.selectKindOfBet.text!)
+	}
 }
