@@ -260,6 +260,7 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         textFieldBet.placeholderColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
         textFieldBet.placeholder = "Somma giocata €    0.00"
         textFieldBet.upperPlaceholder = "Somma giocata €"
+        textFieldBet.placeholderFontScale = 0.65
         textFieldBet.keyboardType = UIKeyboardType.DecimalPad
         textFieldBet.delegate = self
         
@@ -290,7 +291,8 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         createNationSection()
         createLeagueSection()
         createMatchSection()
-        createOutcomeSection()
+        createKindOfBetSection()
+        createValueOfBetSection()
         
     }
     
@@ -358,7 +360,7 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         selectMatch.borderInactiveColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
         selectMatch.borderActiveColor = UIColor(red: 90/255, green: 190/255, blue: 246/255, alpha: 1)
         selectMatch.placeholderColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
-        selectMatch.placeholder = "Partita:    (ex. Milan - Inter)"
+        selectMatch.placeholder = "Partita:    (ex. Milan Inter)"
         selectMatch.upperPlaceholder = "Partita:"
         
 //        // Button Creation
@@ -366,61 +368,34 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 		
     }
     
-    func createOutcomeSection() {
+    func createKindOfBetSection() {
         
         // TextField Creation
         selectKindOfBet.borderStyle = UITextBorderStyle.None
         selectKindOfBet.borderInactiveColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
         selectKindOfBet.borderActiveColor = UIColor(red: 90/255, green: 190/255, blue: 246/255, alpha: 1)
         selectKindOfBet.placeholderColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
-        selectKindOfBet.placeholder = "Risultato:    (ex. 1)"
-        selectKindOfBet.upperPlaceholder = "Risultato:"
+        selectKindOfBet.placeholder = "Tipo di Scommessa:    (ex. Esito Finale)"
+        selectKindOfBet.upperPlaceholder = "Tipo di Scommessa:"
         
 //        // Button Creation
 //        selectOutcomeButton.addTarget(self, action: "selectOutcome:", forControlEvents: .TouchUpInside)
 		
     }
     
-    
-    
-    
-    // button SelectNation press
-    func selectNation(sender: UIButton!) {
-        // TODO: invalidare league, match e outcome se selezionato qualcosa di diverso
-    }
-    
-    // button selectLeague press
-    func selectLeague(sender: UIButton!) {
+    func createValueOfBetSection() {
         
-        if (!invalidField(selectNation)) {
-            // TODO: invalidare match e outcome se selezionato qualcosa di diverso
-        } else {
-            selectNation.shake()
-        }
+        // TextField Creation
+        selectValeOfBet.borderStyle = UITextBorderStyle.None
+        selectValeOfBet.borderInactiveColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
+        selectValeOfBet.borderActiveColor = UIColor(red: 90/255, green: 190/255, blue: 246/255, alpha: 1)
+        selectValeOfBet.placeholderColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
+        selectValeOfBet.placeholder = "Risultato:    (ex. 1)"
+        selectValeOfBet.upperPlaceholder = "Risultato:"
         
     }
     
-    // button selectMatch press
-    func selectMatch(sender: UIButton!) {
-        
-        if (!invalidField(selectLeague)) {
-            // TODO: invalidare outcome se selezionato qualcosa di diverso
-        } else {
-            selectLeague.shake()
-        }
-        
-    }
     
-    // button selectOutcome press
-    func selectOutcome(sender: UIButton!) {
-        
-        if (!invalidField(selectMatch)) {
-            
-        } else {
-            selectMatch.shake()
-        }
-        
-    }
     
     // button Calculate press
     func calculate(sender: UIButton!) {
@@ -429,23 +404,23 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
             textFieldBet.shake()
             if (invalidVictoryField()) {
                 textFieldVictory.shake()
-                if (invalidField(selectKindOfBet)) {
-                    selectKindOfBet.shake()
+                if (invalidField(selectValeOfBet)) {
+                    selectValeOfBet.shake()
                 }
             } else {
-                if (invalidField(selectKindOfBet)) {
-                    selectKindOfBet.shake()
+                if (invalidField(selectValeOfBet)) {
+                    selectValeOfBet.shake()
                 }
             }
         } else {
             if (invalidVictoryField()) {
                 textFieldVictory.shake()
-                if (invalidField(selectKindOfBet)) {
-                    selectKindOfBet.shake()
+                if (invalidField(selectValeOfBet)) {
+                    selectValeOfBet.shake()
                 }
             } else {
-                if (invalidField(selectKindOfBet)) {
-                    selectKindOfBet.shake()
+                if (invalidField(selectValeOfBet)) {
+                    selectValeOfBet.shake()
                 } else {
                     
                     // valid input

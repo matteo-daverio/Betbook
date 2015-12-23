@@ -85,13 +85,13 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JcV-20-bGU">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giocata" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="bye-cE-gw1">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GIOCATA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="bye-cE-gw1">
                                         <rect key="frame" x="8" y="8" width="584" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="nnz-pS-vo4"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <color key="textColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=compact" misplaced="YES">
                                             <rect key="frame" x="8" y="8" width="584" height="18"/>
@@ -239,28 +239,36 @@
                                             <rect key="frame" x="8" y="270" width="784" height="30"/>
                                         </variation>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvi-lF-8Sp">
-                                        <rect key="frame" x="25" y="319" width="550" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3X-pM-oH6" customClass="MKButton" customModule="MyApp">
+                                        <rect key="frame" x="260" y="378" width="80" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="e5S-AX-Vs5"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="500" constant="80" id="TGq-UH-WPy"/>
+                                            <constraint firstAttribute="width" secondItem="Y3X-pM-oH6" secondAttribute="height" multiplier="1:1" id="eHU-P3-9Ea"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="500" constant="80" id="w8V-ww-pOT"/>
+                                            <constraint firstAttribute="height" constant="40" id="xFW-n8-Ua2"/>
+                                            <constraint firstAttribute="width" constant="120" id="y7i-vu-tIW"/>
                                         </constraints>
-                                        <state key="normal">
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Go!">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="8" y="270" width="784" height="30"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="xFW-n8-Ua2"/>
+                                                <exclude reference="y7i-vu-tIW"/>
+                                            </mask>
                                         </variation>
-                                        <connections>
-                                            <action selector="showValueOfBet:" destination="WJF-D3-5eu" eventType="touchUpInside" id="6bw-Zj-jfE"/>
-                                        </connections>
+                                        <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="277" y="409" width="46" height="31"/>
+                                        </variation>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Partita" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="coc-pl-d4r">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="PARTITA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="coc-pl-d4r">
                                         <rect key="frame" x="8" y="121" width="584" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Azk-pe-VNN"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <color key="textColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=compact" misplaced="YES">
                                             <rect key="frame" x="8" y="110" width="584" height="18"/>
@@ -345,28 +353,20 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3X-pM-oH6" customClass="MKButton" customModule="MyApp">
-                                        <rect key="frame" x="260" y="378" width="80" height="80"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvi-lF-8Sp">
+                                        <rect key="frame" x="25" y="319" width="550" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="500" constant="80" id="TGq-UH-WPy"/>
-                                            <constraint firstAttribute="width" secondItem="Y3X-pM-oH6" secondAttribute="height" multiplier="1:1" id="eHU-P3-9Ea"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="500" constant="80" id="w8V-ww-pOT"/>
-                                            <constraint firstAttribute="height" constant="40" id="xFW-n8-Ua2"/>
-                                            <constraint firstAttribute="width" constant="120" id="y7i-vu-tIW"/>
+                                            <constraint firstAttribute="height" constant="30" id="e5S-AX-Vs5"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="Go!">
+                                        <state key="normal">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="xFW-n8-Ua2"/>
-                                                <exclude reference="y7i-vu-tIW"/>
-                                            </mask>
+                                        <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="8" y="270" width="784" height="30"/>
                                         </variation>
-                                        <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="277" y="409" width="46" height="31"/>
-                                        </variation>
+                                        <connections>
+                                            <action selector="showValueOfBet:" destination="WJF-D3-5eu" eventType="touchUpInside" id="6bw-Zj-jfE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
