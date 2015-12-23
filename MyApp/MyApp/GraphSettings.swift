@@ -48,7 +48,7 @@ struct GraphSettings {
     }
     
     static func chartFrame(containerBounds: CGRect) -> CGRect {
-        return CGRectMake(0, 70, containerBounds.size.width, containerBounds.size.height - 70)
+        return CGRectMake(containerBounds.origin.x, containerBounds.origin.y, containerBounds.width, containerBounds.height)
     }
     
     static var labelSettings: ChartLabelSettings {

@@ -18,6 +18,8 @@ class GraphViewController: UIViewController {
     private var potentialWinning: Double?
     private var brandMultiplier: Double?
     
+	@IBOutlet weak var chartView: UIView!
+	
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -41,8 +43,16 @@ class GraphViewController: UIViewController {
         
         let xModel = ChartAxisModel(axisValues: xValues, axisTitleLabel: ChartAxisLabel(text: "Betting Amount", settings: labelSettings))
         let yModel = ChartAxisModel(axisValues: yValues, axisTitleLabel: ChartAxisLabel(text: "Earning Amount", settings: labelSettings.defaultVertical()))
-        
-        let chartFrame = GraphSettings.chartFrame(self.view.bounds)
+		
+		let bounds = UIScreen.mainScreen().bounds
+		let width = bounds.size.width - bounds.size.width * 0.05
+		let height = bounds.size.height - (bounds.size.height * 0.30)
+		
+		let rect = CGRect(x: 0, y: 0, width: width, height: height)
+		
+        let chartFrame = GraphSettings.chartFrame(rect)
+		print("Eccomi")
+		print(self.chartView.bounds)
         let coordsSpace = ChartCoordsSpaceLeftBottomSingleAxis(chartSettings: GraphSettings.chartSettings, chartFrame: chartFrame, xModel: xModel, yModel: yModel)
         
         let (xAxis, yAxis, innerFrame) = (coordsSpace.xAxis, coordsSpace.yAxis, coordsSpace.chartInnerFrame)
@@ -72,7 +82,7 @@ class GraphViewController: UIViewController {
             ]
         )
         
-        self.view.addSubview(chart.view)
+        self.chartView.addSubview(chart.view)
         self.chart = chart
         
     }

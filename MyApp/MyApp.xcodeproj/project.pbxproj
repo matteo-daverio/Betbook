@@ -105,6 +105,7 @@
 		F440CCAA1C1B39D700BE9F08 /* OddsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F440CCA91C1B39D700BE9F08 /* OddsViewController.xib */; };
 		F440CCAC1C1B3EB000BE9F08 /* OddsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */; };
 		F440CCAE1C1B3F5A00BE9F08 /* OddsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */; };
+		F4F5E0B11C2B185900C424A6 /* OnlineGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F5E0B01C2B185900C424A6 /* OnlineGraphViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -231,6 +232,7 @@
 		F440CCA91C1B39D700BE9F08 /* OddsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsViewController.xib; sourceTree = "<group>"; };
 		F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsTableViewCell.xib; sourceTree = "<group>"; };
 		F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsTableViewCell.swift; sourceTree = "<group>"; };
+		F4F5E0B01C2B185900C424A6 /* OnlineGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineGraphViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -483,6 +485,7 @@
 				0BFA99F61C26F39500D2CE2D /* CustomPointsLayer.swift */,
 				0BFA99F81C26F3B900D2CE2D /* CustomLineTrackerLayer.swift */,
 				0BFA99FA1C26F3D200D2CE2D /* GraphViewController.swift */,
+				F4F5E0B01C2B185900C424A6 /* OnlineGraphViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -791,6 +794,7 @@
 				0BFA99EE1C26F28900D2CE2D /* ChartLinesView.swift in Sources */,
 				F418CB9B1C16192B0063A112 /* MenuSectionHeader.swift in Sources */,
 				F418CBBE1C16EA060063A112 /* SingletonSoccerInformationModel.swift in Sources */,
+				F4F5E0B11C2B185900C424A6 /* OnlineGraphViewController.swift in Sources */,
 				F435EEE41C256A59004D8BAA /* SBPickerSelector.m in Sources */,
 				0BFA99A01C26EE0900D2CE2D /* CoverViewController.swift in Sources */,
 				0BFA99CD1C26F1DF00D2CE2D /* ChartAxisYHighLayerDefault.swift in Sources */,

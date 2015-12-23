@@ -261,6 +261,9 @@
                                         <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="277" y="409" width="46" height="31"/>
                                         </variation>
+                                        <connections>
+                                            <segue destination="VCl-Da-4yk" kind="show" identifier="showOfflineGraphMVC" id="BzX-kR-T8A"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="PARTITA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="coc-pl-d4r">
                                         <rect key="frame" x="8" y="121" width="584" height="20"/>
@@ -512,10 +515,63 @@
             </objects>
             <point key="canvasLocation" x="1375" y="-822"/>
         </scene>
-        <!--View Controller-->
+        <!--Online Graph View Controller-->
+        <scene sceneID="w6B-fn-J3K">
+            <objects>
+                <viewController id="VCl-Da-4yk" customClass="OnlineGraphViewController" customModule="MyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bpB-sp-WUK"/>
+                        <viewControllerLayoutGuide type="bottom" id="B3W-8n-h2W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8pk-hK-yxE">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uBL-wj-R9i" customClass="AKPickerView" customModule="MyApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                <color key="backgroundColor" red="0.062745098040000002" green="0.074509803920000006" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="xXd-Pj-Vxy"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightedTextColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lH4-Hp-lQR">
+                                <rect key="frame" x="0.0" y="58" width="600" height="429"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lH4-Hp-lQR" firstAttribute="leading" secondItem="uBL-wj-R9i" secondAttribute="leading" id="4kD-eK-jcg"/>
+                            <constraint firstItem="lH4-Hp-lQR" firstAttribute="trailing" secondItem="uBL-wj-R9i" secondAttribute="trailing" id="ChA-q8-RQy"/>
+                            <constraint firstItem="lH4-Hp-lQR" firstAttribute="top" secondItem="uBL-wj-R9i" secondAttribute="bottom" constant="8" symbolic="YES" id="QHZ-Pu-IFp"/>
+                            <constraint firstItem="uBL-wj-R9i" firstAttribute="top" secondItem="bpB-sp-WUK" secondAttribute="bottom" id="XQc-aa-RWQ"/>
+                            <constraint firstAttribute="trailing" secondItem="uBL-wj-R9i" secondAttribute="trailing" id="XxZ-wy-q0s"/>
+                            <constraint firstItem="lH4-Hp-lQR" firstAttribute="bottom" secondItem="B3W-8n-h2W" secondAttribute="top" id="ZVn-jy-CUM"/>
+                            <constraint firstItem="uBL-wj-R9i" firstAttribute="leading" secondItem="8pk-hK-yxE" secondAttribute="leading" id="v6o-yu-SWy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="brandPicker" destination="uBL-wj-R9i" id="Xiz-or-jH7"/>
+                        <outlet property="chartView" destination="lH4-Hp-lQR" id="Rhx-mZ-Jhj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pCe-Jw-r9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2085" y="-698"/>
+        </scene>
+        <!--Graph View Controller-->
         <scene sceneID="BSk-hN-nyn">
             <objects>
-                <viewController id="nSp-sv-JU9" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ptI-tP-XX7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="nSp-sv-JU9" customClass="GraphViewController" customModule="MyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WFn-ez-War"/>
                         <viewControllerLayoutGuide type="bottom" id="r1H-PY-H4f"/>
@@ -523,12 +579,37 @@
                     <view key="view" contentMode="scaleToFill" id="8um-9s-AUW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vvx-VV-rY8">
+                                <rect key="frame" x="20" y="20" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ktM-NS-g0o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vNl-xM-YIi" userLabel="ViewChart">
+                                <rect key="frame" x="0.0" y="58" width="600" height="421"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="Vvx-VV-rY8" secondAttribute="leading" id="LyZ-er-mgs"/>
+                            <constraint firstItem="vNl-xM-YIi" firstAttribute="centerX" secondItem="Vvx-VV-rY8" secondAttribute="centerX" id="M1u-V5-9el"/>
+                            <constraint firstItem="vNl-xM-YIi" firstAttribute="leading" secondItem="8um-9s-AUW" secondAttribute="leading" id="WPD-j3-h2L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vvx-VV-rY8" secondAttribute="trailing" id="YqV-gO-xDc"/>
+                            <constraint firstItem="r1H-PY-H4f" firstAttribute="top" secondItem="vNl-xM-YIi" secondAttribute="bottom" constant="8" symbolic="YES" id="rK7-Rf-5kw"/>
+                            <constraint firstItem="Vvx-VV-rY8" firstAttribute="top" secondItem="WFn-ez-War" secondAttribute="bottom" constant="20" id="u8E-BL-AJz"/>
+                            <constraint firstItem="vNl-xM-YIi" firstAttribute="top" secondItem="Vvx-VV-rY8" secondAttribute="bottom" constant="8" symbolic="YES" id="ztG-L1-3uC"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chartView" destination="vNl-xM-YIi" id="NW1-wk-rkD"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ptI-tP-XX7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2237" y="-822"/>
+            <point key="canvasLocation" x="2237" y="-1910"/>
         </scene>
         <!--Match List Table View Controller-->
         <scene sceneID="wR7-vH-9OT">
@@ -577,7 +658,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="1gc-vB-5Wi">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="3" translatesAutoresizingMaskIntoConstraints="NO" id="1gc-vB-5Wi">
                                             <rect key="frame" x="459" y="50" width="100" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="an2-sM-Q3f"/>

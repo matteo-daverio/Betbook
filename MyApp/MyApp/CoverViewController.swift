@@ -665,5 +665,11 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         }
         
     }
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if(segue.identifier == "showOfflineGraphMVC"){
+			
+		}
+	}
 
 }
