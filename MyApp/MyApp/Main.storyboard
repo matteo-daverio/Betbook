@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hys-Qt-Hy9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hys-Qt-Hy9">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -86,9 +86,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GIOCATA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="bye-cE-gw1">
-                                        <rect key="frame" x="8" y="8" width="584" height="30"/>
+                                        <rect key="frame" x="8" y="8" width="584" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="nnz-pS-vo4"/>
+                                            <constraint firstAttribute="height" constant="20" id="nnz-pS-vo4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                         <color key="textColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
@@ -101,9 +101,9 @@
                                         </variation>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xEb-t9-e0r" customClass="HighlightedTextField" customModule="MyApp" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="159" width="550" height="30"/>
+                                        <rect key="frame" x="25" y="149" width="550" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="BlE-XQ-wns"/>
+                                            <constraint firstAttribute="height" constant="35" id="BlE-XQ-wns"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -115,9 +115,9 @@
                                         </variation>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jg3-Zv-aCL" customClass="HighlightedTextField" customModule="MyApp" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="199" width="550" height="30"/>
+                                        <rect key="frame" x="25" y="194" width="550" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="31w-Qj-2ck"/>
+                                            <constraint firstAttribute="height" constant="35" id="31w-Qj-2ck"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -129,9 +129,9 @@
                                         </variation>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cpv-7I-IhT" customClass="HighlightedTextField" customModule="MyApp" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="239" width="550" height="30"/>
+                                        <rect key="frame" x="25" y="239" width="550" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="eVt-bd-kz3"/>
+                                            <constraint firstAttribute="height" constant="35" id="eVt-bd-kz3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -143,9 +143,9 @@
                                         </variation>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fZ2-g1-Ex3" customClass="HighlightedTextField" customModule="MyApp" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="279" width="550" height="30"/>
+                                        <rect key="frame" x="25" y="284" width="550" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="MvZ-8K-JkE"/>
+                                            <constraint firstAttribute="height" constant="35" id="MvZ-8K-JkE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -157,9 +157,9 @@
                                         </variation>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ls-yc-Ztl">
-                                        <rect key="frame" x="25" y="279" width="550" height="30"/>
+                                        <rect key="frame" x="25" y="284" width="550" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="X1d-mw-g3k"/>
+                                            <constraint firstAttribute="height" constant="35" id="X1d-mw-g3k"/>
                                         </constraints>
                                         <state key="normal">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -172,9 +172,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uzl-hZ-WE8">
-                                        <rect key="frame" x="25" y="239" width="550" height="30"/>
+                                        <rect key="frame" x="25" y="239" width="550" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="14O-by-A7a"/>
+                                            <constraint firstAttribute="height" constant="35" id="14O-by-A7a"/>
                                         </constraints>
                                         <state key="normal">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -190,9 +190,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4y-bj-IVJ">
-                                        <rect key="frame" x="25" y="199" width="550" height="30"/>
+                                        <rect key="frame" x="25" y="194" width="550" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Zlr-D4-fEs"/>
+                                            <constraint firstAttribute="height" constant="35" id="Zlr-D4-fEs"/>
                                         </constraints>
                                         <state key="normal">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -208,9 +208,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNh-32-AaE">
-                                        <rect key="frame" x="25" y="159" width="550" height="30"/>
+                                        <rect key="frame" x="25" y="149" width="550" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="hcK-s8-X7H"/>
+                                            <constraint firstAttribute="height" constant="35" id="hcK-s8-X7H"/>
                                         </constraints>
                                         <state key="normal">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -226,9 +226,9 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="753" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="81P-AV-acr" customClass="HighlightedTextField" customModule="MyApp" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="319" width="550" height="30"/>
+                                        <rect key="frame" x="25" y="329" width="550" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="ekR-bp-eNS"/>
+                                            <constraint firstAttribute="height" constant="35" id="ekR-bp-eNS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -240,11 +240,11 @@
                                         </variation>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3X-pM-oH6" customClass="MKButton" customModule="MyApp">
-                                        <rect key="frame" x="260" y="378" width="80" height="80"/>
+                                        <rect key="frame" x="270" y="393" width="60" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="500" constant="80" id="TGq-UH-WPy"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="500" constant="60" id="TGq-UH-WPy"/>
                                             <constraint firstAttribute="width" secondItem="Y3X-pM-oH6" secondAttribute="height" multiplier="1:1" id="eHU-P3-9Ea"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="500" constant="80" id="w8V-ww-pOT"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="500" constant="60" id="w8V-ww-pOT"/>
                                             <constraint firstAttribute="height" constant="40" id="xFW-n8-Ua2"/>
                                             <constraint firstAttribute="width" constant="120" id="y7i-vu-tIW"/>
                                         </constraints>
@@ -263,9 +263,9 @@
                                         </variation>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="PARTITA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="coc-pl-d4r">
-                                        <rect key="frame" x="8" y="121" width="584" height="30"/>
+                                        <rect key="frame" x="8" y="121" width="584" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Azk-pe-VNN"/>
+                                            <constraint firstAttribute="height" constant="20" id="Azk-pe-VNN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                         <color key="textColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
@@ -278,9 +278,9 @@
                                         </variation>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tro-bI-Suo" customClass="HighlightedTextField" customModule="MyApp" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="38" width="550" height="30"/>
+                                        <rect key="frame" x="25" y="28" width="550" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="n1O-4j-42G"/>
+                                            <constraint firstAttribute="height" constant="35" id="n1O-4j-42G"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -295,9 +295,9 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sZW-3m-VPL" customClass="HighlightedTextField" customModule="MyApp" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="78" width="550" height="30"/>
+                                        <rect key="frame" x="25" y="73" width="550" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="zah-v2-uNH"/>
+                                            <constraint firstAttribute="height" constant="35" id="zah-v2-uNH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -312,7 +312,7 @@
                                         </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2SF-bQ-nUY">
-                                        <rect key="frame" x="0.0" y="349" width="600" height="29"/>
+                                        <rect key="frame" x="0.0" y="359" width="600" height="34"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="g5F-OY-TRJ"/>
@@ -326,7 +326,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="um6-l1-miH">
-                                        <rect key="frame" x="0.0" y="378" width="260" height="80"/>
+                                        <rect key="frame" x="0.0" y="393" width="270" height="60"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="GG9-ub-yYb"/>
@@ -338,11 +338,11 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fiY-qd-pmr">
-                                        <rect key="frame" x="340" y="378" width="260" height="80"/>
+                                        <rect key="frame" x="330" y="393" width="270" height="60"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kAk-aa-SyS">
-                                        <rect key="frame" x="0.0" y="458" width="600" height="29"/>
+                                        <rect key="frame" x="0.0" y="453" width="600" height="34"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="fMg-Nd-0dQ"/>
@@ -354,7 +354,7 @@
                                         </variation>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvi-lF-8Sp">
-                                        <rect key="frame" x="25" y="319" width="550" height="30"/>
+                                        <rect key="frame" x="25" y="329" width="550" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="e5S-AX-Vs5"/>
                                         </constraints>
