@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BF7AC581C2B3429009C6990 /* CoverageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7AC571C2B3429009C6990 /* CoverageCalculator.swift */; };
+		0BF7AC5A1C2B37E7009C6990 /* IGSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7AC591C2B37E7009C6990 /* IGSwitch.swift */; };
 		0BFA999A1C26EB2000D2CE2D /* UITextField_Shake.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFA99991C26EB2000D2CE2D /* UITextField_Shake.framework */; };
 		0BFA999C1C26ED1800D2CE2D /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA999B1C26ED1800D2CE2D /* TextFieldsEffects.swift */; };
 		0BFA999E1C26ED6800D2CE2D /* HighlightedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA999D1C26ED6800D2CE2D /* HighlightedTextField.swift */; };
@@ -126,6 +128,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BF7AC571C2B3429009C6990 /* CoverageCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverageCalculator.swift; sourceTree = "<group>"; };
+		0BF7AC591C2B37E7009C6990 /* IGSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IGSwitch.swift; sourceTree = "<group>"; };
 		0BFA99991C26EB2000D2CE2D /* UITextField_Shake.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UITextField_Shake.framework; path = Carthage/Build/iOS/UITextField_Shake.framework; sourceTree = "<group>"; };
 		0BFA999B1C26ED1800D2CE2D /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
 		0BFA999D1C26ED6800D2CE2D /* HighlightedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightedTextField.swift; sourceTree = "<group>"; };
@@ -350,15 +354,16 @@
 			name = ChartPoint;
 			sourceTree = "<group>";
 		};
-		0BFBCE171C2AA59B0030935C /* Button */ = {
+		0BFBCE171C2AA59B0030935C /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				0BFBCE181C2AA5C50030935C /* MKButton.swift */,
 				0BFBCE1A1C2AA6050030935C /* MKColor.swift */,
 				0BFBCE1C1C2AA6250030935C /* MKLayer.swift */,
 				0BFBCE221C2AAF100030935C /* FAIcon.swift */,
+				0BF7AC591C2B37E7009C6990 /* IGSwitch.swift */,
 			);
-			name = Button;
+			name = UI;
 			sourceTree = "<group>";
 		};
 		F418C3421C160EF00063A112 = {
@@ -463,6 +468,7 @@
 				0BFA99F01C26F2C200D2CE2D /* Env.swift */,
 				0BFA99F21C26F2D700D2CE2D /* GraphSettings.swift */,
 				0BFA99F41C26F2F800D2CE2D /* DatasetCalculator.swift */,
+				0BF7AC571C2B3429009C6990 /* CoverageCalculator.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -470,7 +476,7 @@
 		F418CB961C1618E60063A112 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0BFBCE171C2AA59B0030935C /* Button */,
+				0BFBCE171C2AA59B0030935C /* UI */,
 				0BFA99A31C26F01000D2CE2D /* Chart */,
 				F418CBC91C174C310063A112 /* RAMAnimatedTabBarController */,
 				F418CBB51C16E9AD0063A112 /* MatchListTableViewController.swift */,
@@ -745,6 +751,7 @@
 				0BFA99FD1C26F6E500D2CE2D /* Chart.swift in Sources */,
 				0BFA99F91C26F3B900D2CE2D /* CustomLineTrackerLayer.swift in Sources */,
 				0BFA99E51C26F26600D2CE2D /* ChartCoordsSpaceLayer.swift in Sources */,
+				0BF7AC5A1C2B37E7009C6990 /* IGSwitch.swift in Sources */,
 				0BFA99CA1C26F1DF00D2CE2D /* ChartAxisXHighLayerDefault.swift in Sources */,
 				F418CBDD1C174C310063A112 /* RAMItemAnimationProtocol.swift in Sources */,
 				F435EED71C21B5F6004D8BAA /* BetEngineTableViewCell.swift in Sources */,
@@ -785,6 +792,7 @@
 				F418CBC61C172A6A0063A112 /* StringForTheWebHelper.swift in Sources */,
 				F418CBE51C184AF60063A112 /* MatchOddsViewController.swift in Sources */,
 				0BFA99B71C26F1AF00D2CE2D /* ChartCoordsSpace.swift in Sources */,
+				0BF7AC581C2B3429009C6990 /* CoverageCalculator.swift in Sources */,
 				0BFA99DD1C26F22700D2CE2D /* ChartLineDrawer.swift in Sources */,
 				F418CBB81C16E9CC0063A112 /* MatchTableViewCell.swift in Sources */,
 				F418CBF51C18B2B00063A112 /* OddsMenuSectionHeader.swift in Sources */,

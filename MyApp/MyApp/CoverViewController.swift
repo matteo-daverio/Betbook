@@ -199,7 +199,7 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 	
 	let spinner = UIActivityIndicatorView(frame: CGRectMake(0,0,100,100))
 	
-	
+    @IBOutlet weak var switchOnline: IGSwitch!
 	
 	
 	
@@ -238,9 +238,34 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
     
     override func viewDidLayoutSubviews() {
         calculateButton.layer.cornerRadius = 0.5 * calculateButton.bounds.size.width
+        
+        calculateButton.setFAIcon(FAType.FALineChart, iconSize: calculateButton.bounds.size.width * 0.58, forState: .Normal)
         //calculateButton.layer.borderColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1).CGColor as CGColorRef
         //calculateButton.layer.borderWidth = 2.0
         //calculateButton.clipsToBounds = true
+        createSwitch()
+    }
+    
+    func createSwitch() {
+        
+        // QUI BISOGNA INIZIALIZZARLO E POSIZIONARLO
+        // AD ESEMPIO:   switchOnline = IGSwitch(frame: <#T##CGRect#>)
+        // SE FAI LA ACTION, IL VALORE è DATO DALL'INDEX, AD ESEMPIO:
+        //if (switchOnline.selectedIndex == 0) {
+              // online
+            
+        //} else {
+              // offline
+            
+        //}
+        
+        switchOnline.titleLeft = "Online"
+        switchOnline.titleRight = "Offline"
+        switchOnline.sliderColor = UIColor.whiteColor()
+        switchOnline.sliderInset = 2
+        switchOnline.backgroundColor = UIColor(red: 90/255, green: 190/255, blue: 246/255, alpha: 1)
+        switchOnline.textColorFront = UIColor(red: 90/255, green: 190/255, blue: 246/255, alpha: 1)
+        switchOnline.textColorBack = UIColor.whiteColor()
     }
 	
 	override func shouldAutorotate() -> Bool {
@@ -553,19 +578,38 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 	//MARK: SBPickerSelectorDelegate
 	func pickerSelector(selector: SBPickerSelector!, selectedValue value: String!, index idx: Int) {
 		
-		switch(selector){
-		case self.nationPicker:
-			self.selectNation.text = value
-		case self.leaguePicker:
-			self.selectLeague.text = value
-		case self.matchListPicker:
-			self.selectMatch.text = value
-		case self.kindOfBetPicker:
-			self.selectKindOfBet.text = value
-		case self.valueOfBetPicker:
-			self.selectValeOfBet.text = value
-		default: break
-		}
+        switch(selector){
+        case self.nationPicker:
+            if (selectNation.text != value) {
+                self.selectNation.text = value
+                self.selectLeague.text = ""
+                self.selectMatch.text = ""
+                self.selectKindOfBet.text = ""
+                self.selectValeOfBet.text = ""
+            }
+        case self.leaguePicker:
+            if (selectLeague.text != value) {
+                self.selectLeague.text = value
+                self.selectMatch.text = ""
+                self.selectKindOfBet.text = ""
+                self.selectValeOfBet.text = ""
+            }
+        case self.matchListPicker:
+            if (selectMatch.text != value) {
+                self.selectMatch.text = value
+                self.selectKindOfBet.text = ""
+                self.selectValeOfBet.text = ""
+            }
+        case self.kindOfBetPicker:
+            if (selectKindOfBet.text != value) {
+                self.selectKindOfBet.text = value
+                self.selectValeOfBet.text = ""
+            }
+        case self.valueOfBetPicker:
+            self.selectValeOfBet.text = value
+        default: break
+        }
+        
 	}
 
 	
@@ -641,7 +685,7 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                 if foundPoint == 1 {
                     precision++
                 }
-                if character == "." {
+                if (character == "." || character == ",") {
                     foundPoint = 1
                 }
             }
@@ -655,7 +699,17 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                 return false
             }
             for character in (textField.text?.characters)! {
-                if character == "." {
+                if (character == "." || character == ",") {
+                    return false
+                }
+            }
+            return true
+        case ",":
+            if textField.text == "" {
+                return false
+            }
+            for character in (textField.text?.characters)! {
+                if (character == "." || character == ",") {
                     return false
                 }
             }
