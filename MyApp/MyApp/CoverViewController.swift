@@ -106,6 +106,9 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 			
 		} else {
 			selectLeague.shake()
+            if (invalidField(selectNation)) {
+                selectNation.shake()
+            }
 		}
 		
 	}
@@ -137,6 +140,13 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 			
 		} else {
 			selectMatch.shake()
+            if (invalidField(selectLeague)) {
+                selectLeague.shake()
+                if (invalidField(selectNation)) {
+                    selectNation.shake()
+                }
+            }
+            
 		}
 	}
 	
@@ -164,6 +174,15 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 			
 		} else {
 			selectKindOfBet.shake()
+            if (invalidField(selectMatch)) {
+                selectMatch.shake()
+                if (invalidField(selectLeague)) {
+                    selectLeague.shake()
+                    if (invalidField(selectNation)) {
+                        selectNation.shake()
+                    }
+                }
+            }
 		}
 	}
 	
@@ -406,10 +425,34 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                 textFieldVictory.shake()
                 if (invalidField(selectValeOfBet)) {
                     selectValeOfBet.shake()
+                    if (invalidField(selectKindOfBet)) {
+                        selectKindOfBet.shake()
+                        if (invalidField(selectMatch)) {
+                            selectMatch.shake()
+                            if (invalidField(selectLeague)) {
+                                selectLeague.shake()
+                                if (invalidField(selectNation)) {
+                                    selectNation.shake()
+                                }
+                            }
+                        }
+                    }
                 }
             } else {
                 if (invalidField(selectValeOfBet)) {
                     selectValeOfBet.shake()
+                    if (invalidField(selectKindOfBet)) {
+                        selectKindOfBet.shake()
+                        if (invalidField(selectMatch)) {
+                            selectMatch.shake()
+                            if (invalidField(selectLeague)) {
+                                selectLeague.shake()
+                                if (invalidField(selectNation)) {
+                                    selectNation.shake()
+                                }
+                            }
+                        }
+                    }
                 }
             }
         } else {
@@ -417,10 +460,34 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                 textFieldVictory.shake()
                 if (invalidField(selectValeOfBet)) {
                     selectValeOfBet.shake()
+                    if (invalidField(selectKindOfBet)) {
+                        selectKindOfBet.shake()
+                        if (invalidField(selectMatch)) {
+                            selectMatch.shake()
+                            if (invalidField(selectLeague)) {
+                                selectLeague.shake()
+                                if (invalidField(selectNation)) {
+                                    selectNation.shake()
+                                }
+                            }
+                        }
+                    }
                 }
             } else {
                 if (invalidField(selectValeOfBet)) {
                     selectValeOfBet.shake()
+                    if (invalidField(selectKindOfBet)) {
+                        selectKindOfBet.shake()
+                        if (invalidField(selectMatch)) {
+                            selectMatch.shake()
+                            if (invalidField(selectLeague)) {
+                                selectLeague.shake()
+                                if (invalidField(selectNation)) {
+                                    selectNation.shake()
+                                }
+                            }
+                        }
+                    }
                 } else {
                     
                     // valid input
