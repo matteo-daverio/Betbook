@@ -168,7 +168,7 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 	}
 	
 	
-    @IBOutlet weak var calculateButton: UIButton!
+    @IBOutlet weak var calculateButton: MKButton!
 	
 	let matchListModel = MatchListRequest()
 	
@@ -211,6 +211,17 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         createMatchSelector()
         createButton()
         
+        // Add UIToolBar on keyboard and Done button on ToolBar
+        self.addDoneButtonOnKeyboard()
+
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        calculateButton.layer.cornerRadius = 0.5 * calculateButton.bounds.size.width
+        //calculateButton.layer.borderColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1).CGColor as CGColorRef
+        //calculateButton.layer.borderWidth = 2.0
+        //calculateButton.clipsToBounds = true
     }
 	
 	override func shouldAutorotate() -> Bool {
@@ -221,6 +232,7 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 		return UIInterfaceOrientationMask.Portrait
 	}
 	
+    /*
 	func textFieldDidBeginEditing(textField: UITextField) {
 		scrollView.setContentOffset(CGPointMake(0, 300), animated: true)
 	}
@@ -235,19 +247,21 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 	func textFieldDidEndEditing(textField: UITextField) {
 		scrollView.setContentOffset(CGPointMake(0, 0), animated: true)
 	}
-    
+    */
     func createBetField() {
         
         //let textFieldFrameBet = CGRect(x: 20, y: screenHeight / 8, width: screenWidth - (2 * 20), height: 40)
         //textFieldBet = HighlightedTextField(frame: textFieldFrameBet)
         
-//        textFieldBet.frame = CGRect(x: 20, y: screenHeight / 8, width: screenWidth - (2 * 20), height: 40)
+//      textFieldBet.frame = CGRect(x: 20, y: screenHeight / 8, width: screenWidth - (2 * 20), height: 40)
         textFieldBet.borderStyle = UITextBorderStyle.None
         textFieldBet.borderInactiveColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
         textFieldBet.borderActiveColor = UIColor(red: 90/255, green: 190/255, blue: 246/255, alpha: 1)
         textFieldBet.placeholderColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
         textFieldBet.placeholder = "Somma giocata €    0.00"
         textFieldBet.upperPlaceholder = "Somma giocata €"
+        textFieldBet.keyboardType = UIKeyboardType.DecimalPad
+        textFieldBet.delegate = self
         
         //self.view.addSubview(textFieldBet)
         
@@ -264,6 +278,8 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         textFieldVictory.placeholderColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
         textFieldVictory.placeholder = "Vittoria €    0.00"
         textFieldVictory.upperPlaceholder = "Vittoria €"
+        textFieldVictory.keyboardType = UIKeyboardType.DecimalPad
+        textFieldVictory.delegate = self
         
         //self.view.addSubview(textFieldVictory)
         
@@ -284,12 +300,21 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 		
 		self.calculateButton.frame.size = CGSize(width: 100, height: 100)
         
-        calculateButton.backgroundColor = UIColor(red: 215.0/255.0, green: 227.0/255.0, blue: 244.0/255.0, alpha: 1.0)
-        //let background = TVButtonLayer(image: UIImage(named: "")!)
-        //let pattern = TVButtonLayer(image: UIImage(named: "")!)
-        //let top = TVButtonLayer(image: UIImage(named: "")!)
-        //button.layers = [background, pattern, top]
-        //calculateButton.parallaxIntensity = 1.3
+        calculateButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        calculateButton.setFAIcon(FAType.FALineChart, iconSize: calculateButton.bounds.size.width/2, forState: .Normal)
+        
+        calculateButton.backgroundColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
+        calculateButton.maskEnabled = true
+        calculateButton.cornerRadius = 40.0
+        calculateButton.backgroundLayerCornerRadius = 40.0
+        calculateButton.ripplePercent = 1.75
+        calculateButton.rippleLocation = .TapLocation
+        calculateButton.rippleLayerColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 0.5)
+        calculateButton.layer.shadowOpacity = 1
+        calculateButton.layer.shadowRadius = 4
+        calculateButton.layer.shadowColor = UIColor.blackColor().CGColor
+        calculateButton.layer.shadowOffset = CGSize(width: 5.0, height: 5.5)
+        
         calculateButton.addTarget(self, action: "calculate:", forControlEvents: .TouchUpInside)
         
         //self.view.addSubview(calculateButton)
@@ -532,4 +557,71 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 	private func populateValueOfBet() -> [String]{
 		return StringForTheWebHelper().getAvailableValueForKindOfBet(self.selectKindOfBet.text!)
 	}
+
+
+    // Creation of Done button on keyboard
+    func addDoneButtonOnKeyboard() {
+        
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRectMake(0, 0, 320, 50))
+        doneToolbar.barStyle = UIBarStyle.BlackTranslucent
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: Selector("doneButtonAction"))
+        
+        var items = [UIBarButtonItem]()
+        items.append(flexSpace)
+        items.append(done)
+        
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        self.textFieldBet.inputAccessoryView = doneToolbar
+        self.textFieldVictory.inputAccessoryView = doneToolbar
+        
+    }
+    
+    func doneButtonAction() {
+        
+        self.textFieldBet.resignFirstResponder()
+        self.textFieldVictory.resignFirstResponder()
+        
+    }
+    
+    
+    // Accept only correct number
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        switch string {
+        case "0","1","2","3","4","5","6","7","8","9":
+            var precision = 0
+            var foundPoint = 0
+            for character in (textField.text?.characters)! {
+                if foundPoint == 1 {
+                    precision++
+                }
+                if character == "." {
+                    foundPoint = 1
+                }
+            }
+            if precision < 2 {
+                return true
+            } else {
+                return false
+            }
+        case ".":
+            if textField.text == "" {
+                return false
+            }
+            for character in (textField.text?.characters)! {
+                if character == "." {
+                    return false
+                }
+            }
+            return true
+        default:
+            return true
+        }
+        
+    }
+
 }

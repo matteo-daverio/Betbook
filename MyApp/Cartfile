@@ -1,5 +1,4 @@
 github "tid-kijyun/Kanna" ~> 1.0.0
 github "rob-nash/CollapsableTable-Swift" ~> 1.0.0
 github "Akkyie/AKPickerView-Swift" ~> 1.0.0
-github "marmelroy/TVButton"
 github "andreamazz/UITextField-Shake"

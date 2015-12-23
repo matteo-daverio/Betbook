@@ -1,0 +1,6 @@
+framework module UITextField_Shake {
+  umbrella header "UITextField_Shake.h"
+
+  export *
+  module * { export * }
+}

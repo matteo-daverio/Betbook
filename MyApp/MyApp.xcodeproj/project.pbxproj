@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0BFA99981C26EB1500D2CE2D /* TVButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFA99971C26EB1500D2CE2D /* TVButton.framework */; };
 		0BFA999A1C26EB2000D2CE2D /* UITextField_Shake.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFA99991C26EB2000D2CE2D /* UITextField_Shake.framework */; };
 		0BFA999C1C26ED1800D2CE2D /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA999B1C26ED1800D2CE2D /* TextFieldsEffects.swift */; };
 		0BFA999E1C26ED6800D2CE2D /* HighlightedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA999D1C26ED6800D2CE2D /* HighlightedTextField.swift */; };
@@ -49,6 +48,11 @@
 		0BFA99F91C26F3B900D2CE2D /* CustomLineTrackerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA99F81C26F3B900D2CE2D /* CustomLineTrackerLayer.swift */; };
 		0BFA99FB1C26F3D200D2CE2D /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA99FA1C26F3D200D2CE2D /* GraphViewController.swift */; };
 		0BFA99FD1C26F6E500D2CE2D /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA99FC1C26F6E500D2CE2D /* Chart.swift */; };
+		0BFBCE191C2AA5C50030935C /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFBCE181C2AA5C50030935C /* MKButton.swift */; };
+		0BFBCE1B1C2AA6050030935C /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFBCE1A1C2AA6050030935C /* MKColor.swift */; };
+		0BFBCE1D1C2AA6250030935C /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFBCE1C1C2AA6250030935C /* MKLayer.swift */; };
+		0BFBCE211C2AAED80030935C /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BFBCE201C2AAED80030935C /* FontAwesome.ttf */; };
+		0BFBCE231C2AAF100030935C /* FAIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFBCE221C2AAF100030935C /* FAIcon.swift */; };
 		F418C34F1C160EF00063A112 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418C34E1C160EF00063A112 /* AppDelegate.swift */; };
 		F418C3591C160EF00063A112 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418C3571C160EF00063A112 /* LaunchScreen.storyboard */; };
 		F418C3641C160EF00063A112 /* MyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418C3631C160EF00063A112 /* MyAppTests.swift */; };
@@ -121,7 +125,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0BFA99971C26EB1500D2CE2D /* TVButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TVButton.framework; path = Carthage/Build/iOS/TVButton.framework; sourceTree = "<group>"; };
 		0BFA99991C26EB2000D2CE2D /* UITextField_Shake.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UITextField_Shake.framework; path = Carthage/Build/iOS/UITextField_Shake.framework; sourceTree = "<group>"; };
 		0BFA999B1C26ED1800D2CE2D /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
 		0BFA999D1C26ED6800D2CE2D /* HighlightedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightedTextField.swift; sourceTree = "<group>"; };
@@ -163,6 +166,11 @@
 		0BFA99F81C26F3B900D2CE2D /* CustomLineTrackerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLineTrackerLayer.swift; sourceTree = "<group>"; };
 		0BFA99FA1C26F3D200D2CE2D /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		0BFA99FC1C26F6E500D2CE2D /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		0BFBCE181C2AA5C50030935C /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
+		0BFBCE1A1C2AA6050030935C /* MKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKColor.swift; sourceTree = "<group>"; };
+		0BFBCE1C1C2AA6250030935C /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
+		0BFBCE201C2AAED80030935C /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		0BFBCE221C2AAF100030935C /* FAIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAIcon.swift; sourceTree = "<group>"; };
 		F418C34B1C160EF00063A112 /* MyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F418C34E1C160EF00063A112 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F418C3581C160EF00063A112 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -233,7 +241,6 @@
 				F435EE811C1EC4B4004D8BAA /* AKPickerView.framework in Frameworks */,
 				F418CB911C16179A0063A112 /* Kanna.framework in Frameworks */,
 				0BFA999A1C26EB2000D2CE2D /* UITextField_Shake.framework in Frameworks */,
-				0BFA99981C26EB1500D2CE2D /* TVButton.framework in Frameworks */,
 				F418CB921C16179A0063A112 /* CollapsableTable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +348,17 @@
 			name = ChartPoint;
 			sourceTree = "<group>";
 		};
+		0BFBCE171C2AA59B0030935C /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				0BFBCE181C2AA5C50030935C /* MKButton.swift */,
+				0BFBCE1A1C2AA6050030935C /* MKColor.swift */,
+				0BFBCE1C1C2AA6250030935C /* MKLayer.swift */,
+				0BFBCE221C2AAF100030935C /* FAIcon.swift */,
+			);
+			name = Button;
+			sourceTree = "<group>";
+		};
 		F418C3421C160EF00063A112 = {
 			isa = PBXGroup;
 			children = (
@@ -395,7 +413,6 @@
 		F418CB931C1618640063A112 /* FrameWork */ = {
 			isa = PBXGroup;
 			children = (
-				0BFA99971C26EB1500D2CE2D /* TVButton.framework */,
 				0BFA99991C26EB2000D2CE2D /* UITextField_Shake.framework */,
 				F435EE801C1EC4B4004D8BAA /* AKPickerView.framework */,
 				F418CB8F1C16179A0063A112 /* Kanna.framework */,
@@ -421,6 +438,7 @@
 				F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */,
 				F435EEC41C1F30B9004D8BAA /* BetTableViewCell.xib */,
 				F435EED41C21AC91004D8BAA /* BetEngineTableViewCell.xib */,
+				0BFBCE201C2AAED80030935C /* FontAwesome.ttf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -450,6 +468,7 @@
 		F418CB961C1618E60063A112 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0BFBCE171C2AA59B0030935C /* Button */,
 				0BFA99A31C26F01000D2CE2D /* Chart */,
 				F418CBC91C174C310063A112 /* RAMAnimatedTabBarController */,
 				F418CBB51C16E9AD0063A112 /* MatchListTableViewController.swift */,
@@ -674,6 +693,7 @@
 				F435EEE01C256A43004D8BAA /* SBPickerSelector.xib in Resources */,
 				F418CB821C1610780063A112 /* Cartfile in Resources */,
 				F418CB9F1C16194C0063A112 /* Main.storyboard in Resources */,
+				0BFBCE211C2AAED80030935C /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,7 +724,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/CollapsableTable.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AKPickerView.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/UITextField_Shake.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/TVButton.framework",
 			);
 			name = "Run Script";
 			outputPaths = (
@@ -732,14 +751,17 @@
 				F418CB991C16191F0063A112 /* MenuModelBuilder.swift in Sources */,
 				F418CBE91C186ED10063A112 /* OddsViewController.swift in Sources */,
 				F418CBDA1C174C310063A112 /* RAMRotationAnimation.swift in Sources */,
+				0BFBCE191C2AA5C50030935C /* MKButton.swift in Sources */,
 				0BFA99C91C26F1DF00D2CE2D /* ChartAxisValuesGenerator.swift in Sources */,
 				0BFA99C71C26F1DF00D2CE2D /* ChartAxisLayerDefault.swift in Sources */,
+				0BFBCE1B1C2AA6050030935C /* MKColor.swift in Sources */,
 				0BFA99DA1C26F22700D2CE2D /* ChartContextDrawer.swift in Sources */,
 				F418CBAA1C16C1AB0063A112 /* CollapsableTableProtocols.swift in Sources */,
 				F435EED11C207C37004D8BAA /* TabBarEnum.swift in Sources */,
 				0BFA99CB1C26F1DF00D2CE2D /* ChartAxisXLayerDefault.swift in Sources */,
 				0BFA99EA1C26F26600D2CE2D /* ChartPointsLineLayer.swift in Sources */,
 				F435EE831C1EC768004D8BAA /* AKPickerView.swift in Sources */,
+				0BFBCE1D1C2AA6250030935C /* MKLayer.swift in Sources */,
 				0BFA999E1C26ED6800D2CE2D /* HighlightedTextField.swift in Sources */,
 				F418CBD91C174C310063A112 /* RAMFumeAnimation.swift in Sources */,
 				0BFA999C1C26ED1800D2CE2D /* TextFieldsEffects.swift in Sources */,
@@ -756,6 +778,7 @@
 				0BFA99B91C26F1AF00D2CE2D /* ChartUtils.swift in Sources */,
 				0BFA99F51C26F2F800D2CE2D /* DatasetCalculator.swift in Sources */,
 				0BFA99E61C26F26600D2CE2D /* ChartGuideLinesLayer.swift in Sources */,
+				0BFBCE231C2AAF100030935C /* FAIcon.swift in Sources */,
 				F418CBC61C172A6A0063A112 /* StringForTheWebHelper.swift in Sources */,
 				F418CBE51C184AF60063A112 /* MatchOddsViewController.swift in Sources */,
 				0BFA99B71C26F1AF00D2CE2D /* ChartCoordsSpace.swift in Sources */,
