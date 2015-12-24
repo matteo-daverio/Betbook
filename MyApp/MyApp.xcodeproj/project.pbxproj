@@ -108,6 +108,7 @@
 		F440CCAC1C1B3EB000BE9F08 /* OddsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */; };
 		F440CCAE1C1B3F5A00BE9F08 /* OddsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */; };
 		F4F5E0B11C2B185900C424A6 /* OnlineGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F5E0B01C2B185900C424A6 /* OnlineGraphViewController.swift */; };
+		F4F5E0B31C2C07F500C424A6 /* OfflineGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F5E0B21C2C07F500C424A6 /* OfflineGraphViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,6 +238,7 @@
 		F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsTableViewCell.xib; sourceTree = "<group>"; };
 		F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsTableViewCell.swift; sourceTree = "<group>"; };
 		F4F5E0B01C2B185900C424A6 /* OnlineGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineGraphViewController.swift; sourceTree = "<group>"; };
+		F4F5E0B21C2C07F500C424A6 /* OfflineGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineGraphViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -476,7 +478,6 @@
 		F418CB961C1618E60063A112 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0BFBCE171C2AA59B0030935C /* UI */,
 				0BFA99A31C26F01000D2CE2D /* Chart */,
 				F418CBC91C174C310063A112 /* RAMAnimatedTabBarController */,
 				F418CBB51C16E9AD0063A112 /* MatchListTableViewController.swift */,
@@ -492,6 +493,7 @@
 				0BFA99F81C26F3B900D2CE2D /* CustomLineTrackerLayer.swift */,
 				0BFA99FA1C26F3D200D2CE2D /* GraphViewController.swift */,
 				F4F5E0B01C2B185900C424A6 /* OnlineGraphViewController.swift */,
+				F4F5E0B21C2C07F500C424A6 /* OfflineGraphViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -499,6 +501,7 @@
 		F418CB971C1618EC0063A112 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0BFBCE171C2AA59B0030935C /* UI */,
 				F435EE821C1EC768004D8BAA /* AKPickerView.swift */,
 				F418CBB71C16E9CC0063A112 /* MatchTableViewCell.swift */,
 				F418CB9A1C16192B0063A112 /* MenuSectionHeader.swift */,
@@ -770,6 +773,7 @@
 				F435EED11C207C37004D8BAA /* TabBarEnum.swift in Sources */,
 				0BFA99CB1C26F1DF00D2CE2D /* ChartAxisXLayerDefault.swift in Sources */,
 				0BFA99EA1C26F26600D2CE2D /* ChartPointsLineLayer.swift in Sources */,
+				F4F5E0B31C2C07F500C424A6 /* OfflineGraphViewController.swift in Sources */,
 				F435EE831C1EC768004D8BAA /* AKPickerView.swift in Sources */,
 				0BFBCE1D1C2AA6250030935C /* MKLayer.swift in Sources */,
 				0BFA999E1C26ED6800D2CE2D /* HighlightedTextField.swift in Sources */,

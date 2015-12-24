@@ -14,9 +14,9 @@ class GraphViewController: UIViewController {
     private var chart: Chart?
     
     // Diventeranno dei let in teoria, togliendo l'opzionale, DA VEDERE
-    private var bettingAmount: Double?
-    private var potentialWinning: Double?
-    private var brandMultiplier: Double?
+	var bettingAmount: Double?
+	var potentialWinning: Double?
+	var brandMultiplier: Double?
     
 	@IBOutlet weak var chartView: UIView!
 	
@@ -25,7 +25,7 @@ class GraphViewController: UIViewController {
         super.viewDidLoad()
         
         // sarà da rimuovere   (0, 20),(15, 5),(20, 6.67)
-        bettingAmount = 50.0
+		//bettingAmount = 50.0
         potentialWinning = 200.0
         brandMultiplier = 3.0
         

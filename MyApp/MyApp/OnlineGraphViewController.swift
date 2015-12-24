@@ -14,7 +14,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 	@IBOutlet weak var brandPicker: AKPickerView!
 
 	let brands = StringForTheWebHelper().getBrandsList()
-
+	
 	override func viewDidLoad() {
 		
 		super.viewDidLoad()

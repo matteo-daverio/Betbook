@@ -32,7 +32,7 @@ public extension UIBarButtonItem {
         set {
             
             FontLoader.loadFontIfNeeded()
-            let font = UIFont(name: FAStruct.FontName, size: 23)
+            let font = UIFont(name: FAStruct.FontName, size: 20)
             assert(font != nil,FAStruct.ErrorAnnounce)
             setTitleTextAttributes([NSFontAttributeName: font!], forState: .Normal)
             title = newValue?.text

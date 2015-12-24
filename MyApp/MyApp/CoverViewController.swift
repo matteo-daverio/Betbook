@@ -12,6 +12,9 @@ import UITextField_Shake
 
 class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, SBPickerSelectorDelegate, MatchListDelegate {
 	
+	
+	@IBOutlet weak var switchOnline: IGSwitch!
+	
 	@IBOutlet weak var scrollView: UIScrollView!
 	
     @IBOutlet weak var textFieldBet: HighlightedTextField!
@@ -199,7 +202,65 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 	
 	let spinner = UIActivityIndicatorView(frame: CGRectMake(0,0,100,100))
 	
-    @IBOutlet weak var switchOnline: IGSwitch!
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@IBAction func goToGraph(sender: MKButton) {
+		
+		let validOffline = true
+		let validOnline = false
+	
+		
+		if(validOffline){
+			performSegueWithIdentifier("showOfflineGraphMVC", sender: self)
+		}
+		
+		if(validOnline){
+			performSegueWithIdentifier("showOnlineGraphMVC", sender: self)
+		}
+		
+	}
+
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if(segue.identifier == "showOnlineGraphMVC"){
+			let upcoming: OnlineGraphViewController = segue.destinationViewController as! OnlineGraphViewController
+			upcoming.bettingAmount = 70.00
+		}
+		
+		if(segue.identifier == "showOfflineGraphMVC"){
+			let upcoming: OfflineGraphViewController = segue.destinationViewController as! OfflineGraphViewController
+			upcoming.bettingAmount = 70.00
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -243,7 +304,7 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         //calculateButton.layer.borderColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1).CGColor as CGColorRef
         //calculateButton.layer.borderWidth = 2.0
         //calculateButton.clipsToBounds = true
-        createSwitch()
+		createSwitch()
     }
     
     func createSwitch() {
@@ -717,13 +778,5 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         default:
             return true
         }
-        
     }
-	
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		if(segue.identifier == "showOfflineGraphMVC"){
-			
-		}
-	}
-
 }
