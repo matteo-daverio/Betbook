@@ -12,6 +12,9 @@ import UITextField_Shake
 
 class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, SBPickerSelectorDelegate, MatchListDelegate {
 	
+	private var online: Bool = true
+	
+	private var match: Match?
 	
 	@IBOutlet weak var switchOnline: IGSwitch!
 	
@@ -21,7 +24,7 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
     
     @IBOutlet weak var textFieldVictory: HighlightedTextField!
     
-    @IBOutlet weak var selectNation: HighlightedTextField!
+	@IBOutlet weak var selectNation: HighlightedTextField!
 	
 	private var nationPicker: SBPickerSelector = SBPickerSelector.picker()
 	
@@ -196,7 +199,9 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 	
 	var matches: [Match]?{
 		didSet{
-			self.matchListPicker.pickerData = populateMatchList()
+			if(matches != nil){
+				self.matchListPicker.pickerData = populateMatchList()
+			}
 		}
 	}
 	
@@ -223,15 +228,17 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 	
 	@IBAction func goToGraph(sender: MKButton) {
 		
-		let validOffline = true
-		let validOnline = false
-	
+		if(switchOnline.selectedIndex == 0){
+			online = true
+		}else{
+			online = false
+		}
 		
-		if(validOffline){
+		if(isValidOffline()){
 			performSegueWithIdentifier("showOfflineGraphMVC", sender: self)
 		}
 		
-		if(validOnline){
+		if(isValidOnline()){
 			performSegueWithIdentifier("showOnlineGraphMVC", sender: self)
 		}
 		
@@ -240,19 +247,54 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if(segue.identifier == "showOnlineGraphMVC"){
 			let upcoming: OnlineGraphViewController = segue.destinationViewController as! OnlineGraphViewController
-			upcoming.bettingAmount = 70.00
+			upcoming.bettingAmount = Double((self.textFieldBet.text?.stringByReplacingOccurrencesOfString(",", withString: "."))!)
+			upcoming.potentialWinning = Double((self.textFieldVictory.text?.stringByReplacingOccurrencesOfString(",", withString: "."))!)
+			upcoming.brandMultiplier = Double("0.0")
+			upcoming.homeTeam = self.match?.homeTeam!
+			upcoming.awayTeam = self.match?.awayTeam!
+			upcoming.nation = self.selectNation.text!
+			upcoming.league = self.selectLeague.text!
+			
+			let cover = CoverageCalculator(esito: self.selectKindOfBet.text!, giocata: self.selectValeOfBet.text!).calculateCoverage()
+			
+			upcoming.kindOfBet = cover.0
+			upcoming.valueOfBet = cover.1
 		}
 		
 		if(segue.identifier == "showOfflineGraphMVC"){
 			let upcoming: OfflineGraphViewController = segue.destinationViewController as! OfflineGraphViewController
-			upcoming.bettingAmount = 70.00
+			upcoming.bettingAmount = Double((self.textFieldBet.text?.stringByReplacingOccurrencesOfString(",", withString: "."))!)
+			upcoming.potentialWinning = Double((self.textFieldVictory.text?.stringByReplacingOccurrencesOfString(",", withString: "."))!)
+			upcoming.brandMultiplier = Double("0.0")
 		}
 		
 	}
 	
+	private func isValidOnline() -> Bool {
+		if(online &&
+			!self.invalidField(self.textFieldBet) &&
+			!self.invalidField(self.textFieldVictory) &&
+			!self.invalidField(self.selectNation) &&
+			!self.invalidField(self.selectLeague) &&
+			!self.invalidField(self.selectMatch) &&
+			!self.invalidField(self.selectKindOfBet) &&
+			!self.invalidField(self.selectValeOfBet)
+			){
+				return true
+		}
+		
+		return false
+	}
 	
-	
-	
+	private func isValidOffline() -> Bool {
+		if(!online &&
+			!self.invalidField(self.textFieldBet) &&
+			!self.invalidField(self.textFieldVictory)){
+				return true
+		}
+		
+		return false
+	}
 	
 	
 	
@@ -294,6 +336,7 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         // Add UIToolBar on keyboard and Done button on ToolBar
         self.addDoneButtonOnKeyboard()
 
+	
         
     }
     
@@ -312,14 +355,13 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         // QUI BISOGNA INIZIALIZZARLO E POSIZIONARLO
         // AD ESEMPIO:   switchOnline = IGSwitch(frame: <#T##CGRect#>)
         // SE FAI LA ACTION, IL VALORE è DATO DALL'INDEX, AD ESEMPIO:
-        //if (switchOnline.selectedIndex == 0) {
-              // online
-            
-        //} else {
-              // offline
-            
-        //}
-        
+		
+		if (switchOnline.selectedIndex == 0) {
+			self.online = true
+        } else {
+			self.online = false
+        }
+		
         switchOnline.titleLeft = "Online"
         switchOnline.titleRight = "Offline"
         switchOnline.sliderColor = UIColor.whiteColor()
@@ -647,6 +689,8 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                 self.selectMatch.text = ""
                 self.selectKindOfBet.text = ""
                 self.selectValeOfBet.text = ""
+				self.matches = nil
+				self.match = nil
             }
         case self.leaguePicker:
             if (selectLeague.text != value) {
@@ -654,12 +698,15 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                 self.selectMatch.text = ""
                 self.selectKindOfBet.text = ""
                 self.selectValeOfBet.text = ""
+				self.matches = nil
+				self.match = nil
             }
         case self.matchListPicker:
             if (selectMatch.text != value) {
                 self.selectMatch.text = value
                 self.selectKindOfBet.text = ""
                 self.selectValeOfBet.text = ""
+				self.match = self.matches![idx]
             }
         case self.kindOfBetPicker:
             if (selectKindOfBet.text != value) {

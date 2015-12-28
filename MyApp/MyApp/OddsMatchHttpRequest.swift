@@ -35,6 +35,7 @@ class OddsMatchHttpRequest {
 	
 	var awayTeam: String!
 	
+	//ForTheWeb
 	var selectedCountryOrEuropeanCompetition: String!
 	
 	var selectedLeague: String!

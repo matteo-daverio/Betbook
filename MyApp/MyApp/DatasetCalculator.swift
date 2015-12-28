@@ -34,7 +34,7 @@ public class DatasetCalculator {
     private func calculateValues() {
         
         maxWin = potentialWinning - bettingAmount   // V - P
-        maxCovering = maxWin! * brandMultiplier      // (V - P) * Q
+        maxCovering = maxWin! * brandMultiplier    // (V - P) * Q
         
         // y1 = -x + (v - p) , y2 = q * x
         
