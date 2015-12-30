@@ -55,6 +55,10 @@
 		0BFBCE1D1C2AA6250030935C /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFBCE1C1C2AA6250030935C /* MKLayer.swift */; };
 		0BFBCE211C2AAED80030935C /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BFBCE201C2AAED80030935C /* FontAwesome.ttf */; };
 		0BFBCE231C2AAF100030935C /* FAIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFBCE221C2AAF100030935C /* FAIcon.swift */; };
+		F410218C1C3299BE000995F4 /* StatisticHttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F410218B1C3299BE000995F4 /* StatisticHttpRequest.swift */; };
+		F410218E1C329D25000995F4 /* RankingAndStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F410218D1C329D25000995F4 /* RankingAndStatistic.swift */; };
+		F41021901C329E99000995F4 /* RankingAndStatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F410218F1C329E99000995F4 /* RankingAndStatisticViewController.swift */; };
+		F41021921C33E735000995F4 /* LeaguesStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41021911C33E735000995F4 /* LeaguesStatisticsViewController.swift */; };
 		F418C34F1C160EF00063A112 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418C34E1C160EF00063A112 /* AppDelegate.swift */; };
 		F418C3591C160EF00063A112 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418C3571C160EF00063A112 /* LaunchScreen.storyboard */; };
 		F418C3641C160EF00063A112 /* MyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418C3631C160EF00063A112 /* MyAppTests.swift */; };
@@ -177,6 +181,10 @@
 		0BFBCE1C1C2AA6250030935C /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
 		0BFBCE201C2AAED80030935C /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		0BFBCE221C2AAF100030935C /* FAIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAIcon.swift; sourceTree = "<group>"; };
+		F410218B1C3299BE000995F4 /* StatisticHttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticHttpRequest.swift; sourceTree = "<group>"; };
+		F410218D1C329D25000995F4 /* RankingAndStatistic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingAndStatistic.swift; sourceTree = "<group>"; };
+		F410218F1C329E99000995F4 /* RankingAndStatisticViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingAndStatisticViewController.swift; sourceTree = "<group>"; };
+		F41021911C33E735000995F4 /* LeaguesStatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaguesStatisticsViewController.swift; sourceTree = "<group>"; };
 		F418C34B1C160EF00063A112 /* MyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F418C34E1C160EF00063A112 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F418C3581C160EF00063A112 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -471,6 +479,8 @@
 				0BFA99F21C26F2D700D2CE2D /* GraphSettings.swift */,
 				0BFA99F41C26F2F800D2CE2D /* DatasetCalculator.swift */,
 				0BF7AC571C2B3429009C6990 /* CoverageCalculator.swift */,
+				F410218B1C3299BE000995F4 /* StatisticHttpRequest.swift */,
+				F410218D1C329D25000995F4 /* RankingAndStatistic.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -494,6 +504,8 @@
 				0BFA99FA1C26F3D200D2CE2D /* GraphViewController.swift */,
 				F4F5E0B01C2B185900C424A6 /* OnlineGraphViewController.swift */,
 				F4F5E0B21C2C07F500C424A6 /* OfflineGraphViewController.swift */,
+				F410218F1C329E99000995F4 /* RankingAndStatisticViewController.swift */,
+				F41021911C33E735000995F4 /* LeaguesStatisticsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -763,8 +775,11 @@
 				F418CBD81C174C310063A112 /* RAMFrameItemAnimation.swift in Sources */,
 				F418CB991C16191F0063A112 /* MenuModelBuilder.swift in Sources */,
 				F418CBE91C186ED10063A112 /* OddsViewController.swift in Sources */,
+				F410218C1C3299BE000995F4 /* StatisticHttpRequest.swift in Sources */,
+				F410218E1C329D25000995F4 /* RankingAndStatistic.swift in Sources */,
 				F418CBDA1C174C310063A112 /* RAMRotationAnimation.swift in Sources */,
 				0BFBCE191C2AA5C50030935C /* MKButton.swift in Sources */,
+				F41021921C33E735000995F4 /* LeaguesStatisticsViewController.swift in Sources */,
 				0BFA99C91C26F1DF00D2CE2D /* ChartAxisValuesGenerator.swift in Sources */,
 				0BFA99C71C26F1DF00D2CE2D /* ChartAxisLayerDefault.swift in Sources */,
 				0BFBCE1B1C2AA6050030935C /* MKColor.swift in Sources */,
@@ -834,6 +849,7 @@
 				0BFA99D51C26F21300D2CE2D /* ChartPoint.swift in Sources */,
 				F418CBD71C174C310063A112 /* RAMBounceAnimation.swift in Sources */,
 				0BFA99D21C26F1FB00D2CE2D /* ChartAxisValue.swift in Sources */,
+				F41021901C329E99000995F4 /* RankingAndStatisticViewController.swift in Sources */,
 				F435EECF1C204DEE004D8BAA /* Bet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

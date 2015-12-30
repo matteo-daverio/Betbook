@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hys-Qt-Hy9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7nn-d4-dgF">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -751,6 +751,24 @@
             </objects>
             <point key="canvasLocation" x="2809" y="315"/>
         </scene>
+        <!--Ranking And Statstic View Controller-->
+        <scene sceneID="tU7-rM-vXK">
+            <objects>
+                <viewController id="7nn-d4-dgF" customClass="RankingAndStatsticViewController" customModule="MyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gkf-ws-2Dc"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ofo-Xv-kLO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HWp-Or-c9q">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="48g-jr-Jlf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-777" y="-496"/>
+        </scene>
         <!--Animated Tab Bar Controller-->
         <scene sceneID="pY7-Ca-CZS">
             <objects>
@@ -766,7 +784,7 @@
                         <segue destination="u68-zQ-QWE" kind="relationship" relationship="viewControllers" id="cma-FD-NsM"/>
                         <segue destination="La8-UB-2WS" kind="relationship" relationship="viewControllers" id="zqi-bS-XKp"/>
                         <segue destination="l14-nl-7nr" kind="relationship" relationship="viewControllers" id="LwJ-yZ-m2k"/>
-                        <segue destination="6Sr-YU-b8S" kind="relationship" relationship="viewControllers" id="Xge-Fg-tlp"/>
+                        <segue destination="YnV-XA-6es" kind="relationship" relationship="viewControllers" id="c9c-ip-U1m"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Sn-jP-pJx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -810,36 +828,6 @@
                 <customObject id="Wl7-dV-egB" customClass="RAMBounceAnimation" customModule="MyApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="426" y="335"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="obC-ak-4kj">
-            <objects>
-                <viewController id="6Sr-YU-b8S" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="peJ-rI-YeW"/>
-                        <viewControllerLayoutGuide type="bottom" id="eST-Ws-Mbz"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="XGx-jJ-UvK">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="Tools_00028" id="Bcl-lw-7BM" customClass="RAMAnimatedTabBarItem" customModule="MyApp" customModuleProvider="target">
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                        <connections>
-                            <outlet property="animation" destination="ACg-ry-Z17" id="vXR-QA-y8b"/>
-                        </connections>
-                    </tabBarItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rJk-gO-ofl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="ACg-ry-Z17" customClass="RAMRotationAnimation" customModule="MyApp" customModuleProvider="target"/>
-            </objects>
-            <point key="canvasLocation" x="426" y="1185"/>
         </scene>
         <!--Bet View Controller-->
         <scene sceneID="Ke8-Fx-C63">
@@ -905,7 +893,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4oy-3p-uNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="6q8-pI-h6j" customClass="RAMBounceAnimation" customModule="MyApp" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="1361" y="1939"/>
+            <point key="canvasLocation" x="1369" y="1287"/>
+        </scene>
+        <!--Leagues Statistics View Controller-->
+        <scene sceneID="qae-ZR-8KH">
+            <objects>
+                <viewController id="hS6-6F-IRw" customClass="LeaguesStatisticsViewController" customModule="MyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ERF-9w-FqD"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Wm-He-CdG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qr5-ND-Fc7">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="i3U-li-Q42"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xjr-Lo-yFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1382" y="2167"/>
         </scene>
         <!--Perfect-->
         <scene sceneID="1YF-7T-lZb">
@@ -928,7 +936,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.098039215686274508" green="0.10196078431372549" blue="0.22352941176470589" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.062745098040000002" green="0.074509803920000006" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                             <color key="textColor" red="0.062745098040000002" green="0.074509803920000006" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -977,14 +985,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PFs-ga-eA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="iNj-Kf-Rcd" customClass="RAMBounceAnimation" customModule="MyApp" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="426" y="1951"/>
+            <point key="canvasLocation" x="434" y="1287"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="K7R-Op-7qw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YnV-XA-6es" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="icon_user" id="v21-fi-G3B" customClass="RAMAnimatedTabBarItem" customModule="MyApp" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="animation" destination="oD4-rb-8Y7" id="fbS-SR-v4U"/>
+                        </connections>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="1Bz-Ka-qWn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.062745098040000002" green="0.074509803920000006" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hS6-6F-IRw" kind="relationship" relationship="rootViewController" id="cTs-Vx-kJT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h6r-Bq-hTN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="oD4-rb-8Y7" customClass="RAMBounceAnimation" customModule="MyApp" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="426" y="2167"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Tools_00028" width="30" height="30"/>
         <image name="drop" width="24" height="24"/>
         <image name="icon_pin" width="30" height="30"/>
         <image name="icon_user" width="30" height="30"/>
     </resources>
-    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.062745098040000002" green="0.074509803920000006" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

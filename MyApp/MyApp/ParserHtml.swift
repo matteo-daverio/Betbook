@@ -8,6 +8,7 @@
 
 import Foundation
 import Kanna
+import WebKit
 
 class ParserHtml {
 	
@@ -124,6 +125,10 @@ class ParserHtml {
 		//Ciclo per le date
 		for tr in bodyTable!.css("tr, class") {
 			
+			if(tr["class"] == "minitable-row"){
+				return nil
+			}
+			
 			if(tr["class"] == "date first"){
 				currentDate = tr.text!
 			}else{
@@ -159,7 +164,11 @@ class ParserHtml {
 						}
 					}
 				}
+
+				
+				
 				let match = Match(homeTeam: currentHomeTeam!, awayTeam: currentAwayTeam!, date: currentDate!, hour: currentHour!, country: country, league: league)
+				
 				if(arrayMatch == nil){
 					arrayMatch = [Match]()
 				}
@@ -634,28 +643,92 @@ class ParserHtml {
 	}
 	
 	
+	func getRankingAndStatisticFromHtml(doc: HTMLDocument)->RankingAndStatistic?{
+
+		var classificaTable: XMLElement?
+		
+		for table in doc.css("table"){
+			if(table["class"] == "big classifica"){
+				classificaTable = table
+			}
+		}
+		
+		if(classificaTable == nil){
+			return nil
+		}
+		
+		let classificaBody = classificaTable?.css("tbody").first
+		
+		//	print(classificaBody!.toHTML)
+		
+		if(classificaBody == nil){
+			return nil
+		}
+		
+		var ranking = RankingAndStatistic()
+		
+		for tr in classificaBody!.css("tr"){
+			
+			var count = 0
+			
+			let row = RankingRow()
+			
+			for td in tr.css("td"){
+				var base = td.text!
+				base = base.stringByReplacingOccurrencesOfString("\n", withString: "")
+				base = base.stringByReplacingOccurrencesOfString("\t", withString: "")
+				
+				switch(count){
+				case 0:
+					row.pos = base
+				case 1:
+					break
+				case 2:
+					row.team = base
+				case 3:
+					row.punti = base
+				case 4:
+					row.g = base
+				case 5:
+					row.v = base
+				case 6:
+					row.n = base
+				case 7:
+					row.p = base
+				case 8:
+					row.gf = base
+				case 9:
+					row.gs = base
+				case 10:
+					
+					for span in td.css("span"){
+						var base2 = span.text!
+						base2 = base2.stringByReplacingOccurrencesOfString("\n", withString: "")
+						base2 = base2.stringByReplacingOccurrencesOfString("\t", withString: "")
+						row.ultimeGiornate.append(base2)
+					}
+					
+					break
+				default:
+					break
+				}
+				
+				count++
+			}
+			
+			ranking.rankingList.append(row)
+			//print(row)
+		}
+		
+	
+
 	
 	
 	
 	
+		return ranking
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}
 	
 	
 	private func addAllTeamsExceptions(){
