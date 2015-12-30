@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0BF161C91C34037300E3E126 /* LeaderboardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF161C81C34037300E3E126 /* LeaderboardCell.xib */; };
 		0BF161CE1C3404EE00E3E126 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF161CC1C3404EE00E3E126 /* LeaderboardTableViewCell.swift */; };
 		0BF161D11C3406CA00E3E126 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF161D01C3406CA00E3E126 /* LeaderboardViewController.swift */; };
-		0BF161D31C340AFF00E3E126 /* LeaderboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF161D21C340AFE00E3E126 /* LeaderboardViewController.xib */; };
 		0BF7AC581C2B3429009C6990 /* CoverageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7AC571C2B3429009C6990 /* CoverageCalculator.swift */; };
 		0BF7AC5A1C2B37E7009C6990 /* IGSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7AC591C2B37E7009C6990 /* IGSwitch.swift */; };
 		0BFA999A1C26EB2000D2CE2D /* UITextField_Shake.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFA99991C26EB2000D2CE2D /* UITextField_Shake.framework */; };
@@ -63,6 +61,9 @@
 		F410218E1C329D25000995F4 /* RankingAndStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F410218D1C329D25000995F4 /* RankingAndStatistic.swift */; };
 		F41021901C329E99000995F4 /* RankingAndStatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F410218F1C329E99000995F4 /* RankingAndStatisticViewController.swift */; };
 		F41021921C33E735000995F4 /* LeaguesStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41021911C33E735000995F4 /* LeaguesStatisticsViewController.swift */; };
+		F41021941C341C98000995F4 /* RankingAndStatsticViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41021931C341C98000995F4 /* RankingAndStatsticViewController.xib */; };
+		F41021971C341EEB000995F4 /* RankingAndStatsticCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41021951C341EEB000995F4 /* RankingAndStatsticCellTableViewCell.swift */; };
+		F41021981C341EEB000995F4 /* RankingAndStatsticCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41021961C341EEB000995F4 /* RankingAndStatsticCellTableViewCell.xib */; };
 		F418C34F1C160EF00063A112 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418C34E1C160EF00063A112 /* AppDelegate.swift */; };
 		F418C3591C160EF00063A112 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418C3571C160EF00063A112 /* LaunchScreen.storyboard */; };
 		F418C3641C160EF00063A112 /* MyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418C3631C160EF00063A112 /* MyAppTests.swift */; };
@@ -137,10 +138,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0BF161C81C34037300E3E126 /* LeaderboardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaderboardCell.xib; sourceTree = "<group>"; };
 		0BF161CC1C3404EE00E3E126 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
 		0BF161D01C3406CA00E3E126 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
-		0BF161D21C340AFE00E3E126 /* LeaderboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaderboardViewController.xib; sourceTree = "<group>"; };
 		0BF7AC571C2B3429009C6990 /* CoverageCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverageCalculator.swift; sourceTree = "<group>"; };
 		0BF7AC591C2B37E7009C6990 /* IGSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IGSwitch.swift; sourceTree = "<group>"; };
 		0BFA99991C26EB2000D2CE2D /* UITextField_Shake.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UITextField_Shake.framework; path = Carthage/Build/iOS/UITextField_Shake.framework; sourceTree = "<group>"; };
@@ -193,6 +192,9 @@
 		F410218D1C329D25000995F4 /* RankingAndStatistic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingAndStatistic.swift; sourceTree = "<group>"; };
 		F410218F1C329E99000995F4 /* RankingAndStatisticViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingAndStatisticViewController.swift; sourceTree = "<group>"; };
 		F41021911C33E735000995F4 /* LeaguesStatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaguesStatisticsViewController.swift; sourceTree = "<group>"; };
+		F41021931C341C98000995F4 /* RankingAndStatsticViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RankingAndStatsticViewController.xib; sourceTree = "<group>"; };
+		F41021951C341EEB000995F4 /* RankingAndStatsticCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingAndStatsticCellTableViewCell.swift; sourceTree = "<group>"; };
+		F41021961C341EEB000995F4 /* RankingAndStatsticCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RankingAndStatsticCellTableViewCell.xib; sourceTree = "<group>"; };
 		F418C34B1C160EF00063A112 /* MyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F418C34E1C160EF00063A112 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F418C3581C160EF00063A112 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -449,7 +451,6 @@
 		F418CB941C1618BF0063A112 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0BF161C81C34037300E3E126 /* LeaderboardCell.xib */,
 				F435EEE51C256A80004D8BAA /* SbPickerSelector */,
 				F435ED951C1D7F4D004D8BAA /* Assets.xcassets */,
 				F418CBF61C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib */,
@@ -465,7 +466,7 @@
 				F435EEC41C1F30B9004D8BAA /* BetTableViewCell.xib */,
 				F435EED41C21AC91004D8BAA /* BetEngineTableViewCell.xib */,
 				0BFBCE201C2AAED80030935C /* FontAwesome.ttf */,
-				0BF161D21C340AFE00E3E126 /* LeaderboardViewController.xib */,
+				F41021931C341C98000995F4 /* RankingAndStatsticViewController.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -533,6 +534,8 @@
 				F435EEC61C1F3187004D8BAA /* BetTableViewCell.swift */,
 				F435EED61C21B5F6004D8BAA /* BetEngineTableViewCell.swift */,
 				0BF161CC1C3404EE00E3E126 /* LeaderboardTableViewCell.swift */,
+				F41021951C341EEB000995F4 /* RankingAndStatsticCellTableViewCell.swift */,
+				F41021961C341EEB000995F4 /* RankingAndStatsticCellTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -718,19 +721,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BF161D31C340AFF00E3E126 /* LeaderboardViewController.xib in Resources */,
 				F435ED961C1D7F4D004D8BAA /* Assets.xcassets in Resources */,
 				F435EED51C21AC91004D8BAA /* BetEngineTableViewCell.xib in Resources */,
 				F418C3591C160EF00063A112 /* LaunchScreen.storyboard in Resources */,
-				0BF161C91C34037300E3E126 /* LeaderboardCell.xib in Resources */,
 				F435EEC51C1F30B9004D8BAA /* BetTableViewCell.xib in Resources */,
 				F418CBA11C1619690063A112 /* MenuSectionHeaderView.xib in Resources */,
 				F440CCAA1C1B39D700BE9F08 /* OddsViewController.xib in Resources */,
 				F440CCAC1C1B3EB000BE9F08 /* OddsTableViewCell.xib in Resources */,
+				F41021981C341EEB000995F4 /* RankingAndStatsticCellTableViewCell.xib in Resources */,
 				F418CBF71C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib in Resources */,
 				F435EEE01C256A43004D8BAA /* SBPickerSelector.xib in Resources */,
 				F418CB821C1610780063A112 /* Cartfile in Resources */,
 				F418CB9F1C16194C0063A112 /* Main.storyboard in Resources */,
+				F41021941C341C98000995F4 /* RankingAndStatsticViewController.xib in Resources */,
 				0BFBCE211C2AAED80030935C /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -836,6 +839,7 @@
 				0BFA99C61C26F1DF00D2CE2D /* ChartAxisLayer.swift in Sources */,
 				0BFA99EE1C26F28900D2CE2D /* ChartLinesView.swift in Sources */,
 				F418CB9B1C16192B0063A112 /* MenuSectionHeader.swift in Sources */,
+				F41021971C341EEB000995F4 /* RankingAndStatsticCellTableViewCell.swift in Sources */,
 				F418CBBE1C16EA060063A112 /* SingletonSoccerInformationModel.swift in Sources */,
 				F4F5E0B11C2B185900C424A6 /* OnlineGraphViewController.swift in Sources */,
 				F435EEE41C256A59004D8BAA /* SBPickerSelector.m in Sources */,

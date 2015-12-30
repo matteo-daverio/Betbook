@@ -14,6 +14,7 @@ class OddsViewController: CollapsableTableViewController, OddsMatchDelegate{
 	// MARK: - Property
 	
 	@IBOutlet weak var tableView: UITableView!
+	
 	let spinner = UIActivityIndicatorView(frame: CGRectMake(0,0,100,100))
 	
 	var delegate: UIViewController?

@@ -12,6 +12,11 @@ class LeaguesStatisticsViewController: UIViewController {
 	
 	var pageMenu : CAPSPageMenu?
 	
+	private func helperController(league: String) -> RankingAndStatsticViewController{
+		let controller = RankingAndStatsticViewController()
+		controller.league = league
+		return controller
+	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -35,7 +40,12 @@ class LeaguesStatisticsViewController: UIViewController {
 		// Initialize view controllers to display and place in array
 		var controllerArray : [UIViewController] = []
 		
-		controllerArray.append(UIViewController())
+		
+		controllerArray.append(helperController("Serie A"))
+		controllerArray.append(helperController("Liga"))
+		controllerArray.append(helperController("Premier League"))
+		controllerArray.append(helperController("Ligue 1"))
+		controllerArray.append(helperController("Bundesliga"))
 		
 		//Questi saranno i controller ognuno con le quote associate al suo brand
 		

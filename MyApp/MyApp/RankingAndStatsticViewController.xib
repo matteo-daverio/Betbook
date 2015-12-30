@@ -5,21 +5,22 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OddsViewController" customModule="MyApp">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RankingAndStatsticViewController" customModule="MyApp" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="dFh-hA-7I9" id="7AA-Mc-4DA"/>
-                <outlet property="view" destination="dFh-hA-7I9" id="GxD-fy-nIZ"/>
+                <outlet property="tableView" destination="UXp-eg-wLq" id="SyG-Mw-OZr"/>
+                <outlet property="view" destination="UXp-eg-wLq" id="Hwp-1L-wcv"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dFh-hA-7I9">
+        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="UXp-eg-wLq">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="dataSource" destination="-1" id="A4e-rt-HWH"/>
-                <outlet property="delegate" destination="-1" id="bju-RQ-YQy"/>
+                <outlet property="dataSource" destination="-1" id="64w-0q-14G"/>
+                <outlet property="delegate" destination="-1" id="jap-bA-WZS"/>
             </connections>
+            <point key="canvasLocation" x="455" y="180"/>
         </tableView>
     </objects>
 </document>
