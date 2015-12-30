@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BF161C91C34037300E3E126 /* LeaderboardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF161C81C34037300E3E126 /* LeaderboardCell.xib */; };
+		0BF161CE1C3404EE00E3E126 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF161CC1C3404EE00E3E126 /* LeaderboardTableViewCell.swift */; };
+		0BF161D11C3406CA00E3E126 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF161D01C3406CA00E3E126 /* LeaderboardViewController.swift */; };
+		0BF161D31C340AFF00E3E126 /* LeaderboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF161D21C340AFE00E3E126 /* LeaderboardViewController.xib */; };
 		0BF7AC581C2B3429009C6990 /* CoverageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7AC571C2B3429009C6990 /* CoverageCalculator.swift */; };
 		0BF7AC5A1C2B37E7009C6990 /* IGSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7AC591C2B37E7009C6990 /* IGSwitch.swift */; };
 		0BFA999A1C26EB2000D2CE2D /* UITextField_Shake.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFA99991C26EB2000D2CE2D /* UITextField_Shake.framework */; };
@@ -133,6 +137,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BF161C81C34037300E3E126 /* LeaderboardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaderboardCell.xib; sourceTree = "<group>"; };
+		0BF161CC1C3404EE00E3E126 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
+		0BF161D01C3406CA00E3E126 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		0BF161D21C340AFE00E3E126 /* LeaderboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaderboardViewController.xib; sourceTree = "<group>"; };
 		0BF7AC571C2B3429009C6990 /* CoverageCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverageCalculator.swift; sourceTree = "<group>"; };
 		0BF7AC591C2B37E7009C6990 /* IGSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IGSwitch.swift; sourceTree = "<group>"; };
 		0BFA99991C26EB2000D2CE2D /* UITextField_Shake.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UITextField_Shake.framework; path = Carthage/Build/iOS/UITextField_Shake.framework; sourceTree = "<group>"; };
@@ -441,6 +449,7 @@
 		F418CB941C1618BF0063A112 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0BF161C81C34037300E3E126 /* LeaderboardCell.xib */,
 				F435EEE51C256A80004D8BAA /* SbPickerSelector */,
 				F435ED951C1D7F4D004D8BAA /* Assets.xcassets */,
 				F418CBF61C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib */,
@@ -456,6 +465,7 @@
 				F435EEC41C1F30B9004D8BAA /* BetTableViewCell.xib */,
 				F435EED41C21AC91004D8BAA /* BetEngineTableViewCell.xib */,
 				0BFBCE201C2AAED80030935C /* FontAwesome.ttf */,
+				0BF161D21C340AFE00E3E126 /* LeaderboardViewController.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -506,6 +516,7 @@
 				F4F5E0B21C2C07F500C424A6 /* OfflineGraphViewController.swift */,
 				F410218F1C329E99000995F4 /* RankingAndStatisticViewController.swift */,
 				F41021911C33E735000995F4 /* LeaguesStatisticsViewController.swift */,
+				0BF161D01C3406CA00E3E126 /* LeaderboardViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -521,6 +532,7 @@
 				F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */,
 				F435EEC61C1F3187004D8BAA /* BetTableViewCell.swift */,
 				F435EED61C21B5F6004D8BAA /* BetEngineTableViewCell.swift */,
+				0BF161CC1C3404EE00E3E126 /* LeaderboardTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -706,9 +718,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BF161D31C340AFF00E3E126 /* LeaderboardViewController.xib in Resources */,
 				F435ED961C1D7F4D004D8BAA /* Assets.xcassets in Resources */,
 				F435EED51C21AC91004D8BAA /* BetEngineTableViewCell.xib in Resources */,
 				F418C3591C160EF00063A112 /* LaunchScreen.storyboard in Resources */,
+				0BF161C91C34037300E3E126 /* LeaderboardCell.xib in Resources */,
 				F435EEC51C1F30B9004D8BAA /* BetTableViewCell.xib in Resources */,
 				F418CBA11C1619690063A112 /* MenuSectionHeaderView.xib in Resources */,
 				F440CCAA1C1B39D700BE9F08 /* OddsViewController.xib in Resources */,
@@ -779,11 +793,13 @@
 				F410218E1C329D25000995F4 /* RankingAndStatistic.swift in Sources */,
 				F418CBDA1C174C310063A112 /* RAMRotationAnimation.swift in Sources */,
 				0BFBCE191C2AA5C50030935C /* MKButton.swift in Sources */,
+				0BF161CE1C3404EE00E3E126 /* LeaderboardTableViewCell.swift in Sources */,
 				F41021921C33E735000995F4 /* LeaguesStatisticsViewController.swift in Sources */,
 				0BFA99C91C26F1DF00D2CE2D /* ChartAxisValuesGenerator.swift in Sources */,
 				0BFA99C71C26F1DF00D2CE2D /* ChartAxisLayerDefault.swift in Sources */,
 				0BFBCE1B1C2AA6050030935C /* MKColor.swift in Sources */,
 				0BFA99DA1C26F22700D2CE2D /* ChartContextDrawer.swift in Sources */,
+				0BF161D11C3406CA00E3E126 /* LeaderboardViewController.swift in Sources */,
 				F418CBAA1C16C1AB0063A112 /* CollapsableTableProtocols.swift in Sources */,
 				F435EED11C207C37004D8BAA /* TabBarEnum.swift in Sources */,
 				0BFA99CB1C26F1DF00D2CE2D /* ChartAxisXLayerDefault.swift in Sources */,
