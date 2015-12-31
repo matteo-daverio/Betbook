@@ -1,0 +1,4 @@
+language: swift
+xcode_project: Development.xcworkspace
+xcode_scheme: Example-Swift
+xcode_sdk: iphonesimulator
