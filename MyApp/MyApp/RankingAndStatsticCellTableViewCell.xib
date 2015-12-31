@@ -133,7 +133,7 @@
                             <constraint firstItem="Xf8-7n-GvU" firstAttribute="bottom" secondItem="HVU-39-hze" secondAttribute="bottom" id="yWF-4u-tuX"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INTER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odn-93-yt5">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INTER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="odn-93-yt5">
                         <rect key="frame" x="84" y="8" width="200" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="358" id="fey-Hb-K5v"/>

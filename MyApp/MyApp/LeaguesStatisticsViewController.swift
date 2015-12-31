@@ -12,9 +12,13 @@ class LeaguesStatisticsViewController: UIViewController {
 	
 	var pageMenu : CAPSPageMenu?
 	
-	private func helperController(league: String) -> RankingAndStatsticViewController{
+	private func helperController(var league: String) -> RankingAndStatsticViewController{
 		let controller = RankingAndStatsticViewController()
 		controller.league = league
+		if(league == "Premier League"){
+			league = "Premier L."
+		}
+		controller.title = league
 		return controller
 	}
 	
@@ -42,8 +46,8 @@ class LeaguesStatisticsViewController: UIViewController {
 		
 		
 		controllerArray.append(helperController("Serie A"))
-		controllerArray.append(helperController("Liga"))
 		controllerArray.append(helperController("Premier League"))
+		controllerArray.append(helperController("Liga"))
 		controllerArray.append(helperController("Ligue 1"))
 		controllerArray.append(helperController("Bundesliga"))
 		
