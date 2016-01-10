@@ -13,6 +13,8 @@ import UIKit
  */
 @IBDesignable public class HighlightedTextField: TextFieldEffects {
     
+    
+    
     /**
      The color of the border when it has no content.
      
@@ -71,7 +73,8 @@ import UIKit
     }
     
     public var upperPlaceholder: String?
-    
+    private var inactiveColor : UIColor?
+    private var activeColor : UIColor?
     private let borderThickness: (active: CGFloat, inactive: CGFloat) = (active: 2, inactive: 1)
     private let placeholderInsets = CGPoint(x: 0, y: 6)
     private let textFieldInsets = CGPoint(x: 0, y: 12)
@@ -110,6 +113,8 @@ import UIKit
             self.placeholderLabel.alpha = 0.5
         })
         
+        activeBorderLayer.backgroundColor = activeColor?.CGColor
+        inactiveBorderLayer.backgroundColor = inactiveColor?.CGColor
         placeholderLabel.text = upperPlaceholder
         activeBorderLayer.frame = self.rectForBorder(self.borderThickness.active, isFilled: true)
     }
@@ -122,16 +127,25 @@ import UIKit
                 }), completion: nil)
             
             placeholderLabel.text = placeholder
+            activeBorderLayer.backgroundColor = activeColor?.CGColor
+            inactiveBorderLayer.backgroundColor = inactiveColor?.CGColor
             self.activeBorderLayer.frame = self.rectForBorder(self.borderThickness.active, isFilled: false)
         }
+    }
+    
+    public func invalidInput() {
+        inactiveBorderLayer.backgroundColor = UIColor.redColor().CGColor
+        activeBorderLayer.backgroundColor = UIColor.redColor().CGColor
     }
     
     // MARK: - Private
     
     private func updateBorder() {
+        inactiveColor = borderInactiveColor
         inactiveBorderLayer.frame = rectForBorder(borderThickness.inactive, isFilled: true)
         inactiveBorderLayer.backgroundColor = borderInactiveColor?.CGColor
         
+        activeColor = borderActiveColor
         activeBorderLayer.frame = rectForBorder(borderThickness.active, isFilled: false)
         activeBorderLayer.backgroundColor = borderActiveColor?.CGColor
     }

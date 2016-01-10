@@ -77,7 +77,7 @@ class IGSwitch: UIControl {
     private var backgroundLabels: [UILabel] = []
     private var sliderView: UIView!
     private var frontLabels: [UILabel] = []
-    private var sliderWidth: CGFloat { return (bounds.width / 2) * 0.90 }
+    private var sliderWidth: CGFloat { return bounds.width / 2 }
     
     // MARK: Initializers
     
@@ -262,4 +262,3 @@ class IGSwitch: UIControl {
     }
     
 }
-

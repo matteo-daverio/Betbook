@@ -29,21 +29,22 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 	private var nationPicker: SBPickerSelector = SBPickerSelector.picker()
 	
 	@IBAction func showNationPicker(sender: UIButton) {
-		
-		//*********************
-		//setup here your picker
-		//*********************
-		
-		self.nationPicker.pickerData = self.populateNation() //picker content
-		self.nationPicker.delegate = self
-		self.nationPicker.pickerType = SBPickerSelectorType.Text
-		self.nationPicker.doneButtonTitle = "Done"
-		self.nationPicker.cancelButtonTitle = "Cancel"
-		
-		let point: CGPoint = view.convertPoint(sender.frame.origin, fromView: sender.superview)
-		var frame: CGRect = sender.frame
-		frame.origin = point
-		self.nationPicker.showPickerIpadFromRect(frame, inView: view)
+        if online == true {
+            //*********************
+            //setup here your picker
+            //*********************
+            
+            self.nationPicker.pickerData = self.populateNation() //picker content
+            self.nationPicker.delegate = self
+            self.nationPicker.pickerType = SBPickerSelectorType.Text
+            self.nationPicker.doneButtonTitle = "Done"
+            self.nationPicker.cancelButtonTitle = "Cancel"
+            
+            let point: CGPoint = view.convertPoint(sender.frame.origin, fromView: sender.superview)
+            var frame: CGRect = sender.frame
+            frame.origin = point
+            self.nationPicker.showPickerIpadFromRect(frame, inView: view)
+        }
 		
 	}
     
@@ -53,26 +54,29 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 	
 	@IBAction func showLeaguePicker(sender: UIButton) {
 		
-		if (!invalidField(selectNation)) {
-			// TODO: invalidare match e outcome se selezionato qualcosa di diverso
-			
-			self.leaguePicker.pickerData = self.populateLeague()
-			self.leaguePicker.delegate = self
-			self.leaguePicker.pickerType = SBPickerSelectorType.Text
-			self.leaguePicker.doneButtonTitle = "Done"
-			self.leaguePicker.cancelButtonTitle = "Cancel"
-			
-			//		let view = self.view
-			
-			let point: CGPoint = view.convertPoint(sender.frame.origin, fromView: sender.superview)
-			var frame: CGRect = sender.frame
-			frame.origin = point
-			
-			self.leaguePicker.showPickerIpadFromRect(frame, inView: view)
-			
-		} else {
-			selectNation.shake()
-		}
+        if online == true {
+            if (!invalidField(selectNation)) {
+                // TODO: invalidare match e outcome se selezionato qualcosa di diverso
+                
+                self.leaguePicker.pickerData = self.populateLeague()
+                self.leaguePicker.delegate = self
+                self.leaguePicker.pickerType = SBPickerSelectorType.Text
+                self.leaguePicker.doneButtonTitle = "Done"
+                self.leaguePicker.cancelButtonTitle = "Cancel"
+                
+                //		let view = self.view
+                
+                let point: CGPoint = view.convertPoint(sender.frame.origin, fromView: sender.superview)
+                var frame: CGRect = sender.frame
+                frame.origin = point
+                
+                self.leaguePicker.showPickerIpadFromRect(frame, inView: view)
+                
+            } else {
+                selectNation.shake()
+            }
+        }
+		
 	}
 	
 	
@@ -84,39 +88,38 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 	
 	@IBAction func showMatchList(sender: AnyObject) {
 		
-		if (!invalidField(selectLeague)) {
-			// TODO: invalidare outcome se selezionato qualcosa di diverso
-			
-			if(self.matches == nil){
-				matchListModel.getMatchList(self.selectNation.text!, uiLeague: self.selectLeague.text!)
-				spinner.startAnimating()
-			}else{
-				
-				self.spinner.stopAnimating()
-				
-				self.matchListPicker.delegate = self
-				self.matchListPicker.pickerType = SBPickerSelectorType.Text
-				self.matchListPicker.doneButtonTitle = "Done"
-				self.matchListPicker.cancelButtonTitle = "Cancel"
-				
-				let sender = self.matchListButton
-				
-				let point: CGPoint = self.view.convertPoint(sender.frame.origin, fromView: sender.superview)
-				var frame: CGRect = sender.frame
-				frame.origin = point
-				
-				self.matchListPicker.showPickerIpadFromRect(frame, inView: self.view)
-			}
-		
-			
-			
-		} else {
-			selectLeague.shake()
-            if (invalidField(selectNation)) {
-                selectNation.shake()
+        if online == true {
+            if (!invalidField(selectLeague)) {
+                // TODO: invalidare outcome se selezionato qualcosa di diverso
+                
+                if(self.matches == nil){
+                    matchListModel.getMatchList(self.selectNation.text!, uiLeague: self.selectLeague.text!)
+                    spinner.startAnimating()
+                }else{
+                    
+                    self.spinner.stopAnimating()
+                    
+                    self.matchListPicker.delegate = self
+                    self.matchListPicker.pickerType = SBPickerSelectorType.Text
+                    self.matchListPicker.doneButtonTitle = "Done"
+                    self.matchListPicker.cancelButtonTitle = "Cancel"
+                    
+                    let sender = self.matchListButton
+                    
+                    let point: CGPoint = self.view.convertPoint(sender.frame.origin, fromView: sender.superview)
+                    var frame: CGRect = sender.frame
+                    frame.origin = point
+                    
+                    self.matchListPicker.showPickerIpadFromRect(frame, inView: self.view)
+                }
+                
+            } else {
+                selectLeague.shake()
+                if (invalidField(selectNation)) {
+                    selectNation.shake()
+                }
             }
-		}
-		
+        }
 	}
 	
     @IBOutlet weak var selectKindOfBet: HighlightedTextField!
@@ -125,35 +128,35 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 	
 	@IBAction func showKindOfBetList(sender: UIButton) {
 		
-		if (!invalidField(selectMatch)) {
-			
-			
-			//*********************
-			//setup here your picker
-			//*********************
-			
-			self.kindOfBetPicker.pickerData = self.populateKindOfBet() //picker content
-			self.kindOfBetPicker.delegate = self
-			self.kindOfBetPicker.pickerType = SBPickerSelectorType.Text
-			self.kindOfBetPicker.doneButtonTitle = "Done"
-			self.kindOfBetPicker.cancelButtonTitle = "Cancel"
-			
-			let point: CGPoint = view.convertPoint(sender.frame.origin, fromView: sender.superview)
-			var frame: CGRect = sender.frame
-			frame.origin = point
-			self.kindOfBetPicker.showPickerIpadFromRect(frame, inView: view)
-			
-			
-		} else {
-			selectMatch.shake()
-            if (invalidField(selectLeague)) {
-                selectLeague.shake()
-                if (invalidField(selectNation)) {
-                    selectNation.shake()
+        if online == true {
+            if (!invalidField(selectMatch)) {
+                
+                //*********************
+                //setup here your picker
+                //*********************
+                
+                self.kindOfBetPicker.pickerData = self.populateKindOfBet() //picker content
+                self.kindOfBetPicker.delegate = self
+                self.kindOfBetPicker.pickerType = SBPickerSelectorType.Text
+                self.kindOfBetPicker.doneButtonTitle = "Done"
+                self.kindOfBetPicker.cancelButtonTitle = "Cancel"
+                
+                let point: CGPoint = view.convertPoint(sender.frame.origin, fromView: sender.superview)
+                var frame: CGRect = sender.frame
+                frame.origin = point
+                self.kindOfBetPicker.showPickerIpadFromRect(frame, inView: view)
+                
+            } else {
+                selectMatch.shake()
+                if (invalidField(selectLeague)) {
+                    selectLeague.shake()
+                    if (invalidField(selectNation)) {
+                        selectNation.shake()
+                    }
                 }
             }
-            
-		}
+        }
+        
 	}
 	
 	
@@ -164,32 +167,35 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 	
 	@IBAction func showValueOfBet(sender: UIButton) {
 		
-		if (!invalidField(selectKindOfBet)) {
-		
-			self.valueOfBetPicker.pickerData = self.populateValueOfBet()
-			
-			self.valueOfBetPicker.delegate = self
-			self.valueOfBetPicker.pickerType = SBPickerSelectorType.Text
-			self.valueOfBetPicker.doneButtonTitle = "Done"
-			self.valueOfBetPicker.cancelButtonTitle = "Cancel"
-			
-			let point: CGPoint = view.convertPoint(sender.frame.origin, fromView: sender.superview)
-			var frame: CGRect = sender.frame
-			frame.origin = point
-			self.valueOfBetPicker.showPickerIpadFromRect(frame, inView: view)
-			
-		} else {
-			selectKindOfBet.shake()
-            if (invalidField(selectMatch)) {
-                selectMatch.shake()
-                if (invalidField(selectLeague)) {
-                    selectLeague.shake()
-                    if (invalidField(selectNation)) {
-                        selectNation.shake()
+        if online == true {
+            if (!invalidField(selectKindOfBet)) {
+                
+                self.valueOfBetPicker.pickerData = self.populateValueOfBet()
+                
+                self.valueOfBetPicker.delegate = self
+                self.valueOfBetPicker.pickerType = SBPickerSelectorType.Text
+                self.valueOfBetPicker.doneButtonTitle = "Done"
+                self.valueOfBetPicker.cancelButtonTitle = "Cancel"
+                
+                let point: CGPoint = view.convertPoint(sender.frame.origin, fromView: sender.superview)
+                var frame: CGRect = sender.frame
+                frame.origin = point
+                self.valueOfBetPicker.showPickerIpadFromRect(frame, inView: view)
+                
+            } else {
+                selectKindOfBet.shake()
+                if (invalidField(selectMatch)) {
+                    selectMatch.shake()
+                    if (invalidField(selectLeague)) {
+                        selectLeague.shake()
+                        if (invalidField(selectNation)) {
+                            selectNation.shake()
+                        }
                     }
                 }
             }
-		}
+        }
+        
 	}
 	
 	
@@ -370,9 +376,13 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         switchOnline.titleRight = "Offline"
         switchOnline.sliderColor = UIColor.whiteColor()
         switchOnline.sliderInset = 2
+        switchOnline.cornerRadius = 10
         switchOnline.backgroundColor = UIColor(red: 90/255, green: 190/255, blue: 246/255, alpha: 1)
         switchOnline.textColorFront = UIColor(red: 90/255, green: 190/255, blue: 246/255, alpha: 1)
         switchOnline.textColorBack = UIColor.whiteColor()
+        
+        switchOnline.addTarget(self, action: "switchChange:", forControlEvents: .ValueChanged)
+        
     }
 	
 	override func shouldAutorotate() -> Bool {
@@ -546,88 +556,128 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         
     }
     
-    
+    // switch change values
+    func switchChange(sender: IGSwitch!) {
+        
+        if (switchOnline.selectedIndex == 0) {
+            self.online = true
+        } else {
+            self.online = false
+        }
+        
+        if online == true {
+            // mettere a posto input field
+            
+        } else {
+            // mettere input field grigi
+            
+        }
+        
+    }
     
     // button Calculate press
     func calculate(sender: UIButton!) {
         
-        if (invalidBetField()) {
-            textFieldBet.shake()
-            if (invalidVictoryField()) {
-                textFieldVictory.shake()
-                if (invalidField(selectValeOfBet)) {
-                    selectValeOfBet.shake()
-                    if (invalidField(selectKindOfBet)) {
-                        selectKindOfBet.shake()
-                        if (invalidField(selectMatch)) {
-                            selectMatch.shake()
-                            if (invalidField(selectLeague)) {
-                                selectLeague.shake()
-                                if (invalidField(selectNation)) {
-                                    selectNation.shake()
-                                }
-                            }
-                        }
-                    }
-                }
-            } else {
-                if (invalidField(selectValeOfBet)) {
-                    selectValeOfBet.shake()
-                    if (invalidField(selectKindOfBet)) {
-                        selectKindOfBet.shake()
-                        if (invalidField(selectMatch)) {
-                            selectMatch.shake()
-                            if (invalidField(selectLeague)) {
-                                selectLeague.shake()
-                                if (invalidField(selectNation)) {
-                                    selectNation.shake()
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        } else {
-            if (invalidVictoryField()) {
-                textFieldVictory.shake()
-                if (invalidField(selectValeOfBet)) {
-                    selectValeOfBet.shake()
-                    if (invalidField(selectKindOfBet)) {
-                        selectKindOfBet.shake()
-                        if (invalidField(selectMatch)) {
-                            selectMatch.shake()
-                            if (invalidField(selectLeague)) {
-                                selectLeague.shake()
-                                if (invalidField(selectNation)) {
-                                    selectNation.shake()
-                                }
-                            }
-                        }
-                    }
-                }
-            } else {
-                if (invalidField(selectValeOfBet)) {
-                    selectValeOfBet.shake()
-                    if (invalidField(selectKindOfBet)) {
-                        selectKindOfBet.shake()
-                        if (invalidField(selectMatch)) {
-                            selectMatch.shake()
-                            if (invalidField(selectLeague)) {
-                                selectLeague.shake()
-                                if (invalidField(selectNation)) {
-                                    selectNation.shake()
+        if online == true {
+            if (invalidBetField()) {
+                textFieldBet.shake()
+                textFieldBet.invalidInput()
+                if (invalidVictoryField()) {
+                    textFieldVictory.shake()
+                    textFieldVictory.invalidInput()
+                    if (invalidField(selectValeOfBet)) {
+                        selectValeOfBet.shake()
+                        selectValeOfBet.invalidInput()
+                        if (invalidField(selectKindOfBet)) {
+                            selectKindOfBet.shake()
+                            selectKindOfBet.invalidInput()
+                            if (invalidField(selectMatch)) {
+                                selectMatch.shake()
+                                selectMatch.invalidInput()
+                                if (invalidField(selectLeague)) {
+                                    selectLeague.shake()
+                                    selectLeague.invalidInput()
+                                    if (invalidField(selectNation)) {
+                                        selectNation.shake()
+                                        selectNation.invalidInput()
+                                    }
                                 }
                             }
                         }
                     }
                 } else {
-                    
-                    // valid input
-                    // save data into model, initialize all classes and go to next view
-                    
+                    if (invalidField(selectValeOfBet)) {
+                        selectValeOfBet.shake()
+                        selectValeOfBet.invalidInput()
+                        if (invalidField(selectKindOfBet)) {
+                            selectKindOfBet.shake()
+                            if (invalidField(selectMatch)) {
+                                selectMatch.shake()
+                                if (invalidField(selectLeague)) {
+                                    selectLeague.shake()
+                                    if (invalidField(selectNation)) {
+                                        selectNation.shake()
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else {
+                if (invalidVictoryField()) {
+                    textFieldVictory.shake()
+                    if (invalidField(selectValeOfBet)) {
+                        selectValeOfBet.shake()
+                        if (invalidField(selectKindOfBet)) {
+                            selectKindOfBet.shake()
+                            if (invalidField(selectMatch)) {
+                                selectMatch.shake()
+                                if (invalidField(selectLeague)) {
+                                    selectLeague.shake()
+                                    if (invalidField(selectNation)) {
+                                        selectNation.shake()
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    if (invalidField(selectValeOfBet)) {
+                        selectValeOfBet.shake()
+                        if (invalidField(selectKindOfBet)) {
+                            selectKindOfBet.shake()
+                            if (invalidField(selectMatch)) {
+                                selectMatch.shake()
+                                if (invalidField(selectLeague)) {
+                                    selectLeague.shake()
+                                    if (invalidField(selectNation)) {
+                                        selectNation.shake()
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        
+                        // valid input
+                        // save data into model, initialize all classes and go to next view
+                        
+                    }
+                }
+            }
+
+        } else {
+            if invalidBetField() {
+                textFieldBet.shake()
+                if (invalidVictoryField()) {
+                    textFieldVictory.shake()
+                }
+            } else {
+                if (invalidVictoryField()) {
+                    textFieldVictory.shake()
                 }
             }
         }
+        
     }
     
     
