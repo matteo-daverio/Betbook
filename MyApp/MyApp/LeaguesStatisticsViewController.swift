@@ -27,7 +27,6 @@ class LeaguesStatisticsViewController: UIViewController {
 		
 		// MARK: - UI Setup
 		
-		self.title = "Classifica"
 		self.navigationController?.navigationBar.translucent = false
 		self.navigationController?.navigationBar.barTintColor = UIColor(red: 20.0/255.0, green: 29.0/255.0, blue: 74.0/255.0, alpha: 1.0)
 		self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -73,6 +72,8 @@ class LeaguesStatisticsViewController: UIViewController {
 		
 		// Initialize scroll menu
 		pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRectMake(0.0, 0.0, self.view.frame.width, self.view.frame.height), pageMenuOptions: parameters)
+		
+		self.title = "Standings"
 		
 		self.addChildViewController(pageMenu!)
 		self.view.addSubview(pageMenu!.view)

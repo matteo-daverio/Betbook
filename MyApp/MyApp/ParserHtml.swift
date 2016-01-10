@@ -665,7 +665,7 @@ class ParserHtml {
 			return nil
 		}
 		
-		var ranking = RankingAndStatistic()
+		let ranking = RankingAndStatistic()
 		
 		for tr in classificaBody!.css("tr"){
 			

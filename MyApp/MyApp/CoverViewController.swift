@@ -313,6 +313,10 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 		//Importantissimo
 		matchListModel.delegate = self
 		
+		self.scrollView.scrollEnabled = false
+		
+		self.title = "Coverage"
+		
 		spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
 		spinner.hidesWhenStopped = true
 		spinner.transform = CGAffineTransformMakeScale(1.5, 1.5)
@@ -322,7 +326,7 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 		spinner.backgroundColor = UIColor.clearColor()
 		self.view.addSubview(spinner)
 	
-		scrollView.scrollEnabled = true
+		//scrollView.scrollEnabled = true
 		
 		scrollView.contentSize = self.view.frame.size
         

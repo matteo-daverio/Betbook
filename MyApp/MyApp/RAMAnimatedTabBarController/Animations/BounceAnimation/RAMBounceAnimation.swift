@@ -41,13 +41,14 @@ class RAMBounceAnimation : RAMItemAnimation {
     }
 
     override func selectedState(icon : UIImageView, textLabel : UILabel) {
-        textLabel.textColor = textSelectedColor
+        textLabel.textColor = UIColor.clearColor()
       
         if let iconImage = icon.image {
             let renderImage = iconImage.imageWithRenderingMode(.AlwaysTemplate)
             icon.image = renderImage
 			//Colore dell'immagine
             icon.tintColor = textSelectedColor
+			playBounceAnimation(icon)
         }
     }
 
@@ -65,6 +66,7 @@ class RAMBounceAnimation : RAMItemAnimation {
             icon.image = renderImage
             icon.tintColor = iconSelectedColor
         }
-    }
+		
+	}
 
 }

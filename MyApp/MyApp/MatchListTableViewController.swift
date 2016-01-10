@@ -128,7 +128,7 @@ class MatchListTableViewController: UITableViewController,MatchListDelegate {
 
 		var i = 0
 	
-		for(matchList; i < matchList.count; i++){
+		for(; i < matchList.count; i++){
 			let mDate = formatter.dateFromString(helperMatchDate(matchList[i]))?.dateByAddingTimeInterval(3600)
 			
 			if(mDate?.compare(currentDate) == NSComparisonResult.OrderedAscending){

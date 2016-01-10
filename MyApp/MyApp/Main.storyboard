@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hys-Qt-Hy9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hys-Qt-Hy9">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -21,7 +21,6 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PBm-ub-DKL">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="0D1-hB-zeD" style="IBUITableViewCellStyleDefault" id="1tF-Yh-lb9">
@@ -34,15 +33,12 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0D1-hB-zeD">
                                                     <rect key="frame" x="15" y="0.0" width="550" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <animations/>
                                         </tableViewCellContentView>
-                                        <animations/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -51,7 +47,6 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PBm-ub-DKL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0yx-FS-CIv"/>
@@ -784,18 +779,18 @@
                         <segue destination="u68-zQ-QWE" kind="relationship" relationship="viewControllers" id="cma-FD-NsM"/>
                         <segue destination="La8-UB-2WS" kind="relationship" relationship="viewControllers" id="zqi-bS-XKp"/>
                         <segue destination="l14-nl-7nr" kind="relationship" relationship="viewControllers" id="LwJ-yZ-m2k"/>
-                        <segue destination="YnV-XA-6es" kind="relationship" relationship="viewControllers" id="c9c-ip-U1m"/>
+                        <segue destination="YnV-XA-6es" kind="relationship" relationship="viewControllers" id="MbJ-pR-RV3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Sn-jP-pJx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-619" y="335"/>
         </scene>
-        <!--Bella-->
+        <!--Search-->
         <scene sceneID="aYg-D4-hGb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="La8-UB-2WS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Bella" image="drop" id="vTN-L2-ZIH" customClass="RAMAnimatedTabBarItem" customModule="MyApp">
+                    <tabBarItem key="tabBarItem" title="Search" image="search" id="vTN-L2-ZIH" customClass="RAMAnimatedTabBarItem" customModule="MyApp">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                 <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -810,7 +805,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="xe6-CS-h1G">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.062745098039215685" green="0.074509803921568626" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
@@ -915,11 +909,11 @@
             </objects>
             <point key="canvasLocation" x="1382" y="2167"/>
         </scene>
-        <!--Perfect-->
+        <!--Coverage-->
         <scene sceneID="1YF-7T-lZb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u68-zQ-QWE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Perfect" image="icon_pin" id="XGJ-1h-X5Y" customClass="RAMAnimatedTabBarItem" customModule="MyApp">
+                <navigationController title="Coverage" automaticallyAdjustsScrollViewInsets="NO" id="u68-zQ-QWE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Coverage" image="calculator" id="XGJ-1h-X5Y" customClass="RAMAnimatedTabBarItem" customModule="MyApp">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                 <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -939,7 +933,7 @@
                         <color key="barTintColor" red="0.062745098040000002" green="0.074509803920000006" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                            <color key="textColor" red="0.062745098040000002" green="0.074509803920000006" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="textShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
@@ -949,15 +943,15 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTS-re-icp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="UPh-r9-T7L" customClass="RAMFumeAnimation" customModule="MyApp" customModuleProvider="target"/>
+                <customObject id="UPh-r9-T7L" customClass="RAMBounceAnimation" customModule="MyApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="426" y="-822"/>
         </scene>
-        <!--Item-->
+        <!--MyBet-->
         <scene sceneID="fHc-V2-mIg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l14-nl-7nr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="icon_user" id="ZlQ-oj-Oyl" customClass="RAMAnimatedTabBarItem" customModule="MyApp" customModuleProvider="target">
+                    <tabBarItem key="tabBarItem" title="MyBet" image="shopping-cart" id="ZlQ-oj-Oyl" customClass="RAMAnimatedTabBarItem" customModule="MyApp" customModuleProvider="target">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                 <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -987,14 +981,14 @@
             </objects>
             <point key="canvasLocation" x="434" y="1287"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Standings-->
         <scene sceneID="K7R-Op-7qw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YnV-XA-6es" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icon_user" id="v21-fi-G3B" customClass="RAMAnimatedTabBarItem" customModule="MyApp" customModuleProvider="target">
+                    <tabBarItem key="tabBarItem" title="Standings" image="text-list" id="v21-fi-G3B" customClass="RAMAnimatedTabBarItem" customModule="MyApp">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                         <connections>
@@ -1006,6 +1000,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.062745098040000002" green="0.074509803920000006" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1019,9 +1017,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="drop" width="24" height="24"/>
-        <image name="icon_pin" width="30" height="30"/>
-        <image name="icon_user" width="30" height="30"/>
+        <image name="calculator" width="32" height="32"/>
+        <image name="search" width="32" height="32"/>
+        <image name="shopping-cart" width="32" height="32"/>
+        <image name="text-list" width="32" height="32"/>
     </resources>
     <color key="tintColor" red="0.062745098040000002" green="0.074509803920000006" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

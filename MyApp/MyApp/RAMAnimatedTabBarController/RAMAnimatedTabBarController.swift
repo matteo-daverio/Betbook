@@ -87,7 +87,8 @@ class RAMAnimatedTabBarController: UITabBarController {
                 
                 // text
                 let textLabel = UILabel()
-                textLabel.text = item.title
+				
+				//			textLabel.text = item.title
 				//Colore backgraund dell test dell'icon bar item
                 textLabel.backgroundColor = UIColor.clearColor()
                 textLabel.textColor = item.textColor
@@ -110,7 +111,7 @@ class RAMAnimatedTabBarController: UITabBarController {
                 }
                 
                 item.image = nil
-                item.title = ""
+				//      item.title = ""
                 index++
             }
         }
