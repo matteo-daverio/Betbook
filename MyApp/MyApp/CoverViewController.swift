@@ -611,12 +611,16 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                         selectValeOfBet.invalidInput()
                         if (invalidField(selectKindOfBet)) {
                             selectKindOfBet.shake()
+                            selectKindOfBet.invalidInput()
                             if (invalidField(selectMatch)) {
                                 selectMatch.shake()
+                                selectMatch.invalidInput()
                                 if (invalidField(selectLeague)) {
                                     selectLeague.shake()
+                                    selectLeague.invalidInput()
                                     if (invalidField(selectNation)) {
                                         selectNation.shake()
+                                        selectNation.invalidInput()
                                     }
                                 }
                             }
@@ -626,16 +630,22 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
             } else {
                 if (invalidVictoryField()) {
                     textFieldVictory.shake()
+                    textFieldVictory.invalidInput()
                     if (invalidField(selectValeOfBet)) {
                         selectValeOfBet.shake()
+                        selectValeOfBet.invalidInput()
                         if (invalidField(selectKindOfBet)) {
                             selectKindOfBet.shake()
+                            selectKindOfBet.invalidInput()
                             if (invalidField(selectMatch)) {
                                 selectMatch.shake()
+                                selectMatch.invalidInput()
                                 if (invalidField(selectLeague)) {
                                     selectLeague.shake()
+                                    selectLeague.invalidInput()
                                     if (invalidField(selectNation)) {
                                         selectNation.shake()
+                                        selectNation.invalidInput()
                                     }
                                 }
                             }
@@ -644,14 +654,19 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                 } else {
                     if (invalidField(selectValeOfBet)) {
                         selectValeOfBet.shake()
+                        selectValeOfBet.invalidInput()
                         if (invalidField(selectKindOfBet)) {
                             selectKindOfBet.shake()
+                            selectKindOfBet.invalidInput()
                             if (invalidField(selectMatch)) {
                                 selectMatch.shake()
+                                selectMatch.invalidInput()
                                 if (invalidField(selectLeague)) {
                                     selectLeague.shake()
+                                    selectLeague.invalidInput()
                                     if (invalidField(selectNation)) {
                                         selectNation.shake()
+                                        selectNation.invalidInput()
                                     }
                                 }
                             }
@@ -668,12 +683,15 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         } else {
             if invalidBetField() {
                 textFieldBet.shake()
+                textFieldBet.invalidInput()
                 if (invalidVictoryField()) {
                     textFieldVictory.shake()
+                    textFieldVictory.invalidInput()
                 }
             } else {
                 if (invalidVictoryField()) {
                     textFieldVictory.shake()
+                    textFieldVictory.invalidInput()
                 }
             }
         }
