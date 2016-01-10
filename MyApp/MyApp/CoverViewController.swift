@@ -8,6 +8,7 @@
 
 import UIKit
 import UITextField_Shake
+import AudioToolbox
 
 
 class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate, SBPickerSelectorDelegate, MatchListDelegate {
@@ -419,8 +420,8 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         textFieldBet.borderInactiveColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
         textFieldBet.borderActiveColor = UIColor(red: 90/255, green: 190/255, blue: 246/255, alpha: 1)
         textFieldBet.placeholderColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
-        textFieldBet.placeholder = "Somma giocata €    0.00"
-        textFieldBet.upperPlaceholder = "Somma giocata €"
+        textFieldBet.placeholder = "Bet amount €    0.00"
+        textFieldBet.upperPlaceholder = "Bet amount €"
         textFieldBet.placeholderFontScale = 0.65
         textFieldBet.keyboardType = UIKeyboardType.DecimalPad
         textFieldBet.delegate = self
@@ -438,8 +439,8 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         textFieldVictory.borderInactiveColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
         textFieldVictory.borderActiveColor = UIColor(red: 90/255, green: 190/255, blue: 246/255, alpha: 1)
         textFieldVictory.placeholderColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
-        textFieldVictory.placeholder = "Vittoria €    0.00"
-        textFieldVictory.upperPlaceholder = "Vittoria €"
+        textFieldVictory.placeholder = "Potential win €    0.00"
+        textFieldVictory.upperPlaceholder = "Potential win €"
         textFieldVictory.keyboardType = UIKeyboardType.DecimalPad
         textFieldVictory.delegate = self
         
@@ -491,8 +492,8 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         selectNation.borderInactiveColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
         selectNation.borderActiveColor = UIColor(red: 90/255, green: 190/255, blue: 246/255, alpha: 1)
         selectNation.placeholderColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
-        selectNation.placeholder = "Nazione:    (ex. Italia)"
-        selectNation.upperPlaceholder = "Nazione:"
+        selectNation.placeholder = "Country:    (ex. Italia)"
+        selectNation.upperPlaceholder = "Country:"
         
 //        // Button Creation
 //        selectNationButton.addTarget(self, action: "selectNation:", forControlEvents: .TouchUpInside)
@@ -506,8 +507,8 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         selectLeague.borderInactiveColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
         selectLeague.borderActiveColor = UIColor(red: 90/255, green: 190/255, blue: 246/255, alpha: 1)
         selectLeague.placeholderColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
-        selectLeague.placeholder = "Campionato:    (ex. Serie A)"
-        selectLeague.upperPlaceholder = "Campionato:"
+        selectLeague.placeholder = "League:    (ex. Serie A)"
+        selectLeague.upperPlaceholder = "League:"
         
 //        // Button Creation
 //        selectLeagueButton.addTarget(self, action: "selectLeague:", forControlEvents: .TouchUpInside)
@@ -521,8 +522,8 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         selectMatch.borderInactiveColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
         selectMatch.borderActiveColor = UIColor(red: 90/255, green: 190/255, blue: 246/255, alpha: 1)
         selectMatch.placeholderColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
-        selectMatch.placeholder = "Partita:    (ex. Milan Inter)"
-        selectMatch.upperPlaceholder = "Partita:"
+        selectMatch.placeholder = "Match:    (ex. Milan Inter)"
+        selectMatch.upperPlaceholder = "Match:"
         
 //        // Button Creation
 //        selectMatchButton.addTarget(self, action: "selectMatch:", forControlEvents: .TouchUpInside)
@@ -536,8 +537,8 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         selectKindOfBet.borderInactiveColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
         selectKindOfBet.borderActiveColor = UIColor(red: 90/255, green: 190/255, blue: 246/255, alpha: 1)
         selectKindOfBet.placeholderColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
-        selectKindOfBet.placeholder = "Tipo di Scommessa:    (ex. Esito Finale)"
-        selectKindOfBet.upperPlaceholder = "Tipo di Scommessa:"
+        selectKindOfBet.placeholder = "Kind of bet:    (ex. Esito Finale)"
+        selectKindOfBet.upperPlaceholder = "Kind of bet:"
         
 //        // Button Creation
 //        selectOutcomeButton.addTarget(self, action: "selectOutcome:", forControlEvents: .TouchUpInside)
@@ -551,8 +552,8 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         selectValeOfBet.borderInactiveColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
         selectValeOfBet.borderActiveColor = UIColor(red: 90/255, green: 190/255, blue: 246/255, alpha: 1)
         selectValeOfBet.placeholderColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
-        selectValeOfBet.placeholder = "Risultato:    (ex. 1)"
-        selectValeOfBet.upperPlaceholder = "Risultato:"
+        selectValeOfBet.placeholder = "Outcome:    (ex. 1)"
+        selectValeOfBet.upperPlaceholder = "Outcome:"
         
     }
     
@@ -598,26 +599,19 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         
         if online == true {
             if (invalidBetField()) {
-                textFieldBet.shake()
-                textFieldBet.invalidInput()
+                performError(textFieldBet)
                 if (invalidVictoryField()) {
-                    textFieldVictory.shake()
-                    textFieldVictory.invalidInput()
+                    performError(textFieldVictory)
                     if (invalidField(selectValeOfBet)) {
-                        selectValeOfBet.shake()
-                        selectValeOfBet.invalidInput()
+                        performError(selectValeOfBet)
                         if (invalidField(selectKindOfBet)) {
-                            selectKindOfBet.shake()
-                            selectKindOfBet.invalidInput()
+                            performError(selectKindOfBet)
                             if (invalidField(selectMatch)) {
-                                selectMatch.shake()
-                                selectMatch.invalidInput()
+                                performError(selectMatch)
                                 if (invalidField(selectLeague)) {
-                                    selectLeague.shake()
-                                    selectLeague.invalidInput()
+                                    performError(selectLeague)
                                     if (invalidField(selectNation)) {
-                                        selectNation.shake()
-                                        selectNation.invalidInput()
+                                        performError(selectNation)
                                     }
                                 }
                             }
@@ -625,20 +619,15 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                     }
                 } else {
                     if (invalidField(selectValeOfBet)) {
-                        selectValeOfBet.shake()
-                        selectValeOfBet.invalidInput()
+                        performError(selectValeOfBet)
                         if (invalidField(selectKindOfBet)) {
-                            selectKindOfBet.shake()
-                            selectKindOfBet.invalidInput()
+                            performError(selectKindOfBet)
                             if (invalidField(selectMatch)) {
-                                selectMatch.shake()
-                                selectMatch.invalidInput()
+                                performError(selectMatch)
                                 if (invalidField(selectLeague)) {
-                                    selectLeague.shake()
-                                    selectLeague.invalidInput()
+                                    performError(selectLeague)
                                     if (invalidField(selectNation)) {
-                                        selectNation.shake()
-                                        selectNation.invalidInput()
+                                        performError(selectNation)
                                     }
                                 }
                             }
@@ -647,23 +636,17 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                 }
             } else {
                 if (invalidVictoryField()) {
-                    textFieldVictory.shake()
-                    textFieldVictory.invalidInput()
+                    performError(textFieldVictory)
                     if (invalidField(selectValeOfBet)) {
-                        selectValeOfBet.shake()
-                        selectValeOfBet.invalidInput()
+                        performError(selectValeOfBet)
                         if (invalidField(selectKindOfBet)) {
-                            selectKindOfBet.shake()
-                            selectKindOfBet.invalidInput()
+                            performError(selectKindOfBet)
                             if (invalidField(selectMatch)) {
-                                selectMatch.shake()
-                                selectMatch.invalidInput()
+                                performError(selectMatch)
                                 if (invalidField(selectLeague)) {
-                                    selectLeague.shake()
-                                    selectLeague.invalidInput()
+                                    performError(selectLeague)
                                     if (invalidField(selectNation)) {
-                                        selectNation.shake()
-                                        selectNation.invalidInput()
+                                        performError(selectNation)
                                     }
                                 }
                             }
@@ -671,20 +654,15 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                     }
                 } else {
                     if (invalidField(selectValeOfBet)) {
-                        selectValeOfBet.shake()
-                        selectValeOfBet.invalidInput()
+                        performError(selectValeOfBet)
                         if (invalidField(selectKindOfBet)) {
-                            selectKindOfBet.shake()
-                            selectKindOfBet.invalidInput()
+                            performError(selectKindOfBet)
                             if (invalidField(selectMatch)) {
-                                selectMatch.shake()
-                                selectMatch.invalidInput()
+                                performError(selectMatch)
                                 if (invalidField(selectLeague)) {
-                                    selectLeague.shake()
-                                    selectLeague.invalidInput()
+                                    performError(selectLeague)
                                     if (invalidField(selectNation)) {
-                                        selectNation.shake()
-                                        selectNation.invalidInput()
+                                        performError(selectNation)
                                     }
                                 }
                             }
@@ -700,20 +678,25 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 
         } else {
             if invalidBetField() {
-                textFieldBet.shake()
-                textFieldBet.invalidInput()
+                performError(textFieldBet)
                 if (invalidVictoryField()) {
-                    textFieldVictory.shake()
-                    textFieldVictory.invalidInput()
+                    performError(textFieldVictory)
                 }
             } else {
                 if (invalidVictoryField()) {
-                    textFieldVictory.shake()
-                    textFieldVictory.invalidInput()
+                    performError(textFieldVictory)
                 }
             }
         }
         
+    }
+    
+    // actions taken
+    
+    func performError(field: HighlightedTextField) {
+        field.shake()
+        field.invalidInput()
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
     
