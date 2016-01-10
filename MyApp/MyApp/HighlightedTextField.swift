@@ -138,6 +138,18 @@ import UIKit
         activeBorderLayer.backgroundColor = UIColor.redColor().CGColor
     }
     
+    public func disable() {
+        inactiveBorderLayer.backgroundColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 80/255).CGColor
+        activeBorderLayer.backgroundColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 30/255).CGColor
+        placeholderLabel.textColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 80/255)
+    }
+    
+    public func enable() {
+        activeBorderLayer.backgroundColor = activeColor?.CGColor
+        inactiveBorderLayer.backgroundColor = inactiveColor?.CGColor
+        placeholderLabel.textColor = UIColor.blackColor()
+    }
+    
     // MARK: - Private
     
     private func updateBorder() {

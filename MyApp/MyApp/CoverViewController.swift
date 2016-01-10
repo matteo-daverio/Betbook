@@ -567,10 +567,28 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         
         if online == true {
             // mettere a posto input field
-            
+            selectNation.enable()
+            selectNation.textColor = UIColor.blackColor()
+            selectLeague.enable()
+            selectLeague.textColor = UIColor.blackColor()
+            selectMatch.enable()
+            selectMatch.textColor = UIColor.blackColor()
+            selectKindOfBet.enable()
+            selectKindOfBet.textColor = UIColor.blackColor()
+            selectValeOfBet.enable()
+            selectValeOfBet.textColor = UIColor.blackColor()
         } else {
             // mettere input field grigi
-            
+            selectNation.disable()
+            selectNation.textColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 60/255)
+            selectLeague.disable()
+            selectLeague.textColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 60/255)
+            selectMatch.disable()
+            selectMatch.textColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 60/255)
+            selectKindOfBet.disable()
+            selectKindOfBet.textColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 60/255)
+            selectValeOfBet.disable()
+            selectValeOfBet.textColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 60/255)
         }
         
     }
