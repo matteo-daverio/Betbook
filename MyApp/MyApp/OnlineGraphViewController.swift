@@ -48,7 +48,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 		self.brandPicker.dataSource = self
 
 		self.brandPicker.interitemSpacing = 20.0
-		self.brandPicker.font = UIFont(name: "HelveticaNeue-Light", size: 20)!
+		self.brandPicker.font = UIFont(name: "HelveticaNeue", size: 20)!
 		self.brandPicker.highlightedFont = UIFont(name: "HelveticaNeue", size: 20)!
 		self.brandPicker.pickerViewStyle = .Wheel
 		self.brandPicker.maskDisabled = true
@@ -208,7 +208,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			case "1":
 				if(self.risultatoFinale != nil){
 					let multiplier = risultatoFinale?.home[item]
-					if(multiplier?.value == ""){
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -219,7 +219,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			case "X":
 				if(self.risultatoFinale != nil){
 					let multiplier = risultatoFinale?.tie[item]
-					if(multiplier?.value == ""){
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -230,7 +230,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			case "2":
 				if(self.risultatoFinale != nil){
 					let multiplier = risultatoFinale?.away[item]
-					if(multiplier?.value == ""){
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -246,7 +246,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			case "1X":
 				if(self.doppiaChance != nil){
 					let multiplier = doppiaChance?.unoX[item]
-					if(multiplier?.value == ""){
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -257,7 +257,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			case "X2":
 				if(self.doppiaChance != nil){
 					let multiplier = doppiaChance?.xDue[item]
-					if(multiplier?.value == ""){
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -269,7 +269,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			case "12":
 				if(self.doppiaChance != nil){
 					let multiplier = doppiaChance?.unoDue[item]
-					if(multiplier?.value == ""){
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -285,7 +285,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			case "Over":
 				if(self.underOver != nil){
 					let multiplier = underOver?.over0_5[item]
-					if(multiplier?.value == ""){
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -296,7 +296,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			case "Under":
 				if(self.underOver != nil){
 					let multiplier = underOver?.under0_5[item]
-					if(multiplier?.value == ""){
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -312,7 +312,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			case "Over":
 				if(self.underOver != nil){
 					let multiplier = underOver?.over1_5[item]
-					if(multiplier?.value == ""){
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -323,7 +323,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			case "Under":
 				if(self.underOver != nil){
 					let multiplier = underOver?.under1_5[item]
-					if(multiplier?.value == ""){
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -339,7 +339,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			case "Over":
 				if(self.underOver != nil){
 					let multiplier = underOver?.over2_5[item]
-					if(multiplier?.value == ""){
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -350,7 +350,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			case "Under":
 				if(self.underOver != nil){
 					let multiplier = underOver?.under2_5[item]
-					if(multiplier?.value == ""){
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -366,7 +366,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			case "Over":
 				if(self.underOver != nil){
 					let multiplier = underOver?.over3_5[item]
-					if(multiplier?.value == ""){
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -377,7 +377,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			case "Under":
 				if(self.underOver != nil){
 					let multiplier = underOver?.under3_5[item]
-					if(multiplier?.value == ""){
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -393,7 +393,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			case "Over":
 				if(self.underOver != nil){
 					let multiplier = underOver?.over4_5[item]
-					if(multiplier?.value == ""){
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -404,7 +404,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			case "Under":
 				if(self.underOver != nil){
 					let multiplier = underOver?.under4_5[item]
-					if(multiplier?.value == ""){
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -420,7 +420,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			case "Gol":
 				if(self.golNoGol != nil){
 					let multiplier = golNoGol?.gol[item]
-					if(multiplier?.value == ""){
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 					self.brandMultiplier = Double((multiplier?.value)!)
@@ -431,7 +431,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			case "No Gol":
 				if(self.golNoGol != nil){
 					let multiplier = golNoGol?.noGol[item]
-					if(multiplier?.value == ""){
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -446,8 +446,8 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			switch(self.valueOfBet!){
 			case "Gol":
 				if(self.golNoGolPrimoTempo != nil){
-					let multiplier = golNoGol?.gol[item]
-					if(multiplier?.value == ""){
+					let multiplier = golNoGolPrimoTempo?.gol[item]
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -456,9 +456,9 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 					self.updateUI()
 				}
 			case "No Gol":
-				if(self.golNoGol != nil){
-					let multiplier = golNoGol?.noGol[item]
-					if(multiplier?.value == ""){
+				if(self.golNoGolPrimoTempo != nil){
+					let multiplier = golNoGolPrimoTempo?.noGol[item]
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -473,8 +473,8 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			switch(self.valueOfBet!){
 			case "Gol":
 				if(self.golNoGolSecondoTempo != nil){
-					let multiplier = golNoGol?.gol[item]
-					if(multiplier?.value == ""){
+					let multiplier = golNoGolSecondoTempo?.gol[item]
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -483,9 +483,9 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 					self.updateUI()
 				}
 			case "No Gol":
-				if(self.golNoGol != nil){
-					let multiplier = golNoGol?.noGol[item]
-					if(multiplier?.value == ""){
+				if(self.golNoGolSecondoTempo != nil){
+					let multiplier = golNoGolSecondoTempo?.noGol[item]
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -501,7 +501,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			case "Pari":
 				if(self.pariDispari != nil){
 					let multiplier = pariDispari?.pari[item]
-					if(multiplier?.value == ""){
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -512,7 +512,7 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 			case "Dispari":
 				if(self.pariDispari != nil){
 					let multiplier = pariDispari?.dispari[item]
-					if(multiplier?.value == ""){
+					if(multiplier?.value == "n.d."){
 						self.brandMultiplier = 0.0
 					}else{
 						self.brandMultiplier = Double((multiplier?.value)!)
@@ -526,6 +526,8 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 		default:
 			break
 		}
+		
+		pickerView.scrollToItem(item, animated: true)
 	}
 
 	

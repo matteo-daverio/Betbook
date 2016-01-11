@@ -42,11 +42,13 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-        let decoded = userDefaults.objectForKey("bets") as! NSData
-        if let bets = NSKeyedUnarchiver.unarchiveObjectWithData(decoded) {
-            self.listOfBet = bets as! [Bet]
-        }
-        
+		
+		if let decoded = userDefaults.objectForKey("bets") {
+			if let bets = NSKeyedUnarchiver.unarchiveObjectWithData(decoded as! NSData) {
+				self.listOfBet = bets as! [Bet]
+			}
+		}
+		
 		self.tableView.tableFooterView = UIView(frame: CGRect.zero)
 		self.selectedBrand = titles[0]
 		
@@ -172,6 +174,7 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 				b.kindOfBet = bet.kindOfBet!
 				b.bet = bet.bet!
 				b.betValue = bet.betValue!
+				b.brand = bet.brand
 				return true
 			}
 		}
@@ -186,7 +189,8 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 				b.awayTeam! == bet.awayTeam! &&
 				b.date! == bet.date! &&
 				b.kindOfBet == bet.kindOfBet! &&
-				b.bet == bet.bet!){
+				b.bet == bet.bet! &&
+				b.brand == bet.brand){
 					return true
 			
 			}
@@ -196,7 +200,7 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 	
     func tryAddThisMatchEvent(bet: Bet) -> Bool {
 		
-		if(!checkSameBrand(bet)){
+		if(!checkSameBrand(bet) && listOfBet.count > 1){
 			return false
 		}
 		
@@ -204,11 +208,19 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 		
 			if(self.tableView != nil){
 					self.tableView.reloadData()
+				if(self.pickerView != nil){
+					self.pickerView.reloadData()
+				}
 				}
 			
 			return true
 		
 		}else{
+			
+			if(!checkSameBrand(bet)){
+				return false
+			}
+			
 			
 			self.listOfBet.append(bet)
 			
