@@ -31,9 +31,19 @@ class OddsMatchHttpRequest {
 	
 	private var parserHtml = ParserHtml()
 	
-	var homeTeam: String!
+	var homeTeam: String!{
+		didSet{
+			homeTeam = homeTeam.stringByReplacingOccurrencesOfString("ö", withString: "o")
+
+		}
+	}
 	
-	var awayTeam: String!
+	var awayTeam: String!{
+		didSet{
+			awayTeam = awayTeam.stringByReplacingOccurrencesOfString("ö", withString: "o")
+
+		}
+	}
 	
 	//ForTheWeb
 	var selectedCountryOrEuropeanCompetition: String!

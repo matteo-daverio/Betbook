@@ -780,8 +780,11 @@ class ParserHtml {
 		
 		
 		
+		//Spagna
 		
-		
+		//Liga
+			self.dictionaryTeam["Barcelona"] = setNames(["Barcelona","Barcellona"])
+			self.dictionaryTeam["Athletic Bilbao"] = setNames(["Athletic Bilbao","Athl Bilbao"])
 		
 		
 		
@@ -790,6 +793,13 @@ class ParserHtml {
 			//League 1
 			self.dictionaryTeam["Lyon"] = setNames(["Lyon","Lione"])
 			self.dictionaryTeam["Nice"] = setNames(["Nice"])
+		
+		//Germania
+		
+		//BundesLiga
+			self.dictionaryTeam["Bayern Munich"] = setNames(["Bayern Munich","Bayern Monaco"])
+			self.dictionaryTeam["Dortmund"] = setNames(["Bor Dortmund","Dortmund"])
+			self.dictionaryTeam["Monchengladbach"] = setNames(["Monchengladbach","Bor Mönchengladbach"])
 		
 	}
 	
@@ -821,12 +831,15 @@ class ParserHtml {
 			return 1
 		}
 		
-		if(dictionaryTeam[homeT]!.possibleNames.contains(check!)){
-			return 0
+		if (dictionaryTeam[homeT] != nil) {
+			if(dictionaryTeam[homeT]!.possibleNames.contains(check!)){
+				return 0
+			}
 		}
-		
-		if(dictionaryTeam[awayT]!.possibleNames.contains(check!)){
-			return 1
+		if (dictionaryTeam[awayT] != nil) {
+			if(dictionaryTeam[awayT]!.possibleNames.contains(check!)){
+				return 1
+			}
 		}
 		
 		return nil
@@ -845,12 +858,16 @@ class ParserHtml {
 			return 2
 		}
 		
-		if(dictionaryTeam[home]!.possibleNames.contains(check)){
-			return 0
+		if (dictionaryTeam[home] != nil) {
+			if(dictionaryTeam[home]!.possibleNames.contains(check)){
+				return 0
+			}
 		}
 		
-		if(dictionaryTeam[away]!.possibleNames.contains(check)){
-			return 2
+		if (dictionaryTeam[away] != nil) {
+			if(dictionaryTeam[away]!.possibleNames.contains(check)){
+				return 2
+			}
 		}
 		
 		return nil
