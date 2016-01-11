@@ -377,14 +377,8 @@ class ParserHtml {
 		let arrayBody = doc.css("tbody")
 		let nameTeamWeb = doc.css("table").first
 		let bodyTable = arrayBody.first
+		//For this specific odd nameTeamWeb is not needed
 		if(bodyTable == nil || nameTeamWeb == nil){
-			return nil
-		}
-		
-		//TODO attenzione alle squadre tipo ac milan
-		let arrayNames = nameTeamWeb!["data-sname"]?.componentsSeparatedByString(" v ")
-		
-		if(arrayNames == nil){
 			return nil
 		}
 		
