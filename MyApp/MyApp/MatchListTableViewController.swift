@@ -58,7 +58,21 @@ class MatchListTableViewController: UITableViewController,MatchListDelegate {
 		
 		dispatch_async(dispatch_get_main_queue()){ () -> Void in
 			if( matchList == nil ){
-				print("Match non disponibili")
+				
+				let title = "Match non disponibili"
+				let message = "Non sono al momento previsti incontri per questa competizione"
+				let okText = "Ok"
+				
+				let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+				
+				let okayButton = UIAlertAction(title: okText, style: UIAlertActionStyle.Cancel, handler: { (UIAlertAction) -> Void in
+					self.spinner.stopAnimating()
+					self.navigationController?.popViewControllerAnimated(true)
+				})
+				
+				alert.addAction(okayButton)
+				self.presentViewController(alert, animated: true, completion: nil)
+				
 			}else{
 				let organizedMatches = self.organizeForDate(matchList!)
 				self.matches = organizedMatches
