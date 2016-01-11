@@ -175,6 +175,11 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 				b.bet = bet.bet!
 				b.betValue = bet.betValue!
 				b.brand = bet.brand
+				
+				let bets = NSKeyedArchiver.archivedDataWithRootObject(self.listOfBet)
+				userDefaults.setObject(bets, forKey: "bets")
+				userDefaults.synchronize()
+				
 				return true
 			}
 		}
