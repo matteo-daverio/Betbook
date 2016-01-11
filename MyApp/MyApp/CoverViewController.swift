@@ -74,7 +74,7 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                 self.leaguePicker.showPickerIpadFromRect(frame, inView: view)
                 
             } else {
-                selectNation.shake()
+                performError(selectNation)
             }
         }
 		
@@ -115,9 +115,9 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                 }
                 
             } else {
-                selectLeague.shake()
+                performError(selectLeague)
                 if (invalidField(selectNation)) {
-                    selectNation.shake()
+                    performError(selectNation)
                 }
             }
         }
@@ -148,11 +148,11 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                 self.kindOfBetPicker.showPickerIpadFromRect(frame, inView: view)
                 
             } else {
-                selectMatch.shake()
+                performError(selectMatch)
                 if (invalidField(selectLeague)) {
-                    selectLeague.shake()
+                    performError(selectLeague)
                     if (invalidField(selectNation)) {
-                        selectNation.shake()
+                        performError(selectNation)
                     }
                 }
             }
@@ -184,13 +184,13 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                 self.valueOfBetPicker.showPickerIpadFromRect(frame, inView: view)
                 
             } else {
-                selectKindOfBet.shake()
+                performError(selectKindOfBet)
                 if (invalidField(selectMatch)) {
-                    selectMatch.shake()
+                    performError(selectMatch)
                     if (invalidField(selectLeague)) {
-                        selectLeague.shake()
+                        performError(selectLeague)
                         if (invalidField(selectNation)) {
-                            selectNation.shake()
+                            performError(selectNation)
                         }
                     }
                 }

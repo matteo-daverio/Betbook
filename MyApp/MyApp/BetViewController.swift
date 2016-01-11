@@ -21,11 +21,18 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 	
 	@IBAction func trash(sender: UIBarButtonItem) {
 		listOfBet.removeAll()
+        
+        let bets = NSKeyedArchiver.archivedDataWithRootObject(self.listOfBet)
+        userDefaults.setObject(bets, forKey: "bets")
+        userDefaults.synchronize()
+        
 		tableView.reloadData()
 	}
 	
 	
 	var listOfBet = [Bet]()
+    var userDefaults = NSUserDefaults.standardUserDefaults()
+
 	
 	private var selectedBrand:String?
 	
@@ -35,6 +42,11 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+        let decoded = userDefaults.objectForKey("bets") as! NSData
+        if let bets = NSKeyedUnarchiver.unarchiveObjectWithData(decoded) {
+            self.listOfBet = bets as! [Bet]
+        }
+        
 		self.tableView.tableFooterView = UIView(frame: CGRect.zero)
 		self.selectedBrand = titles[0]
 		
@@ -182,7 +194,7 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 		return false
 	}
 	
-	 func tryAddThisMatchEvent(bet: Bet) -> Bool {
+    func tryAddThisMatchEvent(bet: Bet) -> Bool {
 		
 		if(!checkSameBrand(bet)){
 			return false
@@ -200,6 +212,10 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 			
 			self.listOfBet.append(bet)
 			
+            let bets = NSKeyedArchiver.archivedDataWithRootObject(self.listOfBet)
+            userDefaults.setObject(bets, forKey: "bets")
+            userDefaults.synchronize()
+            
 			if(self.tableView != nil){
 				self.tableView.reloadData()
 			
@@ -217,6 +233,10 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 			if(b.homeTeam! == bet.homeTeam && b.awayTeam! == bet.awayTeam! && b.date! == bet.date!){
 				listOfBet.removeAtIndex(i)
 				
+                let bets = NSKeyedArchiver.archivedDataWithRootObject(self.listOfBet)
+                userDefaults.setObject(bets, forKey: "bets")
+                userDefaults.synchronize()
+                
 				if(self.tableView != nil){
 					self.tableView.reloadData()
 				}
