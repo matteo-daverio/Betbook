@@ -22,6 +22,7 @@ class OddsViewController: CollapsableTableViewController, OddsMatchDelegate{
 	let menu = OddsModelBuilder().buildMenu()
 	let oddsHttpRequester = OddsMatchHttpRequest()
 	var stringForTheWebHelper = StringForTheWebHelper()
+	var selectedColor = UIColor(red: 0.00/255.0, green: 255.00/255.0, blue: 127.00/255.0, alpha: 1.00)
 	
 	var myBetControllerNavigator: UINavigationController?
 	var myBetController: BetViewController?
@@ -272,7 +273,7 @@ extension OddsViewController{
 		if(!myBetController.isAlreadyIn(bet)){
 		
 			if(myBetController.tryAddThisMatchEvent(bet)){
-				cell.contentView.backgroundColor = UIColor.greenColor()
+				cell.contentView.backgroundColor = self.selectedColor
 			}else{
 				print("Pop up to do")
 			}
@@ -327,7 +328,7 @@ extension OddsViewController{
 		}
 		
 		if(cellGreen){
-			cell.backgroundColor = UIColor.greenColor()
+			cell.backgroundColor = self.selectedColor
 		}else{
 			cell.backgroundColor = UIColor.whiteColor()
 			cell.backgroundView?.backgroundColor = UIColor.whiteColor()

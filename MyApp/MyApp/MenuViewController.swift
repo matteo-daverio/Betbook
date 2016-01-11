@@ -22,6 +22,8 @@ class MenuViewController: CollapsableTableViewController {
 		
 		self.tableView.tableFooterView = UIView(frame: CGRect.zero)
 		//	self.tableView.backgroundColor = UIColor(red: 215.0/255.0, green: 227.0/255.0, blue: 244.0/255.0, alpha: 1.0)
+		
+		self.tableView.registerNib(UINib(nibName: "NationMenuTableViewCell", bundle: nil), forCellReuseIdentifier: "League Cell")
 	}
 	
 	override func viewWillAppear(animated: Bool) {
@@ -79,14 +81,14 @@ extension MenuViewController {
 	}
 	
 	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("Cell")! as UITableViewCell
+		let cell = tableView.dequeueReusableCellWithIdentifier("League Cell")! as! NationMenuTableViewCell
 		
 		let league = menu[indexPath.section].items[indexPath.row]
 		
-		cell.textLabel?.text = league as? String
-		cell.imageView?.image = UIImage(named: (league as? String)!)
+		cell.leagueLabel?.text = league as? String
+		cell.leagueImage?.image = UIImage(named: (league as? String)!)
 		cell.backgroundColor = UIColor.whiteColor()
-		cell.textLabel?.textColor = UIColor.blackColor()
+		cell.leagueLabel?.textColor = UIColor.blackColor()
 		return cell
 	}
 }

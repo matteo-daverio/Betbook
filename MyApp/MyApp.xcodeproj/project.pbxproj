@@ -116,6 +116,8 @@
 		F440CCAA1C1B39D700BE9F08 /* OddsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F440CCA91C1B39D700BE9F08 /* OddsViewController.xib */; };
 		F440CCAC1C1B3EB000BE9F08 /* OddsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */; };
 		F440CCAE1C1B3F5A00BE9F08 /* OddsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */; };
+		F4666FEA1C43ACB5008093CD /* NationMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4666FE81C43ACB5008093CD /* NationMenuTableViewCell.swift */; };
+		F4666FEB1C43ACB5008093CD /* NationMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4666FE91C43ACB5008093CD /* NationMenuTableViewCell.xib */; };
 		F4F5E0B11C2B185900C424A6 /* OnlineGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F5E0B01C2B185900C424A6 /* OnlineGraphViewController.swift */; };
 		F4F5E0B31C2C07F500C424A6 /* OfflineGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F5E0B21C2C07F500C424A6 /* OfflineGraphViewController.swift */; };
 /* End PBXBuildFile section */
@@ -255,6 +257,8 @@
 		F440CCA91C1B39D700BE9F08 /* OddsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsViewController.xib; sourceTree = "<group>"; };
 		F440CCAB1C1B3EB000BE9F08 /* OddsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OddsTableViewCell.xib; sourceTree = "<group>"; };
 		F440CCAD1C1B3F5A00BE9F08 /* OddsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OddsTableViewCell.swift; sourceTree = "<group>"; };
+		F4666FE81C43ACB5008093CD /* NationMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NationMenuTableViewCell.swift; path = ../NationMenuTableViewCell.swift; sourceTree = "<group>"; };
+		F4666FE91C43ACB5008093CD /* NationMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NationMenuTableViewCell.xib; path = ../NationMenuTableViewCell.xib; sourceTree = "<group>"; };
 		F4F5E0B01C2B185900C424A6 /* OnlineGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineGraphViewController.swift; sourceTree = "<group>"; };
 		F4F5E0B21C2C07F500C424A6 /* OfflineGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineGraphViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -454,6 +458,7 @@
 				F435EEE51C256A80004D8BAA /* SbPickerSelector */,
 				F435ED951C1D7F4D004D8BAA /* Assets.xcassets */,
 				F418CBF61C18D2DD0063A112 /* OddsMenuSectionHeaderView.xib */,
+				F4666FE91C43ACB5008093CD /* NationMenuTableViewCell.xib */,
 				F418CBAB1C16C1EF0063A112 /* CollapsableTableScene.swift */,
 				F418CBA91C16C1AB0063A112 /* CollapsableTableProtocols.swift */,
 				F418C34E1C160EF00063A112 /* AppDelegate.swift */,
@@ -535,6 +540,7 @@
 				F435EED61C21B5F6004D8BAA /* BetEngineTableViewCell.swift */,
 				0BF161CC1C3404EE00E3E126 /* LeaderboardTableViewCell.swift */,
 				F41021951C341EEB000995F4 /* RankingAndStatsticCellTableViewCell.swift */,
+				F4666FE81C43ACB5008093CD /* NationMenuTableViewCell.swift */,
 				F41021961C341EEB000995F4 /* RankingAndStatsticCellTableViewCell.xib */,
 			);
 			name = View;
@@ -734,6 +740,7 @@
 				F418CB821C1610780063A112 /* Cartfile in Resources */,
 				F418CB9F1C16194C0063A112 /* Main.storyboard in Resources */,
 				F41021941C341C98000995F4 /* RankingAndStatsticViewController.xib in Resources */,
+				F4666FEB1C43ACB5008093CD /* NationMenuTableViewCell.xib in Resources */,
 				0BFBCE211C2AAED80030935C /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -841,6 +848,7 @@
 				F418CB9B1C16192B0063A112 /* MenuSectionHeader.swift in Sources */,
 				F41021971C341EEB000995F4 /* RankingAndStatsticCellTableViewCell.swift in Sources */,
 				F418CBBE1C16EA060063A112 /* SingletonSoccerInformationModel.swift in Sources */,
+				F4666FEA1C43ACB5008093CD /* NationMenuTableViewCell.swift in Sources */,
 				F4F5E0B11C2B185900C424A6 /* OnlineGraphViewController.swift in Sources */,
 				F435EEE41C256A59004D8BAA /* SBPickerSelector.m in Sources */,
 				0BFA99A01C26EE0900D2CE2D /* CoverViewController.swift in Sources */,
