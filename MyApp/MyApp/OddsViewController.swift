@@ -260,6 +260,11 @@ extension OddsViewController{
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		let cell = tableView.cellForRowAtIndexPath(indexPath) as! OddsTableViewCell
+		
+		if(cell.detailTextLabel?.text == "n.d."){
+			self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+			return
+		}
 			
 			let myBetControllerNavigator = self.tabBarController?.viewControllers![TabBarEnum.Bet.rawValue] as! UINavigationController
 		
@@ -275,7 +280,17 @@ extension OddsViewController{
 			if(myBetController.tryAddThisMatchEvent(bet)){
 				cell.contentView.backgroundColor = self.selectedColor
 			}else{
-				print("Pop up to do")
+				let title = "Attenzione!"
+				let message = "Non è possibile comporre una scommessa con brand differenti"
+				let okText = "Ok"
+				
+				let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+				
+				let okayButton = UIAlertAction(title: okText, style: UIAlertActionStyle.Cancel, handler: nil)
+				
+				alert.addAction(okayButton)
+				self.presentViewController(alert, animated: true, completion: nil)
+				
 			}
 		}else{
 			myBetController.removeThisBet(bet)

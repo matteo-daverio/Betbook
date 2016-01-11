@@ -818,7 +818,7 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 	}
 	
 	private func populateKindOfBet() -> [String]{
-		return StringForTheWebHelper().getAvailableOutcome()
+		return StringForTheWebHelper().getAvailableOutcomeCoverage()
 	}
 	
 	private func populateValueOfBet() -> [String]{

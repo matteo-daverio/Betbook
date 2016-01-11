@@ -290,11 +290,10 @@ class StringForTheWebHelper {
 		return league
 	}
 	
-	func getAvailableOutcome() -> [String]{
+	func getAvailableOutcomeCoverage() -> [String]{
 		
 		let outcomes =
 		[	"Esito Finale",
-			"Primo Tempo",
 			"Doppia Chance",
 			"Under/Over 0.5",
 			"Under/Over 1.5",

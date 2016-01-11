@@ -136,7 +136,7 @@ class PariDispari {
 
 class Odd : CustomStringConvertible{
 	var brand: String = ""
-	var value: String = "1.00"
+	var value: String = "n.d."
 	var best: Bool = false
 	
 	var description: String {
