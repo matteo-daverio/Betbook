@@ -40,11 +40,11 @@ public class CoverageCalculator {
         case "Doppia Chance":
             switch giocata {
             case "1X":
-                return ("Doppia Chance","2")
+                return ("Esito Finale","2")
             case "X2":
-                return ("Doppia Chance","1")
+                return ("Esito Finale","1")
             case "12":
-                return ("Doppia Chance","X")
+                return ("Esito Finale","X")
             default:
                 return ("Error", "Error")
             }

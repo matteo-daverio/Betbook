@@ -55,6 +55,7 @@ class OddsViewController: CollapsableTableViewController, OddsMatchDelegate{
 		//Importantissimo
 		self.tableView.allowsSelection = false
 		self.tableView.allowsMultipleSelection = false
+		self.tableView.tableFooterView = UIView(frame: CGRect.zero)
 		
 		self.oddsHttpRequester.homeTeam = self.homeTeam
 		self.oddsHttpRequester.awayTeam = self.awayTeam
@@ -256,7 +257,6 @@ extension OddsViewController{
 		return 44.0
 	}
 	
-	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		let cell = tableView.cellForRowAtIndexPath(indexPath) as! OddsTableViewCell
 			
@@ -279,19 +279,25 @@ extension OddsViewController{
 		}else{
 			myBetController.removeThisBet(bet)
 			cell.contentView.backgroundColor = UIColor.whiteColor()
-			cell.backgroundColor = UIColor.whiteColor()
 		}
-	}
-	
-	func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
-		let cell = tableView.cellForRowAtIndexPath(indexPath) as! OddsTableViewCell
-	
-		cell.backgroundView?.backgroundColor = UIColor.greenColor()
 		
+		
+		
+		tableView.reloadData()
 	}
 	
-	func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-	}
+//	func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+//		let cell = tableView.cellForRowAtIndexPath(indexPath) as! OddsTableViewCell
+//	
+//		cell.backgroundView?.backgroundColor = UIColor.greenColor()
+//		
+//	}
+	
+//	func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+//		let cell = tableView.cellForRowAtIndexPath(indexPath) as! OddsTableViewCell
+//		
+//		cell.backgroundView?.backgroundColor = UIColor.greenColor()
+//	}
 	
 	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		

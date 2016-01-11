@@ -13,6 +13,8 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 
 	@IBOutlet weak var brandPicker: AKPickerView!
 
+	@IBOutlet weak var coverageLabel: UILabel!
+	
 	let brands = StringForTheWebHelper().getBrandsList()
 	
 	let oddsHttpRequester = OddsMatchHttpRequest()
@@ -52,6 +54,8 @@ class OnlineGraphViewController: GraphViewController, AKPickerViewDataSource, AK
 		self.brandPicker.maskDisabled = true
 		
 		self.brandPicker.reloadData()
+		
+		self.coverageLabel.text = (self.kindOfBet?.capitalizedString)! + ": " + (self.valueOfBet?.capitalizedString)!
 		
 		oddsHttpRequester.delegate = self
 		oddsHttpRequester.selectedCountryOrEuropeanCompetition = nation!

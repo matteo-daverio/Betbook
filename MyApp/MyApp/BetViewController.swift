@@ -17,7 +17,15 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 	@IBAction func addOtherMatch(sender: UIBarButtonItem) {
 		(self.tabBarController as! RAMAnimatedTabBarController).setSelectIndex(from: TabBarEnum.Bet.rawValue, to: TabBarEnum.Search.rawValue )
 	}
-	 var listOfBet = [Bet]()
+	
+	
+	@IBAction func trash(sender: UIBarButtonItem) {
+		listOfBet.removeAll()
+		tableView.reloadData()
+	}
+	
+	
+	var listOfBet = [Bet]()
 	
 	private var selectedBrand:String?
 	
@@ -44,8 +52,8 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 		self.tableView.registerNib(UINib(nibName: "BetEngineTableViewCell", bundle: nil),forCellReuseIdentifier: "EngineBetCell")
 		
 		self.pickerView.interitemSpacing = 20.0
-		self.pickerView.font = UIFont(name: "HelveticaNeue-Light", size: 20)!
-		self.pickerView.highlightedFont = UIFont(name: "HelveticaNeue", size: 20)!
+		self.pickerView.font = UIFont(name: "HelveticaNeue-Light", size: 18)!
+		self.pickerView.highlightedFont = UIFont(name: "HelveticaNeue", size: 25)!
 		self.pickerView.pickerViewStyle = .Wheel
 		self.pickerView.maskDisabled = true
 		
@@ -55,20 +63,13 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 	}
 	
 	override func viewWillAppear(animated: Bool) {
-		if(listOfBet.count > 0){
-
-			for(var i = 0; i < listOfBet.count ; i++){
-				if(listOfBet[0].brand! == titles[i]){
-					print(listOfBet[0].brand!)
-					print(titles[i])
-					pickerView.scrollToItem(i)
-					pickerView.scrollToItem(i, animated: true)
-					pickerView.selectItem(i, animated: true)
-					pickerView.reloadData()
-				}
-			}
-		}
 		self.tableView.reloadData()
+		
+		if(listOfBet.count > 0){
+				self.pickerView.selectItem(titles.indexOf(listOfBet[0].brand!)!, animated: true)
+			}
+		
+		self.pickerView.reloadData()
 	}
 	
 	private func updateCalculus(){
@@ -215,7 +216,10 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 			let b = listOfBet[i]
 			if(b.homeTeam! == bet.homeTeam && b.awayTeam! == bet.awayTeam! && b.date! == bet.date!){
 				listOfBet.removeAtIndex(i)
-				self.tableView.reloadData()
+				
+				if(self.tableView != nil){
+					self.tableView.reloadData()
+				}
 				return true
 			}
 		}

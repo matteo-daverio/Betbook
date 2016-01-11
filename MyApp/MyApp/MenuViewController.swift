@@ -16,6 +16,22 @@ class MenuViewController: CollapsableTableViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let menu = MenuModelBuilder().buildMenu()
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+		//	self.tableView.backgroundColor = UIColor(red: 215.0/255.0, green: 227.0/255.0, blue: 244.0/255.0, alpha: 1.0)
+	}
+	
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		let selection = self.tableView.indexPathForSelectedRow
+		if((selection) != nil){
+			self.tableView.deselectRowAtIndexPath(selection!, animated: true)
+		}
+	}
     
     override func model() -> [CollapsableTableViewSectionModelProtocol]? {
         return menu
@@ -68,8 +84,9 @@ extension MenuViewController {
 		let league = menu[indexPath.section].items[indexPath.row]
 		
 		cell.textLabel?.text = league as? String
-		cell.backgroundColor = UIColor(red: 250.0/255.0, green: 250.0/255.0, blue: 250.0/255.0, alpha: 0.85)
-		
+		cell.imageView?.image = UIImage(named: (league as? String)!)
+		cell.backgroundColor = UIColor.whiteColor()
+		cell.textLabel?.textColor = UIColor.blackColor()
 		return cell
 	}
 }

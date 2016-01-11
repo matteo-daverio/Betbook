@@ -23,20 +23,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="0D1-hB-zeD" style="IBUITableViewCellStyleDefault" id="1tF-Yh-lb9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="0D1-hB-zeD" imageView="7vV-F9-d6i" style="IBUITableViewCellStyleDefault" id="1tF-Yh-lb9">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1tF-Yh-lb9" id="Hya-HS-VLP">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="1tF-Yh-lb9" id="Hya-HS-VLP">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0D1-hB-zeD">
-                                                    <rect key="frame" x="15" y="0.0" width="550" height="43"/>
+                                                    <rect key="frame" x="79" y="0.0" width="486" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Bundesliga" id="7vV-F9-d6i">
+                                                    <rect key="frame" x="15" y="0.0" width="49" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -536,10 +540,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uBL-wj-R9i" customClass="AKPickerView" customModule="MyApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
                                 <color key="backgroundColor" red="0.062745098040000002" green="0.074509803920000006" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="xXd-Pj-Vxy"/>
+                                    <constraint firstAttribute="height" constant="40" id="xXd-Pj-Vxy"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
@@ -551,24 +555,38 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lH4-Hp-lQR">
-                                <rect key="frame" x="0.0" y="58" width="600" height="429"/>
+                                <rect key="frame" x="0.0" y="65" width="600" height="422"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esito Finale: 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="O6G-EV-1C6">
+                                <rect key="frame" x="0.0" y="40" width="600" height="25"/>
+                                <color key="backgroundColor" red="0.79607843140000001" green="0.84313725490000002" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="OpA-CO-bXP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="lH4-Hp-lQR" firstAttribute="top" secondItem="O6G-EV-1C6" secondAttribute="bottom" id="47f-cg-P7Y"/>
                             <constraint firstItem="lH4-Hp-lQR" firstAttribute="leading" secondItem="uBL-wj-R9i" secondAttribute="leading" id="4kD-eK-jcg"/>
                             <constraint firstItem="lH4-Hp-lQR" firstAttribute="trailing" secondItem="uBL-wj-R9i" secondAttribute="trailing" id="ChA-q8-RQy"/>
-                            <constraint firstItem="lH4-Hp-lQR" firstAttribute="top" secondItem="uBL-wj-R9i" secondAttribute="bottom" constant="8" symbolic="YES" id="QHZ-Pu-IFp"/>
+                            <constraint firstItem="O6G-EV-1C6" firstAttribute="leading" secondItem="uBL-wj-R9i" secondAttribute="leading" id="KIg-gR-d1x"/>
                             <constraint firstItem="uBL-wj-R9i" firstAttribute="top" secondItem="bpB-sp-WUK" secondAttribute="bottom" id="XQc-aa-RWQ"/>
                             <constraint firstAttribute="trailing" secondItem="uBL-wj-R9i" secondAttribute="trailing" id="XxZ-wy-q0s"/>
+                            <constraint firstItem="O6G-EV-1C6" firstAttribute="trailing" secondItem="uBL-wj-R9i" secondAttribute="trailing" id="YLv-Cv-fPc"/>
                             <constraint firstItem="lH4-Hp-lQR" firstAttribute="bottom" secondItem="B3W-8n-h2W" secondAttribute="top" id="ZVn-jy-CUM"/>
                             <constraint firstItem="uBL-wj-R9i" firstAttribute="leading" secondItem="8pk-hK-yxE" secondAttribute="leading" id="v6o-yu-SWy"/>
+                            <constraint firstItem="O6G-EV-1C6" firstAttribute="top" secondItem="uBL-wj-R9i" secondAttribute="bottom" id="z2C-Pz-3e1"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="brandPicker" destination="uBL-wj-R9i" id="Xiz-or-jH7"/>
                         <outlet property="chartView" destination="lH4-Hp-lQR" id="Rhx-mZ-Jhj"/>
+                        <outlet property="coverageLabel" destination="O6G-EV-1C6" id="KQf-OX-pMR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pCe-Jw-r9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -871,6 +889,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="U7E-fo-sx0">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="WaI-GD-yLQ">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="trash:" destination="9e1-vW-Bxb" id="gt7-ch-h2f"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pFM-1k-qRs">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -1017,6 +1041,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Bundesliga" width="500" height="441"/>
         <image name="calculator" width="32" height="32"/>
         <image name="search" width="32" height="32"/>
         <image name="shopping-cart" width="32" height="32"/>
