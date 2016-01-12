@@ -183,25 +183,29 @@ class ParserHtml {
 	//This function takes out the list of odds from an html page and gives back an array of RisultatoFinale (if available)
 	func getRisultatoFinaleFromHtml(doc: HTMLDocument)->RisultatoFinale?{
 		
+		let risultatoFinale = RisultatoFinale()
+		
 		let arrayBody = doc.css("tbody")
 		let nameTeamWeb = doc.css("table").first
-		let tie = "Pareggio"
+
 		let bodyTable = arrayBody.first
 		if(bodyTable == nil){
-			return nil
+			addMissingRisultatoFinale(risultatoFinale)
+			return risultatoFinale
 		}
 		
 		let arrayNames = nameTeamWeb!["data-sname"]?.componentsSeparatedByString(" v ")
 		
 		if(arrayNames == nil){
-			return nil
+			addMissingRisultatoFinale(risultatoFinale)
+			return risultatoFinale
 		}
 		
 		let homeTeam = arrayNames![0]
 		let awayTeam = arrayNames![1]
 		
 		
-		let risultatoFinale = RisultatoFinale()
+		
 		var countOdd = 0
 		for tr in bodyTable!.css("tr, class, data-bname") {
 			
@@ -243,6 +247,14 @@ class ParserHtml {
 					odd.brand = self.listOfBrands[countOdd]
 				default: continue
 				}
+				
+				//Attenzione
+				if(result == nil){
+					print("Devi aggiungere una di queste squadre")
+					addMissingRisultatoFinale(risultatoFinale)
+					return risultatoFinale
+				}
+				
 				switch(result!){
 				case 0:
 					risultatoFinale.home.append(odd)
@@ -268,7 +280,26 @@ class ParserHtml {
 //		print(awayTeam)
 //		print(risultatoFinale.away)
 		
+		addMissingRisultatoFinale(risultatoFinale)
+		
 		return risultatoFinale
+	}
+	
+	private func addMissingRisultatoFinale(risultatoFinale: RisultatoFinale){
+		let n = self.listOfBrands.count
+		
+		while(risultatoFinale.home.count < n){
+			risultatoFinale.home.append(Odd())
+		}
+		
+		while(risultatoFinale.away.count < n){
+			risultatoFinale.away.append(Odd())
+		}
+		
+		while(risultatoFinale.tie.count < n){
+			risultatoFinale.tie.append(Odd())
+		}
+	
 	}
 	
 	
@@ -280,23 +311,28 @@ class ParserHtml {
 	
 	
 	func getDoppiaChanceFromHtml(doc: HTMLDocument)->DoppiaChance?{
+		
+		let doppiaChance = DoppiaChance()
+		
 		let arrayBody = doc.css("tbody")
 		let nameTeamWeb = doc.css("table").first
 		let bodyTable = arrayBody.first
 		if(bodyTable == nil || nameTeamWeb == nil){
-			return nil
+			addMissingDoppiaChance(doppiaChance)
+			return doppiaChance
 		}
 		//TODO attenzione alle squadre tipo ac milan
 		let arrayNames = nameTeamWeb!["data-sname"]?.componentsSeparatedByString(" v ")
 		
 		if(arrayNames == nil){
-			return nil
+			addMissingDoppiaChance(doppiaChance)
+			return doppiaChance
 		}
 		
 		let homeT = arrayNames![0]
 		let awayT = arrayNames![1]
 		
-		let doppiaChance = DoppiaChance()
+		
 		
 		var countOdd = 0
 		for tr in bodyTable!.css("tr, class, data-bname") {
@@ -345,6 +381,13 @@ class ParserHtml {
 				default: continue
 				}
 				
+				//Attenzione
+				if(result == nil){
+					print("Devi aggiungere una di queste squadre")
+					addMissingDoppiaChance(doppiaChance)
+					return doppiaChance
+				}
+				
 				switch(result!){
 				case 0:
 					doppiaChance.unoX.append(odd)
@@ -362,27 +405,43 @@ class ParserHtml {
 			}
 			//Fine controllo tutte quote per un evento
 		}
-
-//		print(" ")
-//		print("Doppia Chance")
-//		print(doppiaChance.unoX)
-//		print(doppiaChance.xDue)
-//		print(doppiaChance.unoDue)
+		
+		addMissingDoppiaChance(doppiaChance)
 		
 		return doppiaChance
 	}
 	
+	private func addMissingDoppiaChance(doppiaChance: DoppiaChance){
+		let n = self.listOfBrands.count
+		
+		while(doppiaChance.unoX.count < n){
+			doppiaChance.unoX.append(Odd())
+		}
+		
+		while(doppiaChance.xDue.count < n){
+			doppiaChance.xDue.append(Odd())
+		}
+		
+		while(doppiaChance.unoDue.count < n){
+			doppiaChance.unoDue.append(Odd())
+		}
+	}
+	
 	func getUnderOverFromHtml(doc: HTMLDocument)->UnderOver?{
 	
+		let underOver = UnderOver()
+		
 		let arrayBody = doc.css("tbody")
 		let nameTeamWeb = doc.css("table").first
 		let bodyTable = arrayBody.first
+		
 		//For this specific odd nameTeamWeb is not needed
 		if(bodyTable == nil || nameTeamWeb == nil){
-			return nil
+			addMissingRowsUnderOver(underOver)
+			return underOver
 		}
 		
-		let underOver = UnderOver()
+		
 		
 		var countOdd = 0
 		for tr in bodyTable!.css("tr, class, data-bname") {
@@ -472,26 +531,78 @@ class ParserHtml {
 				countOdd++
 			}
 		}
+		
+		addMissingRowsUnderOver(underOver)
+		
 		return underOver
+	}
+	
+	private func addMissingRowsUnderOver(underOver: UnderOver){
+		let n = self.listOfBrands.count
+		
+		
+		while(underOver.over0_5.count < n){
+			underOver.over0_5.append(Odd())
+		}
+		
+		
+		while(underOver.under0_5.count < n){
+			underOver.under0_5.append(Odd())
+		}
+		
+		while(underOver.over1_5.count < n){
+			underOver.over1_5.append(Odd())
+		}
+		
+		while(underOver.under1_5.count < n){
+			underOver.under1_5.append(Odd())
+		}
+		
+		while(underOver.over2_5.count < n){
+			underOver.over2_5.append(Odd())
+		}
+		
+		while(underOver.under2_5.count < n){
+			underOver.under2_5.append(Odd())
+		}
+		
+		while(underOver.over3_5.count < n){
+			underOver.over3_5.append(Odd())
+		}
+		
+		while(underOver.under3_5.count < n){
+			underOver.under3_5.append(Odd())
+		}
+		
+		while(underOver.over4_5.count < n){
+			underOver.over4_5.append(Odd())
+		}
+		
+		while(underOver.under4_5.count < n){
+			underOver.under4_5.append(Odd())
+		}
+		
 	}
 	
 	func getGolNoGolFromHtml(doc: HTMLDocument)->GolNoGol?{
 	
+		let golNoGol = GolNoGol()
+		
 		let arrayBody = doc.css("tbody")
 		let nameTeamWeb = doc.css("table").first
 		let bodyTable = arrayBody.first
 		if(bodyTable == nil || nameTeamWeb == nil){
-			return nil
+			addMissingRowsGolNoGol(golNoGol)
+			return golNoGol
 		}
 		
 		//TODO attenzione alle squadre tipo ac milan
 		let arrayNames = nameTeamWeb!["data-sname"]?.componentsSeparatedByString(" v ")
 		
 		if(arrayNames == nil){
-			return nil
+			addMissingRowsGolNoGol(golNoGol)
+			return golNoGol
 		}
-		
-		let golNoGol = GolNoGol()
 		
 		var countOdd = 0
 		
@@ -547,32 +658,46 @@ class ParserHtml {
 				
 			}
 		}
-		
-//		print(" ")
-//		print("Gol noGol")
-//		print(golNoGol.gol)
-//		print(golNoGol.noGol)
+
+		addMissingRowsGolNoGol(golNoGol)
 		
 		return golNoGol
 	}
 	
+	private func addMissingRowsGolNoGol(golNoGol: GolNoGol){
+		let n = self.listOfBrands.count
+		
+		
+		while(golNoGol.gol.count < n){
+			golNoGol.gol.append(Odd())
+		}
+		
+		while(golNoGol.noGol.count < n){
+			golNoGol.noGol.append(Odd())
+		}
+	}
+	
 	func getPariDispariFromHtml(doc: HTMLDocument)->PariDispari?{
+		
+		let pariDispari = PariDispari()
 		
 		let arrayBody = doc.css("tbody")
 		let nameTeamWeb = doc.css("table").first
 		let bodyTable = arrayBody.first
 		if(bodyTable == nil || nameTeamWeb == nil){
-			return nil
+			addMissingRowsPariDispari(pariDispari)
+			return pariDispari
 		}
 		
 		//TODO attenzione alle squadre tipo ac milan
 		let arrayNames = nameTeamWeb!["data-sname"]?.componentsSeparatedByString(" v ")
 		
 		if(arrayNames == nil){
-			return nil
+			addMissingRowsPariDispari(pariDispari)
+			return pariDispari
 		}
 		
-		let pariDispari = PariDispari()
+		
 		
 		var countOdd = 0
 		for tr in bodyTable!.css("tr, class, data-bname") {
@@ -628,12 +753,22 @@ class ParserHtml {
 			}
 		}
 		
-//		print(" ")
-//		print("Pari Dispari")
-//		print(pariDispari.pari)
-//		print(pariDispari.dispari)
+		addMissingRowsPariDispari(pariDispari)
 		
 		return pariDispari
+	}
+	
+	private func addMissingRowsPariDispari(pariDispari: PariDispari){
+		let n = self.listOfBrands.count
+		
+		
+		while(pariDispari.pari.count < n){
+			pariDispari.pari.append(Odd())
+		}
+		
+		while(pariDispari.dispari.count < n){
+			pariDispari.dispari.append(Odd())
+		}
 	}
 	
 	
@@ -730,55 +865,9 @@ class ParserHtml {
 		//Itaia
 		
 			//Serie A
-			self.dictionaryTeam["Atalanta"] = setNames(["Atalanta"])
-			self.dictionaryTeam["Bologna"] = setNames(["Bologna"])
-			self.dictionaryTeam["Carpi"] = setNames(["Carpi"])
-			self.dictionaryTeam["Chievo"] = setNames(["Chievo"])
-			self.dictionaryTeam["Empoli"] = setNames(["Empoli"])
-			self.dictionaryTeam["Fiorentina"] = setNames(["Fiorentina"])
-			self.dictionaryTeam["Frosinone"] = setNames(["Frosinone"])
-			self.dictionaryTeam["Genoa"] = setNames(["Genoa"])
-			self.dictionaryTeam["Verona"] = setNames(["Verona"])
-			self.dictionaryTeam["Inter"] = setNames(["Inter"])
-			self.dictionaryTeam["Juventus"] = setNames(["Juventus"])
-			self.dictionaryTeam["Lazio"] = setNames(["Lazio"])
+
 			self.dictionaryTeam["AC Milan"] = setNames(["Milan","AC Milan"])
-			self.dictionaryTeam["Napoli"] = setNames(["Napoli"])
-			self.dictionaryTeam["Palermo"] = setNames(["Palermo"])
-			self.dictionaryTeam["Roma"] = setNames(["Roma"])
-			self.dictionaryTeam["Sampdoria"] = setNames(["Sampdoria"])
-			self.dictionaryTeam["Sassuolo"] = setNames(["Sassuolo"])
-			self.dictionaryTeam["Torino"] = setNames(["Torino"])
-			self.dictionaryTeam["Udinese"] = setNames(["Udinese"])
-		
-		
-			//Serie B
-			self.dictionaryTeam["Ascoli"] = setNames(["Ascoli"])
-			self.dictionaryTeam["Avellino"] = setNames(["Avellino"])
-			self.dictionaryTeam["Bari"] = setNames(["Bari"])
-			self.dictionaryTeam["Brescia"] = setNames(["Brescia"])
-			self.dictionaryTeam["Cagliari"] = setNames(["Cagliari"])
-			self.dictionaryTeam["Cesena"] = setNames(["Cesena"])
-			self.dictionaryTeam["Como"] = setNames(["Como"])
-			self.dictionaryTeam["Crotone"] = setNames(["Crotone"])
-			self.dictionaryTeam["Lanciano"] = setNames(["Lanciano"])
-			self.dictionaryTeam["Latina"] = setNames(["Latina"])
-			self.dictionaryTeam["Livorno"] = setNames(["Livorno"])
-			self.dictionaryTeam["Modena"] = setNames(["Modena"])
-			self.dictionaryTeam["Novara"] = setNames(["Novara"])
-			self.dictionaryTeam["Perugia"] = setNames(["Perugia"])
-			self.dictionaryTeam["Entella"] = setNames(["Entella"])
-			self.dictionaryTeam["Pro Vercelli"] = setNames(["Pro Vercelli"])
-			self.dictionaryTeam["Pescara"] = setNames(["Pescara"])
-			self.dictionaryTeam["Spezia"] = setNames(["Spezia"])
-			self.dictionaryTeam["Salernitana"] = setNames(["Salernitana"])
-			self.dictionaryTeam["Trapani"] = setNames(["Trapani"])
-			self.dictionaryTeam["Vicenza"] = setNames(["Vicenza"])
-			self.dictionaryTeam["Ternana"] = setNames(["Ternana"])
-		
-		
-		
-		
+
 		
 		//Spagna
 		
