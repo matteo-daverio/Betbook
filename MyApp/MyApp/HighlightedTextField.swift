@@ -53,7 +53,7 @@ import UIKit
      
      This property determines the size of the placeholder label relative to the font size of the text field.
      */
-    @IBInspectable dynamic public var placeholderFontScale: CGFloat = 0.65 {
+    @IBInspectable dynamic public var placeholderFontScale: CGFloat = 0.60 {
         didSet {
             updatePlaceholder()
         }
@@ -77,10 +77,16 @@ import UIKit
     private var activeColor : UIColor?
     private let borderThickness: (active: CGFloat, inactive: CGFloat) = (active: 2, inactive: 1)
     private let placeholderInsets = CGPoint(x: 0, y: 6)
-    private let textFieldInsets = CGPoint(x: 0, y: 12)
+    private let textFieldInsets = CGPoint(x: 0, y: 15)
     private let inactiveBorderLayer = CALayer()
     private let activeBorderLayer = CALayer()
     private var activePlaceholderPoint: CGPoint = CGPointZero
+	
+	private let kindFontDownPlaceHolder = "HelveticaNeue"
+	private let sizeFontDownPlaceHolder = CGFloat(20)
+	
+	private let kindFontUpPlaceHolder = "HelveticaNeue"
+	private let sizeFontUpPlaceHolder = CGFloat(20)
     
     // MARK: - TextFieldsEffects
     
@@ -88,7 +94,7 @@ import UIKit
         let frame = CGRect(origin: CGPointZero, size: CGSize(width: rect.size.width, height: rect.size.height))
         
         placeholderLabel.frame = CGRectInset(frame, placeholderInsets.x, placeholderInsets.y)
-        placeholderLabel.font = placeholderFontFromFont(font!)
+        placeholderLabel.font = placeholderFontFromFont(UIFont(name: kindFontDownPlaceHolder, size: sizeFontDownPlaceHolder)!)
         
         updateBorder()
         updatePlaceholder()
@@ -103,6 +109,7 @@ import UIKit
             UIView.animateWithDuration(0.3, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1.0, options: .BeginFromCurrentState, animations: ({
                 self.placeholderLabel.frame.origin = CGPoint(x: 10, y: self.placeholderLabel.frame.origin.y)
                 self.placeholderLabel.alpha = 0
+				self.placeholderLabel.font = self.placeholderFontFromFont(UIFont(name: self.kindFontUpPlaceHolder, size: self.sizeFontUpPlaceHolder)!)
             }), completion:nil)
         }
         
@@ -124,6 +131,7 @@ import UIKit
             UIView.animateWithDuration(0.35, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 2.0, options: UIViewAnimationOptions.BeginFromCurrentState, animations: ({ [unowned self] in
                 self.layoutPlaceholderInTextRect()
                 self.placeholderLabel.alpha = 1
+				self.placeholderLabel.font = self.placeholderFontFromFont(UIFont(name: self.kindFontDownPlaceHolder, size: self.sizeFontDownPlaceHolder)!)
                 }), completion: nil)
             
             placeholderLabel.text = placeholder

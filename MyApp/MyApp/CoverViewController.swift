@@ -214,7 +214,41 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
 	
 	let spinner = UIActivityIndicatorView(frame: CGRectMake(0,0,100,100))
 	
+	private func isOkBetAmountRespectToPotentialWin() -> Bool{
+		var bet: Double?
+		var win: Double?
+		
+		if(self.textFieldBet != nil && self.textFieldBet.text != "" && self.textFieldVictory != nil && self.textFieldVictory.text != ""){
+			bet = Double((self.textFieldBet.text?.stringByReplacingOccurrencesOfString(",", withString: "."))!)
+			win = Double((self.textFieldVictory.text?.stringByReplacingOccurrencesOfString(",", withString: "."))!)
+			
+			if(bet >= win){
+				return false
+			}else{
+				return true
+			}
+		}
+		
+		return true
+	}
+	
 	@IBAction func goToGraph(sender: MKButton) {
+		
+		if(!isOkBetAmountRespectToPotentialWin()){
+			
+			let title = "Attenzione!"
+			let message = "Non è possibile inserire un importo giocato inferiore alla vincita potenziale"
+			let okText = "Ok"
+			
+			let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+			
+			let okayButton = UIAlertAction(title: okText, style: UIAlertActionStyle.Cancel, handler: nil)
+			
+			alert.addAction(okayButton)
+			self.presentViewController(alert, animated: true, completion: nil)
+			
+			return
+		}
 		
 		if(switchOnline.selectedIndex == 0){
 			online = true
@@ -401,8 +435,8 @@ class CoverViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         textFieldBet.borderInactiveColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
         textFieldBet.borderActiveColor = UIColor(red: 90/255, green: 190/255, blue: 246/255, alpha: 1)
         textFieldBet.placeholderColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
-        textFieldBet.placeholder = "Bet amount €    0.00"
-        textFieldBet.upperPlaceholder = "Bet amount €"
+        textFieldBet.placeholder = "Importo Giocato €    0.00"
+        textFieldBet.upperPlaceholder = "Importo Giocato €"
         textFieldBet.keyboardType = UIKeyboardType.DecimalPad
         textFieldBet.delegate = self
         

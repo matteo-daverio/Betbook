@@ -26,14 +26,25 @@ class MatchListTableViewController: UITableViewController,MatchListDelegate {
 		//Importantissimo
 		matchListModel.delegate = self
 		
+		self.title = league
+		
+		let bounds = UIScreen.mainScreen().bounds
+		let widht = bounds.size.width
+		let height = bounds.size.height
+		
 		spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
 		spinner.hidesWhenStopped = true
 		spinner.transform = CGAffineTransformMakeScale(1.5, 1.5)
-		let center = self.view.center
-		spinner.center = CGPointMake(center.x, center.y-center.y*0.30)
+		let center = CGPoint(x: widht * 0.5, y: height * 0.2)
+		
+		
+		
+		spinner.center = CGPointMake(center.x, center.y)
 		spinner.color = UIColor.blackColor()
-		spinner.backgroundColor = UIColor.whiteColor()
+		spinner.backgroundColor = UIColor.clearColor()
 		self.view.addSubview(spinner)
+		self.view.bringSubviewToFront(spinner)
+		spinner.startAnimating()
 		
 		
 		spinner.startAnimating()

@@ -63,15 +63,22 @@ class OddsViewController: CollapsableTableViewController, OddsMatchDelegate{
 		self.oddsHttpRequester.selectedCountryOrEuropeanCompetition = self.selectedCountryOrEuropeanCompetition
 		self.oddsHttpRequester.selectedLeague = self.selectedLeague
 		
+		let bounds = UIScreen.mainScreen().bounds
+		let widht = bounds.size.width
+		let height = bounds.size.height
+		
 		spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
 		spinner.hidesWhenStopped = true
 		spinner.transform = CGAffineTransformMakeScale(1.5, 1.5)
-		let center = self.delegate!.view.center
-		spinner.center = CGPointMake(center.x, center.y-center.y*0.30)
+		let center = CGPoint(x: widht * 0.5, y: height * 0.2)
+		
+		
+		
+		spinner.center = CGPointMake(center.x, center.y)
 		spinner.color = UIColor.blackColor()
 		spinner.backgroundColor = UIColor.clearColor()
-		self.delegate?.view.addSubview(spinner)
-		self.delegate?.view.bringSubviewToFront(spinner)
+		self.view.addSubview(spinner)
+		self.view.bringSubviewToFront(spinner)
 		spinner.startAnimating()
 		
 		self.delegate?.reloadInputViews()

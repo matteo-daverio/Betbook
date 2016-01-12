@@ -59,6 +59,27 @@ class OfflineGraphViewController: GraphViewController, UITextFieldDelegate{
 	func doneButtonAction() {
 		
 		self.inputBetTextField.resignFirstResponder()
+		if(inputBetTextField.text == ""){
+			return
+		}
+		
+		let input = Double(inputBetTextField.text!.stringByReplacingOccurrencesOfString(",", withString: "."))!
+		
+		if(input < 1){
+			let title = "Attenzione!"
+			let message = "Inserire un moltiplicatore superiore ad 1"
+			let okText = "Ok"
+			
+			let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+			
+			let okayButton = UIAlertAction(title: okText, style: UIAlertActionStyle.Cancel, handler: nil)
+			
+			alert.addAction(okayButton)
+			self.presentViewController(alert, animated: true, completion: nil)
+			inputBetTextField.text = ""
+			return
+		}
+		
 		self.brandMultiplier = Double(inputBetTextField.text!.stringByReplacingOccurrencesOfString(",", withString: "."))! - 1.00
 		print("ciao")
 		self.chart?.view.removeFromSuperview()

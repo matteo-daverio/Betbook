@@ -42,6 +42,7 @@ class BetViewController: UIViewController, AKPickerViewDataSource, AKPickerViewD
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		self.title = "My Bet"
 		
 		if let decoded = userDefaults.objectForKey("bets") {
 			if let bets = NSKeyedUnarchiver.unarchiveObjectWithData(decoded as! NSData) {

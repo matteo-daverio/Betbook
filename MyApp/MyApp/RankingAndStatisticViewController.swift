@@ -10,6 +10,8 @@ import UIKit
 
 class RankingAndStatsticViewController: UITableViewController, StatisticDelegate{
 	
+	let spinner = UIActivityIndicatorView(frame: CGRectMake(0,0,100,100))
+	
 	let statisticHttpRequest = StatisticHttpRequest()
 	
 	var league: String?
@@ -33,6 +35,24 @@ class RankingAndStatsticViewController: UITableViewController, StatisticDelegate
 		
 		self.statisticHttpRequest.getRankingAndStatisticForLeague(league!)
 		
+		let bounds = UIScreen.mainScreen().bounds
+		let widht = bounds.size.width
+		let height = bounds.size.height
+		
+		spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+		spinner.hidesWhenStopped = true
+		spinner.transform = CGAffineTransformMakeScale(1.5, 1.5)
+		let center = CGPoint(x: widht * 0.5, y: height * 0.2)
+		
+		
+
+		spinner.center = CGPointMake(center.x, center.y)
+		spinner.color = UIColor.blackColor()
+		spinner.backgroundColor = UIColor.clearColor()
+		self.view.addSubview(spinner)
+		self.view.bringSubviewToFront(spinner)
+		spinner.startAnimating()
+		
 //		self.statisticHttpRequest.getRankingAndStatisticForLeague("Liga")
 //		self.statisticHttpRequest.getRankingAndStatisticForLeague("Premier League")
 //		self.statisticHttpRequest.getRankingAndStatisticForLeague("Ligue 1")
@@ -49,6 +69,8 @@ class RankingAndStatsticViewController: UITableViewController, StatisticDelegate
 			
 				print(" ")
 				self.ranking = ranking
+				
+				self.spinner.stopAnimating()
 			}
 		}
 	}

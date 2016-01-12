@@ -20,6 +20,8 @@ class MenuViewController: CollapsableTableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		self.title = "Search"
+		
 		self.tableView.tableFooterView = UIView(frame: CGRect.zero)
 		//	self.tableView.backgroundColor = UIColor(red: 215.0/255.0, green: 227.0/255.0, blue: 244.0/255.0, alpha: 1.0)
 		
