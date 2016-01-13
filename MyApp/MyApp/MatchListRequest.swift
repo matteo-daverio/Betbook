@@ -63,9 +63,8 @@ class MatchListRequest {
 				
 				//Questa istruzione serve per mettere questa istruzione in esecuzione sulla coda principale! Cosi la grafica viene aggiornata aapena i dati sono disponibili
 				//Questo va fatto per evitare ulteriori ritardi nel fornire i dati alla grafica con il delegate
-				dispatch_async(dispatch_get_main_queue(), { () -> Void in
-					self.delegate?.setMatchList(list)
-				})
+				self.delegate?.setMatchList(list)
+				
 			}
 		}
 		

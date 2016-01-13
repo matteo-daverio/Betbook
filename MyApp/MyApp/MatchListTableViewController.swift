@@ -70,6 +70,8 @@ class MatchListTableViewController: UITableViewController,MatchListDelegate {
 		dispatch_async(dispatch_get_main_queue()){ () -> Void in
 			if( matchList == nil ){
 				
+				self.view.userInteractionEnabled = false
+				
 				let title = "Match non disponibili"
 				let message = "Non sono al momento previsti incontri per questa competizione"
 				let okText = "Ok"

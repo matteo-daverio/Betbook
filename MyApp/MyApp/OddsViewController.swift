@@ -44,11 +44,13 @@ class OddsViewController: CollapsableTableViewController, OddsMatchDelegate{
 	
 	override func viewWillAppear(animated: Bool) {
 		self.tableView.reloadData()
+		print(self.tableView.contentSize)
 	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		self.tableView.autoresizingMask = UIViewAutoresizing.FlexibleHeight
 //		self.myBetControllerNavigator = self.tabBarController?.viewControllers![TabBarEnum.Bet.rawValue] as? UINavigationController
 //		
 //		self.myBetController = self.myBetControllerNavigator!.viewControllers[0] as? BetViewController

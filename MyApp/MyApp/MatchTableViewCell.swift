@@ -31,13 +31,20 @@ class MatchTableViewCell: UITableViewCell {
 		homeTeamName?.text = match?.homeTeam!
 		awayTeamName?.text = match?.awayTeam!
 		hourLabel?.text = match?.hour!
-		homeImageView.image = UIImage(named: (match?.homeTeam!.lowercaseString)!)
+		
+		var homeImageName = match?.homeTeam!.stringByReplacingOccurrencesOfString("ö", withString: "o")
+		homeImageName = homeImageName!.stringByReplacingOccurrencesOfString("á", withString: "a")
+		
+		var awayImageName = match?.awayTeam!.stringByReplacingOccurrencesOfString("ö", withString: "o")
+		awayImageName = awayImageName!.stringByReplacingOccurrencesOfString("á", withString: "a")
+		
+		homeImageView.image = UIImage(named: homeImageName!.lowercaseString)
 		
 		if(homeImageView.image == nil){
 			homeImageView.image = UIImage(named: "default")
 		}
 		
-		awayImageView.image = UIImage(named: (match?.awayTeam!.lowercaseString)!)
+		awayImageView.image = UIImage(named: awayImageName!.lowercaseString)
 		
 		if(awayImageView.image == nil){
 			awayImageView.image = UIImage(named: "default")

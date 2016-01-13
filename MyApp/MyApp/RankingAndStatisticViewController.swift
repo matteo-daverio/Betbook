@@ -29,6 +29,8 @@ class RankingAndStatsticViewController: UITableViewController, StatisticDelegate
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		self.tableView.autoresizingMask = UIViewAutoresizing.FlexibleHeight
+		
 		self.statisticHttpRequest.delegate = self
 		
 		self.tableView.registerNib(UINib(nibName: "RankingAndStatsticCellTableViewCell", bundle: nil), forCellReuseIdentifier: "RankingAndStatsticCellTableViewCell")
@@ -113,7 +115,14 @@ class RankingAndStatsticViewController: UITableViewController, StatisticDelegate
 			cell.positionLabel.text = ranking?.rankingList[indexPath.row].pos
 			cell.teamNameLabel.text = ranking?.rankingList[indexPath.row].team
 			cell.pointLabel.text = ranking?.rankingList[indexPath.row].punti
-			cell.teamImageView.image = UIImage(named: (cell.teamNameLabel.text?.lowercaseString)!)
+		
+			var imageName = (ranking?.rankingList[indexPath.row].team)!.stringByReplacingOccurrencesOfString("ö", withString: "o")
+		
+			imageName = imageName.stringByReplacingOccurrencesOfString("á", withString: "a")
+		
+		
+		
+			cell.teamImageView.image = UIImage(named: imageName.lowercaseString)
 		
 		for(var i = 0; i < ranking?.rankingList[indexPath.row].ultimeGiornate.count ; i++){
 			let esito = ranking?.rankingList[indexPath.row].ultimeGiornate[i]
